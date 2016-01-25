@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	
+<html>
+<head>
+	<title>Solución</title>
+</head>
+		
+<body>
+
+<h1>Seminar 1 Solution</h1>
+		
+<p><b>Ejercicio 1. Elaborar dos casos de uso: Comprar álbum y Comentar el álbum. incluyendo extensiones y/o inclusiones</b></p>
+
+<p><b>Caso de uso 1:</b> Comprar álbum</p>
+
+<p><b>Contexto:</b> Un usuario quiere comprar un álbum</p>
+
+<p><b>Actores primarios:</b> Usuario</p>
+<p><b>Actores de soporte:</b> Paypal</p>
+<p><b>Precondiciones </b></p>
+<p>El usuario se puede comunicar con el sistema </p>
+<p>El usuario está logeado en el sistema </p>
+
+<p><b>Postcondiciones de éxito</b></p>
+<p>El usuario se ha comprado el disco</p>
+<p>(Opcional) El usuario ha recibido el disco físicamente</p>
+
+<p><b>Condiciones de fracaso</b></p>
+<p>El usuario no se ha podido comprar el disco</p>
+<p>El usuario no ha recibido el disco en formato físico</p>
+
+<p><b>Flujo básico</b></p>
+
+<ol type="1">
+	<li> El usuario indica que quiere comprar un disco </il>
+	<li> El sistema verifica si el usuario está logeado </il>
+	<li> El usuario confirma que quiere comprar el disco </il>
+	<li> El sistema redirige al usuario a la página de Paypal </il>
+	<li> El usuario completa los datos de compra </il>
+	<li> Paypal verifica los datos de compra </il>
+	<li> Paypal envia una confirmación de la compra al usuario </il>
+	<li> Paypal envia una confirmación de la compra al sistema (Web Service) </il>
+	<li> El usuario descarga el disco </il>
+</ol>
+
+<p><b>Extensión</b></p>
+
+<p> 2.a El usuario no se encuentra logeado</p> 
+<p> 2.a.1 Se ejecuta la inclusión login</p>
+<p> 2.a.1.1 El sistema pregunta por el username y la contraseña</p>
+<p> 2.a.1.1.1 Se ejecuta la extensión registrar usuario</p>
+
+<p> 3.a El usuario rechaza la confirmación </p>
+<p> 3.a.1 Vuelve al paso 1 </p> 
+
+<p> 5.a Los datos son incorrectos </p>
+<p> 5.a.1. Vuelve al paso 5 </p>
+		
+</body>
+	
+</html>
