@@ -1,11 +1,22 @@
 /* 
-  - streams de la llibreria estàndard per escriure a consola
-  - namespace std::nom
+  - definició d'una classe
+  - instaciacio i missatge a un objecte
  */
 #include <iostream>
 
+class Animal
+{
+public:
+	void escriuEspecie()
+	{
+		std::cout << "...indefinida..." << std::endl;
+	}
+};
+
 int main(void)
 {
-	std::cout << "Hola mon" << std::endl;
+	Animal unAnimal;
+	unAnimal.escriuEspecie();
+
 	return 0;
 }
