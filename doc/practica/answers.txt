@@ -1,0 +1,80 @@
+Q1. Al ejecutar el comando git status, se nos está indicando que existen archivos sin seguimiento en el path. Para incluirlos en el seguimiento, deberemos añadirlos mediante el comando git add <archivo>.
+
+Q2. Una vez que hemos ejecutado el comando git add README.md para añadir el archivo creado previamente, mediante la ejecución de git status podemos ver una serie de cambios:
+
+- Se ha añadido un archivo README.md al Staging Area, el cúal tendremos que hacer un commit.
+
+Q3. Todos los cambios que introduzcamos en un fichero, los podremos identificar mediante la instrucción git diff <filename>. Estos cambios se representan mediante el símbolo +, precedido de los nuevos carácteres (color verde). 
+
+
+Q4. El mensaje del commit debe indicar el propósito del fichero, y en caso de introducir cambios aclararlos los cambios respecto la versión previa.
+
+Si ejecutamos el comando git status, se nos indica que la rama está delante de origin/master para 1 commit, y que deberemos hacer push para introducir los cambios locales.
+
+El archivo que habíamos modicado, no está listo para el commit, con lo cual, si queremos que se reflejen los cambios deberemos hacer de nuevo un git add <filename>, git commit -m <message> y git push.
+
+Q5. Hay un commit, el referente al ejercicio anterior. 
+
+Las primeras 7 letras y números equivalen a f4e942a.
+
+Q6. Si introducimos cambios en el archivo README.md, y a continuación ejecutamos el comando git show HEAD, veremos lo siguiente:
+
+- El commit en el que estamos trabajando
+- Los cambios que se han introducido respecto a una versión previa del archivo
+
+Q7. Una vez que hemos introducido otra en el archivo README.md, hacemos lo siguiente para recuperar la versión anterior del archivo:
+
+1. Ejecutamos git reset HEAD README.md. Este comando restaura el archivo en el staging area y deja el archivo igual a como estaba en el commit especificado. Tenemos que tener en cuenta, que este comando, vuelva a la versión anterior del archivo sólo en el staging area y para tener la misma versión en el directorio local tendremos que ejecutar el comando git checkout <filename>. 
+
+Q8. Una vez que hemos creado una nueva rama documents, tendremos dos ramas: documents y master. Delante de la rama master, tendremos *, que significa la rama actual.
+
+Q9. En la rama master, tenemos el mensaje original. Por el contrario, en la rama documents tenemos el nuevo mensaje "We are in the documents branch"
+
+Q10. Una vez que hemos contestado las 10 primeras preguntas: las 5 primeras guardadas en el archivo answers.txt de la rama master, y las 5 restantes en el archivo answers.txt de la rama documents, tenemos problemas.
+
+Git nos dice que existe un error al hacer merge entre ambos archivos, debido a que existencias difenrencias entre ellos.
+
+Para solucionarlo, simplemente desde la rama master, hemos abierto el archivo answers.txt, y hemos eliminado todo los <, > y = introducidos por Git al hacer merge.
+
+A continuación, hemos seguido los siguientes pasos:
+
+1. git add answers.txt
+2. git commit -m 'Merge both files'
+3. git push
+
+Y hemos solucionado el problema.
+
+Q11. Una vez ejecutado el comando git branch -d documents, sólo tendremos una rama, master.
+
+
+Tutorial C++
+
+Commit 1 ID:
+
+Commit 2 ID: 
+
+Commit 3 ID: 
+
+Commit 4 ID: 
+
+Commit 5 ID:
+
+Commit 6 ID: 
+
+Commit 7 ID:
+
+Commit 8 ID:
+
+Commit 9 ID: 
+
+Commit 10 ID: 
+
+Commit 11 ID: 
+
+Commit 12 ID: 
+
+Commit 13 ID: 
+
+Commit 14 ID: 
+
+Commit 15 ID: 
