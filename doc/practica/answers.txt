@@ -49,33 +49,32 @@ Q11. Una vez ejecutado el comando git branch -d documents, sólo tendremos una r
 
 Tutorial C++
 
-Commit 1 ID: 
+Commit 1. SHA ID: f95dd57e5e09886c96cf30e04c1216f0c2b1fc27
 
-Commit 2 ID:
+Commit 2. SHA ID:ccf7a6827529ddeb72e6137b20be4b77001524fe
 
-Commit 3 ID:
+Commit 3. SHA ID: 594def5663429b9972aea64b1c2e133e1785b5a6
 
-Commit 4 ID:
+Commit 4. SHA ID:33787e76d970c47459e56fd2d9032fc734ad8421
 
-Commit 5 ID:
+Commit 5. SHA ID:e21a29087e139bb140d119e9f36bbd4ed43ea0de
 
-Commit 6 ID:
+Commit 6. SHA ID: b9c59010274b787d54fe5f9932c9be499afb2597
 
-Commit 7 ID: 
+Commit 7. SHA ID:  4242ffdf6617767a6039ab65f2b7a8b8363638ad
 
-Commit 8 ID: 
+Commit 8. SHA ID:  6daf7ae585ef658daccd6dd9400084b1f808139b
 
-Commit 9 ID: 
+Commit 9. SHA ID: a45be07fb5e1543ab7b30594446d629dfdb998dc
 
-Commit 10 ID:
+Commit 10. SHAID:4c616d1d872b06ae32dc1db86e84e5b4443dd42a
 
+Commit 11. SHA ID:fdf01ba1f1671caacba8552a9c5e7378aa68061b
 
-Commit 11 ID:
+Commit 12. SHA ID:fdf01ba1f1671caacba8552a9c5e7378aa68061b
 
-Commit 12 ID:
+Commit 13. SHA ID:ae6ee10329eced332829c618149984295b411ef2
 
-Commit 13 ID:
+Commit 14. SHA ID:  f98f3ecb633311e4400e8f3b99d7ecf7680bd363
 
-Commit 14 ID: 
-
-Commit 15 ID: 
+Commit 15. SHA ID:  6492dd6a31d29f3249593de26798f7c77adbdfe4
