@@ -49,33 +49,33 @@ Q11. Una vez ejecutado el comando git branch -d documents, sólo tendremos una r
 
 Tutorial C++
 
-Commit 1 ID: caa13c98e329cd6e1c7d9ef0ff6ef28a46b2a0a1
+Commit 1 ID: 
 
-Commit 2 ID: 648f7f1b362831d5f5615916af9cd0afc877f245
+Commit 2 ID:
 
-Commit 3 ID: b55168630fc8ec043017f494d3cb1017c3efe50b
+Commit 3 ID:
 
-Commit 4 ID: 8a3acaf1b57bd9d000fc17f71833a514c81c5346
+Commit 4 ID:
 
-Commit 5 ID: 7d7275462a23d80fbc66bc48ae43cf80473f0e3b
+Commit 5 ID:
 
-Commit 6 ID: 43e7513e2d6afd40e2f53140b307b1aba8812e2e
+Commit 6 ID:
 
-Commit 7 ID: 4e8dab5eff4af4547153a1ae2999d11af25ec950
+Commit 7 ID: 
 
-Commit 8 ID: 13068a020bbb66afe81b47610bf2c1a00f35c09e
+Commit 8 ID: 
 
-Commit 9 ID: 1b7c8e6af90129ce28d8ed149b4e6823058dc19d
+Commit 9 ID: 
 
-Commit 10 ID: 09d27650adc8a79fd27bd7c242a0ffcbddeb3381
+Commit 10 ID:
 
 
-Commit 11 ID: 674b025997ef46ba7033b3fcefc2dce439386ce6
+Commit 11 ID:
 
-Commit 12 ID: 674b025997ef46ba7033b3fcefc2dce439386ce6
+Commit 12 ID:
 
-Commit 13 ID: d1308f8f443fa5fa3b60e6037280a04e99b93335
+Commit 13 ID:
 
-Commit 14 ID: 459021ee8386be247806621f3c3a513d5fea9479
+Commit 14 ID: 
 
-Commit 15 ID: 3b591001baeb952fe465a0889cb00150752dd38b
+Commit 15 ID: 
