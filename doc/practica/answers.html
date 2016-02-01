@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<html>
+<head>
+	<title>Solución Practica 1 - GIT</title>
+</head>
+
+<body>
+
+<h1>Lab session 1 - Version control system</h1>
+
+<p><b>Q1.</b> Al ejecutar el comando git status, se nos está indicando que existen archivos sin seguimiento en el path. Para incluirlos en el seguimiento, deberemos añadirlos mediante el comando git add &lt;archivo&gt;. </p>
+
+<p><b>Q2.</b> Una vez que hemos ejecutado el comando git add README.md para añadir el archivo creado previamente, mediante la ejecución de git status podemos ver una serie de cambios:</p>
+
+<p>- Se ha añadido un archivo README.md al Staging Area, el cúal tendremos que hacer un commit.</p>
+
+<p><b>Q3.</b> Todos los cambios que introduzcamos en un fichero, los podremos identificar mediante la instrucción git diff &lt;filename&gt;. Estos cambios se representan mediante el símbolo +, precedido de los nuevos carácteres (color verde).</p> 
+
+
+<p><b>Q4.</b> El mensaje del commit debe indicar el propósito del fichero, y en caso de introducir cambios aclararlos los cambios respecto la versión previa.</p>
+
+<p>Si ejecutamos el comando git status, se nos indica que la rama está delante de origin/master para 1 commit, y que deberemos hacer push para introducir los cambios locales.</p>
+
+<p>El archivo que habíamos modicado, no está listo para el commit, con lo cual, si queremos que se reflejen los cambios deberemos hacer de nuevo un git add &lt;filename&gt;, git commit -m &lt;message&gt; y git push.</p>
+
+<p><b>Q5.</b> Hay un commit, el referente al ejercicio anterior.</p> 
+
+<p>Las primeras 7 letras y números equivalen a f4e942a.</p>
+
+<p><b>Q6.</b> Si introducimos cambios en el archivo README.md, y a continuación ejecutamos el comando git show HEAD, veremos lo siguiente:</p>
+
+<p>- El commit en el que estamos trabajando</p>
+<p>- Los cambios que se han introducido respecto a una versión previa del archivo</p>
+
+<p><b>Q7.</b> Una vez que hemos introducido otra en el archivo README.md, hacemos lo siguiente para recuperar la versión anterior del archivo:</p>
+
+<p><b>1.</b> Ejecutamos git reset HEAD README.md. Este comando restaura el archivo en el staging area y deja el archivo igual a como estaba en el commit especificado. Tenemos que tener en cuenta, que este comando, vuelva a la versión anterior del archivo sólo en el staging area y para tener la misma versión en el directorio local tendremos que ejecutar el comando git checkout &lt;filename&gt;.</p> 
+
+<p>Q8. Una vez que hemos creado una nueva rama documents, tendremos dos ramas: documents y master. Delante de la rama master, tendremos *, que significa la rama actual.</p>
+
+<p><b>Q9.</b> En la rama master, tenemos el mensaje original. Por el contrario, en la rama documents tenemos el nuevo mensaje "We are in the documents branch"</p>
+
+<p><b>Q10.</b> Una vez que hemos contestado las 10 primeras preguntas: las 5 primeras guardadas en el archivo answers.txt de la rama master, y las 5 restantes en el archivo answers.txt de la rama documents, tenemos problemas.</p>
+
+<p>Git nos dice que existe un error al hacer merge entre ambos archivos, debido a que existencias difenrencias entre ellos.</p>
+
+<p>Para solucionarlo, simplemente desde la rama master, hemos abierto el archivo answers.txt, y hemos eliminado todo los &lt;, &gt; y = introducidos por Git al hacer merge.</p>
+
+<p>A continuación, hemos seguido los siguientes pasos:</p>
+
+<ol type="1">
+	<li> git add answers.txt </li>
+	<li> git commit -m 'Merge both files' </li>
+	<li> git push </li>
+</ol>
+
+<p>Y hemos solucionado el problema. </p>
+
+<p><b>Q11.</b> Una vez ejecutado el comando git branch -d documents, sólo tendremos una rama, master. </p>
+
+
+<p><b>Tutorial C++</b></p>
+
+<p>Commit 1. SHA ID: f95dd57e5e09886c96cf30e04c1216f0c2b1fc27</p>
+
+<p>Commit 2. SHA ID:ccf7a6827529ddeb72e6137b20be4b77001524fe</p>
+
+<p>Commit 3. SHA ID: 594def5663429b9972aea64b1c2e133e1785b5a6</p>
+
+<p>Commit 4. SHA ID:33787e76d970c47459e56fd2d9032fc734ad8421</p>
+
+<p>Commit 5. SHA ID:e21a29087e139bb140d119e9f36bbd4ed43ea0de</p>
+
+<p>Commit 6. SHA ID: b9c59010274b787d54fe5f9932c9be499afb2597</p>
+
+<p>Commit 7. SHA ID:  4242ffdf6617767a6039ab65f2b7a8b8363638ad</p>
+
+<p>Commit 8. SHA ID:  6daf7ae585ef658daccd6dd9400084b1f808139b</p>
+
+<p>Commit 9. SHA ID: a45be07fb5e1543ab7b30594446d629dfdb998dc</p>
+
+<p>Commit 10. SHAID:4c616d1d872b06ae32dc1db86e84e5b4443dd42a</p>
+
+<p>Commit 11. SHA ID:fdf01ba1f1671caacba8552a9c5e7378aa68061b</p>
+
+<p>Commit 12. SHA ID:fdf01ba1f1671caacba8552a9c5e7378aa68061b</p>
+
+<p>Commit 13. SHA ID:ae6ee10329eced332829c618149984295b411ef2</p>
+
+<p>Commit 14. SHA ID:  f98f3ecb633311e4400e8f3b99d7ecf7680bd363</p>
+
+<p>Commit 15. SHA ID:  6492dd6a31d29f3249593de26798f7c77adbdfe4</p>
+
+</body>
+
+</html>
