@@ -3,10 +3,10 @@
 
 class Album{
 
-	public:
-		string title(){
-			return;
-		}
-}
+public:
+	string title(){
+		return;
+	}
+};
 
 #endif
