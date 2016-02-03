@@ -1,4 +1,5 @@
 #include "MiniCppUnit.hxx"
+#include "albuns.hxx"
 
 class AlbumTests : public TestFixture<AlbumTests>
 {
@@ -11,12 +12,14 @@ public:
 		//TEST_CASE( testListed_afterListing );
 		//TEST_CASE( testListed_afterUnlisting );
 	}
-	/*
+	
 	void testTitle_byDefault()
 	{
 		Album album;
 		ASSERT_EQUALS( "-- Untitled --", album.title() );
 	}
+
+	/*
 	void testTitle_afterModifying()
 	{
 		Album album;
