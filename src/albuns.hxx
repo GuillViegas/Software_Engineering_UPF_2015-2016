@@ -6,8 +6,8 @@
 class Album{
 
 public:
-	void title(){
-		;
+	string title(){
+		return "_test_";
 	}
 };
 
