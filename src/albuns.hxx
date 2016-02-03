@@ -1,11 +1,13 @@
 #ifndef albuns_hxx
 #define albuns_hxx
 
+#include <iostream>
+
 class Album{
 
 public:
-	string title(){
-		return;
+	void title(){
+		std::coun << "...test..." << std::endl;
 	}
 };
 
