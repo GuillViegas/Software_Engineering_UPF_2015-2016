@@ -4,8 +4,8 @@
 #include <string>
 
 class Album{
-
-	public string title(){
+public:
+	string title(){
 		return "_test_";
 	}
 };
