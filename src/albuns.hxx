@@ -4,7 +4,7 @@
 class Album{
 
 	public:
-		string title (){
+		string title(){
 			return;
 		}
 }
