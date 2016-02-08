@@ -9,7 +9,7 @@
 		
 <body>
 
-<h1>Seminar 2 Solution</h1>
+<h1>Seminario 2 Solución</h1>
 		
 <p><b>Ejercicio 1. Elaborar dos casos de uso: Comprar álbum y Comentar el álbum. incluyendo extensiones y/o inclusiones</b></p>
 
@@ -57,6 +57,104 @@
 
 <p> 5.a Los datos son incorrectos </p>
 <p> 5.a.1. Vuelve al paso 5 </p>
+
+<p><b>Caso de uso 2:</b> Comentar un álbum</p>
+
+<p><b>Contexto:</b> Un usuario quiere comentar un álbum</p>
+
+<p><b>Actores primarios:</b> Usuario</p>
+<p><b>Actores de soporte:</b> Paypal</p>
+<p><b>Precondiciones </b></p>
+<p>El usuario se puede comunicar con el sistema </p>
+<p>El usuario está logeado en el sistema </p>
+<p>El usuario tiene que haberse comprado/descargado el álbum previamente para poder comentarlo</p>
+
+
+<p><b>Postcondiciones de éxito</b></p>
+<p>El usuario ha comentado un álbum con éxito</p>
+<p>Sólo se puede dejar un comentario/valoración por usuario</p>
+
+<p><b>Condiciones de fracaso</b></p>
+<p>El usuario no ha podido comentar el álbum</p>
+<p>El usuario ha hecho más de un comentario en el mismo álbum</p>
+
+<p><b>Flujo básico</b></p>
+
+<ol type="1">
+    <li> El usuario busca el álbum del artista que quiera comentar</il>
+	<li> El usuario indica que quiere comentar el álbum</il>
+	<li> El sistema verifica si el usuario está logeado </il>
+	<li> El sistema verifica que el usuario ha comprado previamente el disco </il>
+	<li> El sistema redirige al usuario a la sección de comentarios </il>
+	<li> El usuario escribe el comentario</il>
+	<li> El usuario publica el nuevo comentario</il>
+	<li> El sistema verifica la longitud del comentario </il>
+	<li> El sistema guarda y publica el nuevo comentario </il>
+
+</ol>
+
+<p><b>Extensión</b></p>
+
+<p> 3.a El usuario no se encuentra logeado</p> 
+<p> 3.a.1 Se ejecuta la inclusión login</p>
+<p> 3.a.1.1 El sistema pregunta por el username y la contraseña</p>
+<p> 3.a.1.1.1 Se ejecuta la extensión registrar usuario</p>
+
+<p> 4.a El usuario no ha comprado/descargado previamente el disco</p> 
+<p> 4.a.1 Se ejecuta la inclusión comprar álbum</p>
+<p> 4.a.1.1 El sistema pregunta por el username y la contraseña</p>
+<p> 4.a.1.1.1 Se ejecuta la extensión registrar usuario</p>
+
+<p> 6.a El usuario cancela la publicación</p>
+<p> 6.a.1 Vuelve al paso 1</p>
+
+<p>(Opcional) En el caso de que haya un límite de palabras para cada comentario</p>
+<p> 8.a El comentario no cumple con la longitud máxima establecida</p>
+<p> 8.a.1 Vuelve al paso 6</p>
+
+<p> 9.a El sistema no puede guardar el nuevo comentario</p>
+<p> 9.a.1 Vuelve al paso 7</p>
+
+<p><b>Ejercicio 5. Actualizar el glosario en caso de que haya nuevos conceptos</b></p>
+
+<p><b>Conceptos teóricos </b></p> 
+
+<p><b>Requerimientos</b></p> 
+
+<p>Los requerimientos ayudan a determinar que se quiere, y sirve de contracto entre el cliente y el desarrollador. Estos son los principales tipos de requerimientos:</p> 
+
+<ol type="1">
+    <li> <b>Requerimientos funcionales:</b> describen la funcionalidad del sistema </il>
+    <li> <b>Requerimientos no-funcionales:</b> restricciones del sistema o del desarrollo </il>
+    <li> <b>Requerimientos de dominio:</b> limitaciones impuestas por el dominio de la aplicación</il>
+</ol>
+
+<p><b>Casos de uso</b></p> 
+
+<p>Los casos de uso describen la interacción entre los sistemas y los actores, por ejemplo personas o entidades externas al sistema que interactúan con él. Un caso de uso ilustra un servicio que supone que el sistema tiene que proveer. Se distingue entre actores primarios, que inician el contacto con el sistema, y los actores de soporte que son contactados por el sistema.</p>
+
+<p>Cada caso de uso consiste en una lista de pasos que describen una interacción específica entre el actor y el sistema, como la información asociada. Un <em>diagrama</em> ilustra las relaciones entre los casos de uso y los actores. Normalmente, un caso de uso incluye un flujo básico en cúal la interración acaba con éxito. Las <em>extensiones</em> de un caso de uso especifican que ocurre cuando la interración falla en un punto. A veces las extensiones son complicadaas de ser definidas como un caso de uso propio.</p>
+
+<p>Existen tres tipos de relaciones en los casos de uso:</p>
+
+<ol type="1">
+    <li> <b>includes:</b> un caso de uso siempre incluye otro completamente </il>
+    <li> <b>extends:</b> un caso de uso es la extensión de otro </il>
+    <li> <b>generalizes:</b> varios casos de uso incluyen los mismos pasos que pueden ser agrupados en un incompleto "super caso de uso"</il>
+</ol>
+
+<p><b>Ejercicio 6. Actualizar la lista de puntos oscuros</b></p>
+
+<p>Vuelve a surgir como punto oscuro (al igual que uno de los puntos del seminario anterior), el papel de Paypal en la compra del album, ¿cómo de involucrado está y qué parte se lleva?</p>
+
+<p>No se específica si hay un número máximo de palabras para el comentario que pueda escribir el usuario</p>
+
+<p>No se específica si se pueden bloquear comentarios</p>
+
+<p>No se específica si los comentarios también tienen valoraciones</p>
+
+<p>No se específica si existe tiempo límite para publicar el nuevo comentario</p>
+
 		
 </body>
 	
