@@ -5,7 +5,7 @@
 
 class Album{
 public:
-	string title(){
+	std::string title(){
 		return "_test_";
 	}
 };
