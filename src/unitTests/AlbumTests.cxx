@@ -6,7 +6,7 @@ class AlbumTests : public TestFixture<AlbumTests>
 public:
 	TEST_FIXTURE( AlbumTests )
 	{
-		//TEST_CASE( testTitle_byDefault );
+		TEST_CASE( testTitle_byDefault );
 		//TEST_CASE( testTitle_afterModifying );
 		//TEST_CASE( testListed_byDefault );
 		//TEST_CASE( testListed_afterListing );
