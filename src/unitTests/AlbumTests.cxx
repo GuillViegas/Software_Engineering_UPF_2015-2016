@@ -26,17 +26,23 @@ public:
 		album.title( "A title" );
 		ASSERT_EQUALS( "A title", album.title() );
 	}
+	
+	
 	void testListed_byDefault()
 	{
 		Album album;
 		ASSERT_EQUALS( false, album.isListed() );
 	}
+
+	
 	void testListed_afterListing()
 	{
 		Album album;
 		album.list();
 		ASSERT_EQUALS( true, album.isListed() );
 	}
+
+
 	void testListed_afterUnlisting()
 	{
 		Album album;
