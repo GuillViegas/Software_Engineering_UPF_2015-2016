@@ -16,6 +16,10 @@ public:
 	string title(){
 		return t;
 	}
+
+	void title(string _title){
+		
+	}
 };
 
 #endif
