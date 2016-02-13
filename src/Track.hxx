@@ -28,7 +28,7 @@ public:
 	}
 
 	void duration(unsigned int _duration){
-
+		trackDuration = _duration;
 	}
 };
 
