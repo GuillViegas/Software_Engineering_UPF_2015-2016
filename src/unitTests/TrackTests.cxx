@@ -8,7 +8,7 @@ public:
 	{
 		TEST_CASE( testTitle_byDefault );
 		TEST_CASE( testTitle_afterModifying );
-		//TEST_CASE( testDuration_byDefault );
+		TEST_CASE( testDuration_byDefault );
 		//TEST_CASE( testDuration_afterModifying );
 		//TEST_CASE( testMaster_byDefault );
 		//TEST_CASE( testMaster_afterModifying );
@@ -27,12 +27,12 @@ public:
 		ASSERT_EQUALS( "A Title", track.title() );
 	}
 
-	/*
 	void testDuration_byDefault()
 	{
 		Track track;
 		ASSERT_EQUALS( 0u, track.duration() );
 	}
+	/*
 	void testDuration_afterModifying()
 	{
 		Track track;
