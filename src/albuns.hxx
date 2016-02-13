@@ -23,7 +23,7 @@ public:
 
 public:
 	void title(string _title){
-		//t = _title;
+		titleAlbum = _title;
 	}
 
 };
