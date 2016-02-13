@@ -2,26 +2,28 @@
 #define albuns_hxx
 
 #include <string>
+using namespace std;
+
 
 class Album{
-/*protected:
-	std::string t;
+protected:
+	// string t;
+
+// public:
+// 	Album (){
+// 		t = "-- Untitled --";
+// 	}
+
 
 public:
-	Album (){
-		t = "-- Untitled --";
-	}
-
-*/
-public:
-	std::string title(){
+	string title(){
 		return "";
 		//return t;
 	}
 
 /*
 public:
-	void title(std::string _title){
+	void title(string _title){
 		//t = _title;
 	}
 */
