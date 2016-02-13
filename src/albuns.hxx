@@ -14,14 +14,10 @@ public:
 		titleAlbum = "-- Untitled --";
 	}
 
-
-public:
 	string title(){
 		return titleAlbum;
 	}
 
-
-public:
 	void title(string _title){
 		titleAlbum = _title;
 	}
