@@ -7,18 +7,17 @@ using namespace std;
 
 class Album{
 protected:
-	string t;
+	string titleAlbum;
 
 public:
 	Album (){
-		t = "-- Untitled --";
+		titleAlbum = "-- Untitled --";
 	}
 
 
 public:
 	string title(){
-		//return "";
-		return t;
+		return titleAlbum;
 	}
 
 /*
