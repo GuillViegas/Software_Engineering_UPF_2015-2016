@@ -6,8 +6,8 @@ using namespace std;
 
 
 class Album{
-protected:
-	// string t;
+// protected:
+// 	string t;
 
 // public:
 // 	Album (){
@@ -17,7 +17,8 @@ protected:
 
 public:
 	string title(){
-		return "";
+		//return "";
+		return "-- Untitled --";
 		//return t;
 	}
 
