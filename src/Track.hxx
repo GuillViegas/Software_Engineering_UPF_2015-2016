@@ -18,7 +18,7 @@ public:
 	}
 
 	void title(string _title){
-		
+		t = _title;
 	}
 };
 
