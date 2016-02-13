@@ -7,12 +7,12 @@ using namespace std;
 class Track{
 protected:
 	string trackTitle;
-	unsigned int d;
+	unsigned int trackDuration;
 
 public:
 	Track () {
 		trackTitle = "-- Untitled --";
-		d = 0u;
+		trackDuration = 0u;
 	}
 
 	string title(){
@@ -24,7 +24,11 @@ public:
 	}
 
 	unsigned int duration(){
-		return d;
+		return trackDuration;
+	}
+
+	void duration(unsigned int _duration){
+
 	}
 };
 
