@@ -6,20 +6,19 @@ using namespace std;
 
 
 class Album{
-// protected:
-// 	string t;
+protected:
+	string t;
 
-// public:
-// 	Album (){
-// 		t = "-- Untitled --";
-// 	}
+public:
+	Album (){
+		t = "-- Untitled --";
+	}
 
 
 public:
 	string title(){
 		//return "";
-		return "-- Untitled --";
-		//return t;
+		return t;
 	}
 
 /*
