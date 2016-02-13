@@ -6,19 +6,19 @@ using namespace std;
 
 class Track{
 protected:
-	string t;
+	string trackTitle;
 
 public:
 	Track () {
-		t = "-- Untitled --";
+		trackTitle = "-- Untitled --";
 	}
 
 	string title(){
-		return t;
+		return trackTitle;
 	}
 
 	void title(string _title){
-		t = _title;
+		trackTitle = _title;
 	}
 };
 
