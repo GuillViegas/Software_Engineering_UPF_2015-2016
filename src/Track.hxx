@@ -12,6 +12,7 @@ protected:
 public:
 	Track () {
 		trackTitle = "-- Untitled --";
+		d = 0u;
 	}
 
 	string title(){
