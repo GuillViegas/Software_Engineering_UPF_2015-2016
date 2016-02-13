@@ -5,10 +5,16 @@
 using namespace std;
 
 class Track{
+protected:
+	string t;
 
 public:
+	Track () {
+		t = "-- Untitled --";
+	}
+
 	string title(){
-		return "";
+		return t;
 	}
 };
 
