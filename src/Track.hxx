@@ -7,6 +7,7 @@ using namespace std;
 class Track{
 protected:
 	string trackTitle;
+	unsigned int d;
 
 public:
 	Track () {
@@ -19,6 +20,10 @@ public:
 
 	void title(string _title){
 		trackTitle = _title;
+	}
+
+	unsigned int duration(){
+		return d;
 	}
 };
 
