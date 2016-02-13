@@ -20,12 +20,12 @@ public:
 		return titleAlbum;
 	}
 
-/*
+
 public:
 	void title(string _title){
 		//t = _title;
 	}
-*/
+
 };
 
 #endif
