@@ -17,6 +17,18 @@ public:
 		solo = s;
 	}
 
+	//Method that return some artist attributes: name, result, label
+	std::string info() {
+		std:string result;
+		std:string label;
+		
+		if (group == true) label = "[group]";
+		else label = "[solo]"
+
+		result = name + " " + label + std::endl;
+		return result;
+	}
+
 
 	//void name(std:string name) {}
 
