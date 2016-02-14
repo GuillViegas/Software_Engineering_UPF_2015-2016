@@ -18,7 +18,7 @@ public:
 	}
 
 	//Method that return some artist attributes: name, result, label
-	std::string info() {
+	std::string description() {
 		std:string result;
 		std:string label;
 		
