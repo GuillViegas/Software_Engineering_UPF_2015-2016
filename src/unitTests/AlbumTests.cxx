@@ -1,5 +1,5 @@
 #include "MiniCppUnit.hxx"
-#include "albuns.hxx"
+#include "Albuns.hxx"
 
 class AlbumTests : public TestFixture<AlbumTests>
 {
