@@ -17,6 +17,20 @@ public:
 		solo = s;
 	}
 
+
+	//void name(std:string name) {}
+
+	//void newTrack(std:string trackName, std:string length,std:string folder) {}
+
+	//void newAlbum(std:string album) {}
+
+	//void findTrack(std:string trackName) {}
+
+	//void findAlbum(std:string albumName) {}
+
+	//void assignTrackToAlbum(std:string trackName, std:string albumName) {}
+
+
 	/*
 	std::string getName() {
 		return t;
