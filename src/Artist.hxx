@@ -59,14 +59,13 @@ public:
 	
 	
 	std::string description() {
-		std::string result;
 		std::string label;
 		
 		if (isGroup() == true) label = "[group]";
 		else label = "[solo]";
 
-		result = artistName + " " + label + '\n';
-		return result;
+		return artistName + " " + label + " \n";
+		
 	}
 	
 	/*
