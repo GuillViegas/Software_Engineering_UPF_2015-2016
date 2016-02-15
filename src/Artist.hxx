@@ -50,7 +50,7 @@ public:
 
 
 	//Method that return some artist attributes: name, result, label
-	/*
+	
 	std::string description() {
 		std:string result;
 		std:string label;
@@ -61,19 +61,19 @@ public:
 		result = name + " " + label + std::endl;
 		return result;
 	}
-	*/
+	
 
-	//void newTrack(std:string trackName, std:string length,std:string folder) {}
+	void newTrack(std:string trackName, std:string length,std:string folder) {}
 
-	//void newAlbum(std:string album) {}
+	void newAlbum(std:string album) {}
 
-	//void findTrack(std:string trackName) {}
+	void findTrack(std:string trackName) {}
 
-	//void findAlbum(std:string albumName) {}
+	void findAlbum(std:string albumName) {}
 
-	//void assignTrackToAlbum(std:string trackName, std:string albumName) {}
+	void assignTrackToAlbum(std:string trackName, std:string albumName) {}
 
-
+*/
 	
 
 };
