@@ -37,7 +37,8 @@ public:
 	}
 
 	void master(std::string _trackPath){
-		
+		std::string t = _trackPath;
+		trackPath = t;
 	}
 };
 
