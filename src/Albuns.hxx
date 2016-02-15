@@ -9,10 +9,12 @@ using namespace std;
 class Album{
 protected:
 	string titleAlbum;
+	bool listed;
 
 public:
 	Album (){
 		titleAlbum = "-- Untitled --";
+		//listed = false;
 	}
 
 	string title(){
@@ -21,6 +23,10 @@ public:
 
 	void title(string _title){
 		titleAlbum = _title;
+	}
+
+	bool isListed(){
+		return true;
 	}
 
 };
