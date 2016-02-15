@@ -53,7 +53,8 @@ public:
 
 	
 	void solo(){
-		artistIsSolo = false;
+		bool b = true;
+		artistIsSolo = b;
 	}
 
 	/*
