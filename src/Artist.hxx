@@ -45,11 +45,13 @@ public:
 		artistIsGroup = true;
 	}
 
-	/*
+	
 	bool isSolo(){
-		return artistIsSolo;
+		//return artistIsSolo;
+		return true;
 	}
 
+	/*
 	void isSolo(bool b){
 		artistIsSolo = b;
 	}
