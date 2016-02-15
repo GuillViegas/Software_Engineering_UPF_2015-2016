@@ -42,7 +42,8 @@ public:
 
 	
 	void group(){
-		artistIsGroup = false;
+		bool b = true;
+		artistIsGroup = b;
 	}
 
 	/*
