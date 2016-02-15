@@ -33,11 +33,13 @@ public:
 		artistName = _name;
 	}
 
-	/*
+	
 	bool isGroup(){
-		return artistIsGroup;
+		//return artistIsGroup;
+		return true;
 	}
 
+	/*
 	void group(bool b){
 		artistIsGroup = true;
 	}
