@@ -11,7 +11,7 @@ public:
 		TEST_CASE( testDuration_byDefault );
 		TEST_CASE( testDuration_afterModifying );
 		TEST_CASE( testMaster_byDefault );
-		//TEST_CASE( testMaster_afterModifying );
+		TEST_CASE( testMaster_afterModifying );
 	}
 	
 	void testTitle_byDefault()
@@ -46,14 +46,13 @@ public:
 		ASSERT_EQUALS( "", track.master() );
 	}
 
-	/*
+	
 	void testMaster_afterModifying()
 	{
 		Track track;
 		track.master( "masters/AFile.wav" );
 		ASSERT_EQUALS( "masters/AFile.wav", track.master() );
 	}
-	*/
 };
 
 REGISTER_FIXTURE( TrackTests )
