@@ -47,8 +47,10 @@ public:
 
 	
 	bool isSolo(){
-		//return artistIsSolo;
-		return true;
+		bool b = false;
+		artistIsSolo = b;
+		return artistIsSolo;
+
 	}
 
 	/*
