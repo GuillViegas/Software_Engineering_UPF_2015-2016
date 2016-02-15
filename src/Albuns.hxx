@@ -14,7 +14,7 @@ protected:
 public:
 	Album (){
 		titleAlbum = "-- Untitled --";
-		//listed = false;
+		listed = false;
 	}
 
 	string title(){
@@ -26,7 +26,7 @@ public:
 	}
 
 	bool isListed(){
-		return true;
+		return listed;
 	}
 
 };
