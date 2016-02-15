@@ -14,6 +14,7 @@ protected:
 public:
 
 	Artist() {
+		artistName = "-- No name --";
 	}
 
 	Artist(std::string n) {
