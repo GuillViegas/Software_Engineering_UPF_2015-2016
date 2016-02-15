@@ -15,6 +15,8 @@ public:
 
 	Artist() {
 		artistName = "-- No name --";
+		artistIsGroup = false;
+		artistIsSolo = false;
 	}
 
 	Artist(std::string n) {
@@ -35,8 +37,6 @@ public:
 
 	
 	bool isGroup(){
-		bool b = false;
-		artistName = b;
 		return artistIsGroup;
 	}
 
