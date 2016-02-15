@@ -30,7 +30,8 @@ public:
 
 
 	void name(std::string _name){
-		//artistName = _name;
+		std::string aux = _name;
+		artistName = aux;
 	}
 
 	/*
