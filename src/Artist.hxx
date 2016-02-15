@@ -3,12 +3,11 @@
 
 #include <iostream>
 #include <string>
-using namespace std;
 
 class Artist {
 
 protected:
-	string artistName;		//Indicates artist name
+	std::string artistName;		//Indicates artist name
 	bool artistIsGroup;				//Indicates if the artist belongs to a group
 	bool artistIsSolo;				//Indicates if the artist is a solo artist
 
@@ -17,7 +16,7 @@ public:
 	Artist() {
 	}
 
-	Artist(string n, bool g, bool s) {
+	Artist(std::string n, bool g, bool s) {
 		artistName = n;
 		artistIsGroup = g;
 		artistIsSolo = s;
