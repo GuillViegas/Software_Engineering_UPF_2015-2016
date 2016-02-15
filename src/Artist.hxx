@@ -35,8 +35,9 @@ public:
 
 	
 	bool isGroup(){
-		//return artistIsGroup;
-		return true;
+		bool b = false;
+		artistName = b;
+		return artistIsGroup;
 	}
 
 	/*
