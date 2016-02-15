@@ -51,12 +51,12 @@ public:
 
 	}
 
-	/*
-	void isSolo(bool b){
-		artistIsSolo = b;
+	
+	void solo(){
+		artistIsSolo = false;
 	}
 
-
+	/*
 	//Method that return some artist attributes: name, result, label
 	
 	std::string description() {
