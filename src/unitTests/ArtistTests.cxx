@@ -65,7 +65,7 @@ public:
 
 		Artist artist;
 		artist.name( "A Name" );
-		ASSERT_EQUALS("A Name [solo] " + '\n', artist.description() );
+		ASSERT_EQUALS("A Name [solo] \n", artist.description() );
 	}
 
 
