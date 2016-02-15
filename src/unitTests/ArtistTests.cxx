@@ -11,8 +11,6 @@ public:
 		TEST_CASE( testName_afterModifying );
 		TEST_CASE( testGroup_byDefault );
 		TEST_CASE( testGroup_afterModifying );
-		TEST_CASE( testSolo_byDefault );
-		TEST_CASE( testSolo_afterModifying );
 		TEST_CASE( testDescription_getInfo );
 
 	}
@@ -45,21 +43,6 @@ public:
 		Artist artist;
 		artist.group();
 		ASSERT_EQUALS( true , artist.isGroup() );
-	}
-
-	
-	void testSolo_byDefault()
-	{
-		Artist artist;
-		ASSERT_EQUALS( false , artist.isSolo() );
-	}
-
-	
-	void testSolo_afterModifying()
-	{
-		Artist artist;
-		artist.solo();
-		ASSERT_EQUALS( true , artist.isSolo() );
 	}
 
 	void testDescription_getInfo(){

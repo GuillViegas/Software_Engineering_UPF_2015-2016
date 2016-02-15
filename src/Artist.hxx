@@ -10,20 +10,17 @@ class Artist {
 protected:
 	std::string artistName;		//Indicates artist name
 	bool artistIsGroup;				//Indicates if the artist belongs to a group
-	bool artistIsSolo;				//Indicates if the artist is a solo artist
 
 public:
 
 	Artist() {
 		artistName = "-- No name --";
 		artistIsGroup = false;
-		artistIsSolo = false;
 	}
 
 	Artist(std::string n) {
 		artistName = n;
 		artistIsGroup = false;
-		artistIsSolo = false;
 	}
 
 	
@@ -44,20 +41,7 @@ public:
 	
 	void group(){
 		artistIsGroup = true;
-	}
-
-	
-	bool isSolo(){
-		return artistIsSolo;
-
-	}
-
-	
-	void solo(){
-		artistIsSolo = true;
-	}
-
-	
+	}	
 	
 	std::string description() {
 		std::string label;
