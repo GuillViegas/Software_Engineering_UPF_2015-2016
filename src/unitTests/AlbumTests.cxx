@@ -8,9 +8,9 @@ public:
 	{
 		TEST_CASE( testTitle_byDefault );
 		TEST_CASE( testTitle_afterModifying );
-		//TEST_CASE( testListed_byDefault );
-		//TEST_CASE( testListed_afterListing );
-		//TEST_CASE( testListed_afterUnlisting );
+		TEST_CASE( testListed_byDefault );
+		TEST_CASE( testListed_afterListing );
+		TEST_CASE( testListed_afterUnlisting );
 	}
 	
 	void testTitle_byDefault()
@@ -27,7 +27,7 @@ public:
 		ASSERT_EQUALS( "A title", album.title() );
 	}
 	
-	/*
+	
 	void testListed_byDefault()
 	{
 		Album album;
@@ -42,7 +42,7 @@ public:
 		ASSERT_EQUALS( true, album.isListed() );
 	}
 
-
+	
 	void testListed_afterUnlisting()
 	{
 		Album album;
@@ -50,7 +50,6 @@ public:
 		album.unlist();
 		ASSERT_EQUALS( false, album.isListed() );
 	}
-	*/
 };
 
 REGISTER_FIXTURE( AlbumTests )

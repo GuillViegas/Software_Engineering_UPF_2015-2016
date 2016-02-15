@@ -3,18 +3,24 @@
 
 #include <iostream>
 #include <string>
+using namespace std;
 
 class Artist {
+
+protected:
+	string artistName;		//Indicates artist name
+	bool artistIsGroup;				//Indicates if the artist belongs to a group
+	bool artistIsSolo;				//Indicates if the artist is a solo artist
 
 public:
 
 	Artist() {
 	}
 
-	Artist(std::string n, bool g, bool s) {
-		name = n;
-		group = g;
-		solo = s;
+	Artist(string n, bool g, bool s) {
+		artistName = n;
+		artistIsGroup = g;
+		artistIsSolo = s;
 	}
 
 	//Method that return some artist attributes: name, result, label
@@ -44,20 +50,34 @@ public:
 
 
 	/*
-	std::string getName() {
+	string name() {
 		return t;
-	}*/
+	}
 
-	/*
-	std::string getInfo() {
+	void name (string _name){
+		artistName = _name;
+	}
+
+	bool isGroup (){
+		return artistIsGroup;
+	}
+
+	void group(){
+		artistIsGroup = true;
+	}
+
+	bool isSolo(){
+		return artistIsSolo;
+	}
+
+	void solo(){
+		artistIsSolo = true;
+	}
+
+	string getInfo() {
 		return
 	}
 	*/
-
-private:
-	std::string name;		//Indicates artist name
-	bool group;				//Indicates if the artist belongs to a group
-	bool solo;				//Indicates if the artist is a solo artist
 
 };
 
