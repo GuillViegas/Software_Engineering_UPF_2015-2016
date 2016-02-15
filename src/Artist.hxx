@@ -28,11 +28,12 @@ public:
 		return artistName;
 	}
 
-	/*
-	void name(std::string name){
-		artistName = artistName;
+
+	void name(std::string _name){
+		//artistName = _name;
 	}
 
+	/*
 	bool isGroup(){
 		return artistIsGroup;
 	}
