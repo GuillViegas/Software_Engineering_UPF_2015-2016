@@ -16,13 +16,41 @@ public:
 	Artist() {
 	}
 
-	Artist(std::string n, bool g, bool s) {
+	Artist(std::string n) {
 		artistName = n;
-		artistIsGroup = g;
-		artistIsSolo = s;
+		artistIsGroup = false;
+		artistIsSolo = false;
 	}
 
+	
+	std::string name() {
+		return artistName;
+	}
+
+	/*
+	void name(std::string name){
+		artistName = artistName;
+	}
+
+	bool isGroup(){
+		return artistIsGroup;
+	}
+
+	void group(bool b){
+		artistIsGroup = true;
+	}
+
+	bool isSolo(){
+		return artistIsSolo;
+	}
+
+	void isSolo(bool b){
+		artistIsSolo = b;
+	}
+
+
 	//Method that return some artist attributes: name, result, label
+	/*
 	std::string description() {
 		std:string result;
 		std:string label;
@@ -33,9 +61,7 @@ public:
 		result = name + " " + label + std::endl;
 		return result;
 	}
-
-
-	//void name(std:string name) {}
+	*/
 
 	//void newTrack(std:string trackName, std:string length,std:string folder) {}
 
@@ -48,35 +74,7 @@ public:
 	//void assignTrackToAlbum(std:string trackName, std:string albumName) {}
 
 
-	/*
-	string name() {
-		return t;
-	}
-
-	void name (string _name){
-		artistName = _name;
-	}
-
-	bool isGroup (){
-		return artistIsGroup;
-	}
-
-	void group(){
-		artistIsGroup = true;
-	}
-
-	bool isSolo(){
-		return artistIsSolo;
-	}
-
-	void solo(){
-		artistIsSolo = true;
-	}
-
-	string getInfo() {
-		return
-	}
-	*/
+	
 
 };
 
