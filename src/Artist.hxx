@@ -56,21 +56,20 @@ public:
 		artistIsSolo = true;
 	}
 
-	/*
-	//Method that return some artist attributes: name, result, label
+	
 	
 	std::string description() {
-		std:string result;
-		std:string label;
+		std::string result;
+		std::string label;
 		
-		if (group == true) label = "[group]";
-		else label = "[solo]"
+		if (isGroup() == true) label = "[group]";
+		else label = "[solo]";
 
-		result = name + " " + label + std::endl;
+		result = artistName + " " + label + '\n';
 		return result;
 	}
 	
-
+	/*
 	void newTrack(std:string trackName, std:string length,std:string folder) {}
 
 	void newAlbum(std:string album) {}
