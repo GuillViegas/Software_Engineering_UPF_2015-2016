@@ -35,6 +35,10 @@ public:
 	std::string master(){
 		return trackPath;
 	}
+
+	void master(std::string _trackPath){
+		
+	}
 };
 
 #endif
