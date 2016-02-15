@@ -1,3 +1,4 @@
+/* Final version for lab session 2 */
 #ifndef Albuns_hxx
 #define Albuns_hxx
 
