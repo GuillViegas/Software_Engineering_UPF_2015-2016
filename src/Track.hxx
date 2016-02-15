@@ -2,12 +2,12 @@
 #define track_hxx
 
 #include <string>
-using namespace std;
 
 class Track{
 protected:
-	string trackTitle;
+	std::string trackTitle;
 	unsigned int trackDuration;
+	std::string trackPath;
 
 public:
 	Track () {
@@ -15,11 +15,11 @@ public:
 		trackDuration = 0u;
 	}
 
-	string title(){
+	std::string title(){
 		return trackTitle;
 	}
 
-	void title(string _title){
+	void title(std::string _title){
 		trackTitle = _title;
 	}
 
@@ -29,6 +29,10 @@ public:
 
 	void duration(unsigned int _duration){
 		trackDuration = _duration;
+	}
+
+	std::string master(){
+		return trackPath;
 	}
 };
 
