@@ -30,7 +30,7 @@ public:
 	}
 
 	void list(){
-		
+		listed = true;
 	}
 
 };
