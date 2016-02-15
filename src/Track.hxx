@@ -13,7 +13,7 @@ public:
 	Track () {
 		trackTitle = "-- Untitled --";
 		trackDuration = 0u;
-		//trackPath = "";
+		trackPath = "";
 	}
 
 	std::string title(){
@@ -33,8 +33,6 @@ public:
 	}
 
 	std::string master(){
-		std::string b = "";
-		trackPath = b;
 		return trackPath;
 	}
 };
