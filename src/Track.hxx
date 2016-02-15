@@ -33,7 +33,9 @@ public:
 	}
 
 	std::string master(){
-		return "/";
+		std::string b = "";
+		trackPath = b;
+		return trackPath;
 	}
 };
 
