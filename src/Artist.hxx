@@ -65,7 +65,7 @@ public:
 		if (isGroup() == true) label = "[group]";
 		else label = "[solo]";
 
-		result = artistName + " " + label + '\n';
+		result = artistName + " " + label + " \n";
 		return result;
 	}
 	
