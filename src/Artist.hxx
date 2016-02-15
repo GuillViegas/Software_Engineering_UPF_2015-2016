@@ -40,11 +40,12 @@ public:
 		return artistIsGroup;
 	}
 
-	/*
-	void group(bool b){
-		artistIsGroup = true;
+	
+	void group(){
+		artistIsGroup = false;
 	}
 
+	/*
 	bool isSolo(){
 		return artistIsSolo;
 	}
