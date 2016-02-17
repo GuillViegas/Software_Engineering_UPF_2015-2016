@@ -4,12 +4,16 @@
 
 #include <iostream>
 #include <string>
+#include "Track.hxx"
+#include "Albuns.hxx"
 
 class Artist {
 
 protected:
 	std::string artistName;		//Indicates artist name
 	bool artistIsGroup;				//Indicates if the artist belongs to a group
+	std::list<Track> tracklist; 	
+	std::list<Album> albumslist; 	
 
 public:
 
@@ -53,6 +57,9 @@ public:
 		
 	}
 	
+	std::string catalogTracks() {
+		return " ";
+	}
 	/*
 	void newTrack(std:string trackName, std:string length,std:string folder) {}
 
