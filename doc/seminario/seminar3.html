@@ -4,7 +4,7 @@
 	
 <html>
 <head>
-	<title>Pre-entrega solución Seminario 3</title>
+	<title>Entrega Seminario 3. Solución</title>
 </head>
 		
 <body>
@@ -12,6 +12,8 @@
     <h1>Seminario 3 Solución</h1>
     
     <p><b>Ejercicio 1. Dibujar un diagrama de análisis estático para el proyecto SingAlong</b></p>
+
+    <img src="imagenes/s3_static_analysis_diagram.png">
     
     <p><b>Ejercicio 2. Extraer otros requerimientos de dominio en formato texto. Para hacerlo, el diagrama de análisis estático puede ser utilizado como punto de partida, identificando los conceptos que no son explicados de forma clara por el diagrama. Los requerimientos textuales no deben "sobreponerse" con la información que el diagrama ya expresa.</b></p>
     
@@ -22,10 +24,12 @@
     <ul>
         <li>Cada vez que se registre un nuevo producto (canción o álbum), se le asignará un ID. Este ID se puede generar de forma aleatoria o simplemente incrementado un contador cada vez que se registre un producto.</li>
         <li>Es necesario que la comunicación entre la plataforma Web y el usuario sea mediante el standard ASCII</li>
-        <li>El sistema no puede compartir información personal de los usuarios, excepto su nombre</li>
-        <li>El sistema dejará comentar un producto, si el usuario se ha comprado/descargado el item previamente.</li>
+        <li>El sistema no puede compartir información personal de los usuarios, excepto su nombre o username</li>
+        <li>El sistema dejará comentar un producto, si el usuario se ha comprado/descargado el item previamente</li>
         <li>El sistema registrará nuevos usuarios, siempre que el username no se este utilizando ya</li>
         <li>El sistema habilitará la descarga de productos, siempre que se recibirá un recibo por parte de Paypal</li>
+        <li>La plataforma SingAlong deberá estar disponible las 24hrs, 7 días a la semana</li>
+        <li>Si la plataforma Paypal no responde, no se podrán comprar canciones temporalmente</li>
     </ul>
 
     
