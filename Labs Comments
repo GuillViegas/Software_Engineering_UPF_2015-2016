@@ -1,0 +1,26 @@
+Práctica 1:
+- Contenido del mail incorrecto
+- Answerst.txt debería colgar directamente de la carpeta doc/ .
+- La carpeta tutorial/ debería de colgar del root del proyecto, con los archivos animals.hxx y exemple_polimorfisme.cxx.
+- La idea era que tutorial/ solo tubiese esos dos archivos y se fuesen haciendo commits.
+- No se ha implementado la relación entre animales del tutorial.
+- Los commits son correctos, pero falta el de la relación entre animales.
+
+Práctica 2:
+- El contenido del mail es incorrecto
+- Faltaría un testDescription byDefault.
+- Los atributos de las clases deberían ser private y no protected.
+- Hay que pasar los parámetros por referencia y no por copia. Por ejemplo, la función title( string ) que tenéis en la clase Album, debería ser: title(const std::string &newTitle).
+- No se hace uso del const.
+
+Práctica 3:
+
+Práctica 4:
+
+Práctica 5:
+
+Práctica 6:
+
+Práctica 7:
+
+Práctica 8:
