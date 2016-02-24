@@ -62,9 +62,12 @@ public:
 		if(tracklist.empty())
 			return "";
 	}
-	/*
-	void newTrack(std:string trackName, std:string length,std:string folder) {}
+	
+	void newTrack(std::string trackName, unsigned int duration, std::string folder) {
 
+	}
+
+	/*
 	void newAlbum(std:string album) {}
 
 	void findTrack(std:string trackName) {}
