@@ -74,10 +74,7 @@ public:
 	}
 	
 	void newTrack(std::string trackName, unsigned int duration, std::string folder) {
-		Track track; //(tranckName, duration, folder);
-		track.title(trackName);
-		track.duration(duration);
-		track.master(folder);
+		Track track(trackName, duration, folder);
 		tracklist.push_back(track);
 	}
 

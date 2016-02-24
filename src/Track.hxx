@@ -17,6 +17,12 @@ public:
 		trackPath = "";
 	}
 
+	Track(std::string _title, unsigned int _duration, std::string folder){
+		trackTitle = _title;
+		trackDuration = _duration;
+		trackPath = folder;
+	}
+
 	std::string title(){
 		return trackTitle;
 	}
