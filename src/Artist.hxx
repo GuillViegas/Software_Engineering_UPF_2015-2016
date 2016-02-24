@@ -58,7 +58,7 @@ public:
 	}
 	
 	std::string catalogTracks() {
-		return " ";
+		return "";
 	}
 	/*
 	void newTrack(std:string trackName, std:string length,std:string folder) {}
