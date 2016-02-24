@@ -58,13 +58,27 @@ public:
 	}
 	
 	std::string catalogTracks() {
+		Track track;
+		std::string name_duration;
+		std::string folder;
 
 		if(tracklist.empty())
 			return "";
+		else if (tracklist.size() == 1) {
+			track = tracklist.front();
+			name_duration = "\t" + track.title() + " [" + std::to_string(track.duration()) + "s]\n";
+			folder = "\t\t" + track.master() + "\n";
+			return name_duration + folder;
+		}
+
 	}
 	
 	void newTrack(std::string trackName, unsigned int duration, std::string folder) {
-
+		Track track; //(tranckName, duration, folder);
+		track.title(trackName);
+		track.duration(duration);
+		track.master(folder);
+		tracklist.push_back(track);
 	}
 
 	/*
