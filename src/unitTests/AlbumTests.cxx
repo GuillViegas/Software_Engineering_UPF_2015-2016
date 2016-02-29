@@ -1,6 +1,6 @@
 /* Final version for lab session 2 */
 #include "MiniCppUnit.hxx"
-#include "Albuns.hxx"
+#include "Album.hxx"
 
 class AlbumTests : public TestFixture<AlbumTests>
 {
