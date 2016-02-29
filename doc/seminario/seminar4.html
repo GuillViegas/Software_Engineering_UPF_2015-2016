@@ -4,7 +4,7 @@
 	
 <html>
 <head>
-	<title>Pre-entrega solución Seminario 4</title>
+	<title>Entrega solución seminario 4</title>
 </head>
 		
 <body>
@@ -15,52 +15,99 @@
     
     <p><b>Ejercicio 2. Descubre requerimientos no-funcionales. Una manera de hacerlo es empezando con los requerimeintos funcionales e identifacar/inventar requeriminetos asociados no funcionales</b></p>
         
-    <ul>
-        <li>Producto</li>
+   <ul>
+        <li>Producto</li> <p></p>
             <ul>
                 <li>Usabilidad</li>
-                    <p>La plataforma SingAlong debe ser sencilla de utilizar</p>
-                    <p>El tiempo de aprendizaje por usuario no debe ser mayor a 10 minutos</p>
+                    <p>La plataforma SingAlong debe ser intuitiva y fácil de utilizar</p>
+                    <p>El tiempo de aprendizaje por usuario no debe ser mayor a 15 minutos</p>
                     <p>La plataforma debe incluir un tutorial básico</p>
+                    <p>El sistema debe incluir mensajes de error que sean informativos y orientados al usuario final</p>
+                    <p>La plataforma debe estar diseñada de forma Responsive, para que el servicio pueda ser accesible desde diversas plataformas como ordenadores personales, móviles inteligentes o tablets</p>
+                    <p>La plataforma podrá utilizarse en dos idiomas: inglés y español</p>
+                
                 <li>Eficiencia</li>
-                    <p>Tiempo de respuesta de las búsquedas de canciones o álbums o artistas</p>
-                    <p>Tiempo de descarga acceptable</p>
+                    <p>El tiempo de proceso por parte del servidor deberá ser menos a 200 milisegundos</p>
+                    <p>El tiempo medio en procesar una operación de la base de datos será de 50-100 milisegundos</p>
+                    <p>El tiempo de respuesta de las búsquedas de canciones o álbums o artistas deberá ser inferior a un segundo</p>
+                    <p>El tiempo de descarga deberá ser acceptable, acorde con la conexión de banda ancha que tenga cada usuario</p>
                     <p>El tiempo de refresco de la pantalla debe ser menor a 1 segundo</p>
-                    <p></p>
+                
                 <li>Robustez</li>
-                    <p>El sistema deberá soportar x transacciones/segundo</p>
+                    <p>El sistema deberá soportar 200 transacciones/segundo con picos de 600 transacciones/segundo</p>
+                    <p>La base de datos MySQL deberá soportar 800 solicitudes/segundo</p>
+                    <p>El sistema deberá soportar la subida de 10.000 nuevas canciones/día</p>
+                    <p>El sistema deberá soportar la descarga de 3.000 canciones/día </p>
                     <p>El tiempo de recuperación de la plataforma deberá ser menor a 2 minutos</p>
+                    <p>La tasa de errores cometidos por el usuario deberá ser menor del 1% de las transacciones totales ejecutadas en el sistema</p>
+                    <p>El sistema debe tener una disponibilidad del 99,99% de las veces en que el usuario intente accederlo (365 días al año, 7 días a la semana, 24 hrs)</p>
+                    <p>El promedio de duración de errores no podrá ser superior a 15 minutos</p>
+                    <p>La probabilidad que el sistema falle no deberá ser superior al 0,05</p>
+                    <p>El sistema debe estar restringido a accesos o modificaciones no autorizadas</p>
+                
                 <li>Portabilidad</li>
-                    <ul>
-                        <li>La base da datos se encontrará en un servidor de Amazon</li>
-                    </ul>
+                    <p>La plataforma SingAlong se encontrará alojada en la plataforma Google Cloud</p>
+                    
             </ul>
         
         <p></p>
         
-        <li>Organizativo</li>
+        <li>Organizativo</li> <p></p>
             <ul>
                 <li>Entregables</li>
-                <p>Cada dos semanas se tendrán reuniones con el cliente para revisar el proyecto, y añadir posibles mejoras</p>
+                <p>Cada dos semanas se tendrán reuniones con el cliente para revisar el proyecto, y añadir posibles mejoras o hacer cambios en la plataforma a nivel de usabilidad</p>
+                <p>Cada semana el equipo encargado del desarrollo se reunirá para reportar el esfuerzo invertido en la plataforma, sus avances y problemas que hayan surgido hasta el momento</p>
+                
                 <li>Implementación</li>
+                
+                <p><b>Front-end:</b></p>
+                <p>La interfaz de usuario será implementada para navegadores web únicamente con HTML5 y JavaScript</p>
+                
+                <p><b>Back-end:</b></p>
+                <p>La base de datos estará escrita en lenguaje MySQL</p>
+                <p>Se utilizará una base de datos de Oracle</p>
+                
+                <p><b>Herramientas de desarrollo:</b></p>
+                <p>Se utilizará la plataforma de desarrollo Eclipse</p>
+                <p>Se utilizarán herramientas de integración continua como Jenkins y Maven</p>
+                
+                <p><b>Herramientas de testing:</b></p>
+                <p>Se utilizarán herramientas como Apache JMeter, Sellenium y Badboy para testear la plataforma y sus conexiones</p>
+                
+                <p><b>Otros</b></p>
+                <p>Debe especificarse un plan de recuperación ante desastres para el sistema al ser desarrollado</p>
+                
                 <li>Standards</li>
-                    <p>***</p>
+                <p><b>ISO 8601 </b>Para seguir la notación estándar utilizada para representar la fecha y la hora</p>
+                <p><b>ISO 9126 </b>Para seguir el estándar internacional para la evaluación de la calidad del software</p>
             </ul>
             
         <p></p>
         
-        <li>Externo</li>
+        <li>Externo</li> <p></p>
             <ul>
                 <li>Interoperabilidad</li>
                     <p>La plataforma Paypal debe estar activa para poder realizar las compras</p>
-                    <p></p>
+                    <p>Los servidores de Google Cloud deberán estar operativos para que el servicio SingAlong funcione correctamente</p>
+                
                 <li>Ético</li>
                     <p>No se podrán copiar productos de otros artistas, incluidos los que no se encuentren registrados en la plataforma</p>
+                    <p>No se podrán recoger o cualquier forma de recolectar información acerca de usuarios sin su consentimiento</p>
+                    <p>No se podrá difamar, abusar, acosar, acechar, amenazar o de alguna forma violar los derechos legales de otros</p>
+                    <p>No se podrá publicar, anunciar, subir, distribuir contenido que sea inapropiado, indecente, transgresor, difamatorio, obsceno o ilegal</p>
+                    <p>No se podrán subir archivos o material que infrigan las leyes de propiedad intelectual (o derechos de privacidad) a menos que se controlen esos derechos</p>
+                    <p>No se podrá subir material que contegan virus, archivos corruptos, o cualquier otro tipo de software que pueda dañar otros sistemas/equipos</p>
+                    <p>No se podrá falsificar o eliminar la referencia del autor, referencia legal, avisos, designaciones propietarias, rótulos de origen o fuente del software u otro material que se suba a la plataforma</p>
+                    <p>No se podrá restringir o inhibir que otros usuarios puedan usar y disfrutar de los servicios que ofrece la plataforma</p>
+                
                 <li>Social</li>
                     <p>***</p>
+                
                 <li>Legislativo</li>
+                    <p>No se podrán violar leyes o regulaciones apicables (determinado a cada país)</p>
                     <p>Protección de datos de cada uno de los usuarios del sistema</p>
                     <p>Impuestos aplicables a los productos en cada país</p>
+                    
             </ul>
     </ul>
     
