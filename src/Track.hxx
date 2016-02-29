@@ -5,7 +5,7 @@
 #include <string>
 
 class Track{
-protected:
+private:
 	std::string trackTitle;
 	unsigned int trackDuration;
 	std::string trackPath;

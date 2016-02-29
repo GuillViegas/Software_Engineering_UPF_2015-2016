@@ -9,7 +9,7 @@
 
 class Artist {
 
-protected:
+private:
 	std::string artistName;		//Indicates artist name
 	bool artistIsGroup;				//Indicates if the artist belongs to a group
 	std::list<Track> tracklist; 	
