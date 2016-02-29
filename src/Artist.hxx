@@ -11,7 +11,7 @@ class Artist {
 
 private:
 	std::string artistName;				//Indicates artist name
-	bool artistIsGroup;				//Indicates if the artist belongs to a group
+	bool artistIsGroup;					//Indicates if the artist belongs to a group
 	std::list<Track> tracklist; 	
 	std::list<Album> albumslist; 	
 
@@ -33,7 +33,7 @@ public:
 	}
 
 
-	void name(const std::string& _name){
+	void name(const std::string &_name){
 		artistName = _name;
 	}
 
@@ -73,19 +73,19 @@ public:
 
 	}
 	
-	void newTrack(const std::string& trackName, const unsigned int& duration, const std::string& folder) {
+	void newTrack(const std::string &trackName, const unsigned int &duration, const std::string &folder) {
 		Track track(trackName, duration, folder);
 		tracklist.push_back(track);
 	}
 
 	/*
-	void newAlbum(const std:string& album) {}
+	void newAlbum(const std:string &album) {}
 
-	void findTrack(const std:string& trackName) {}
+	void findTrack(const std:string &trackName) {}
 
-	void findAlbum(const std:string& albumName) {}
+	void findAlbum(const std:string &albumName) {}
 
-	void assignTrackToAlbum(const std:string& trackName, const std:string& albumName) {}
+	void assignTrackToAlbum(const std:string &trackName, const std:string &albumName) {}
 
 */
 	

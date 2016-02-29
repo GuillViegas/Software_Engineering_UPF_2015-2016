@@ -17,7 +17,7 @@ public:
 		trackPath = "";
 	}
 
-	Track(const std::string& _title, const unsigned int& _duration, const std::string& folder){
+	Track(const std::string &_title, const unsigned int &_duration, const std::string &folder){
 		trackTitle = _title;
 		trackDuration = _duration;
 		trackPath = folder;
@@ -27,7 +27,7 @@ public:
 		return trackTitle;
 	}
 
-	void title(const std::string& _title){
+	void title(const std::string &_title){
 		trackTitle = _title;
 	}
 
@@ -35,7 +35,7 @@ public:
 		return trackDuration;
 	}
 
-	void duration(const unsigned int& _duration){
+	void duration(const unsigned int &_duration){
 		trackDuration = _duration;
 	}
 
@@ -43,7 +43,7 @@ public:
 		return trackPath;
 	}
 
-	void master(const std::string& _trackPath){
+	void master(const std::string &_trackPath){
 		trackPath = _trackPath;
 	}
 };
