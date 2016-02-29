@@ -4,20 +4,267 @@
 	
 <html>
 <head>
-	<title>Entrega solución seminario 4</title>
+	<title>Seminario 4</title>
 </head>
 		
 <body>
 
-    <h1>Seminario 4</h1>
+    <h1>Documentación de requerimientos</h1>
     
-    <p><b>Ejercicio 1. Identificar una clase del proyecto cuyas instancias pasan a través de una serie de estados, y elebaora un diagrama de estados para esta clase.</b></p>
-
+    <p><b>Stakeholders</b></p>
+    
+    <ul>
+        <li>Sello discográfico</li>
+        <li>Clientes del Web Service</li>
+        <li>Artistas</li>
+        <li>Desarrolladores proyecto</li>
+        <li>Equipos de futuros desarrolladores</li>
+        <li>Correos</li>
+        <li>Operador humano</li>
+        <li>Paypal</li>
+    </ul> 
+    
+    <p><b>Requerimientos de dominio</b></p>
+    
+    <p>Diagrama de análisis estático</p>
+    
+    <img src="imagenes/s3_static_analysis_diagram_02.png">
+    
+    <p>Otros requerimientos de dominio a partir del diagrama</p>
+    
+    <ul>
+        <li>Cada vez que se registre un nuevo producto (canción o álbum), se le asignará un ID. Este ID se puede generar de forma aleatoria o simplemente incrementado un contador cada vez que se registre un producto.</li>
+        <li>Es necesario que la comunicación entre la plataforma Web y el usuario sea mediante el standard ASCII</li>
+        <li>El sistema no puede compartir información personal de los usuarios, excepto su nombre o username</li>
+        <li>El sistema dejará comentar un producto, si el usuario se ha comprado/descargado el item previamente</li>
+        <li>El sistema registrará nuevos usuarios, siempre que el username no se este utilizando ya</li>
+        <li>El sistema habilitará la descarga de productos, siempre que se recibirá un recibo por parte de Paypal</li>
+        <li>La plataforma SingAlong deberá estar disponible las 24hrs, 7 días a la semana</li>
+        <li>Si la plataforma Paypal no responde, no se podrán comprar canciones temporalmente</li>
+    </ul>
+    
+    <p><b>Diagrama de estados para la clase: Album</b></p>
+    
     <img src="imagenes/Album.png" style="max-width: 550px; max-height: 550px; width: auto; height: auto;">
     
-    <p><b>Ejercicio 2. Descubre requerimientos no-funcionales. Una manera de hacerlo es empezando con los requerimeintos funcionales e identifacar/inventar requeriminetos asociados no funcionales</b></p>
+    <p><b>Diagramas de actividad:</b> Comprar álbum y publicar álbum</p>
+    
+    <p><b>Comprar álbum</b></p>
         
-   <ul>
+    <img src="imagenes/PurchasingAlbum.png">
+    
+    <p><b>Publicar álbum</b></p>
+    
+    <img src="imagenes/PublicarAlbum.png">
+    
+    
+    
+    <p><b>Casos de uso</b></p>
+    
+    <p>A continuación se especifican dos casos de usos: comprar y comentar un álbum</p>
+    
+    <p><b>Caso de uso 1: Comprar álbum</b></p>
+
+    <img src="imagenes/ComprarAlbum.png">
+
+    <ul>
+        <p><b>Contexto:</b> Un usuario quiere comprar un álbum</p>
+
+        <p><b>Actores primarios:</b> Usuario</p>
+        <p><b>Actores de soporte:</b> Paypal</p>
+        <p><b>Precondiciones </b></p>
+        <p>El usuario se puede comunicar con el sistema </p>
+        <p>El usuario está logeado en el sistema </p>
+
+        <p><b>Postcondiciones de éxito</b></p>
+        <p>El usuario se ha comprado el disco</p>
+        <p>(Opcional) El usuario ha recibido el disco físicamente</p>
+
+        <p><b>Condiciones de fracaso</b></p>
+        <p>El usuario no se ha podido comprar el disco</p>
+        <p>El usuario no ha recibido el disco en formato físico</p>
+
+        <p><b>Flujo básico</b></p>
+
+        <ol type="1">
+            <li> El usuario indica que quiere comprar un disco </il>
+            <li> El sistema verifica si el usuario está logeado </il>
+            <li> El usuario confirma que quiere comprar el disco </il>
+            <li> El sistema redirige al usuario a la página de Paypal </il>
+            <li> El usuario completa los datos de compra </il>
+            <li> Paypal verifica los datos de compra </il>
+            <li> Paypal envia una confirmación de la compra al usuario </il>
+            <li> Paypal envia una confirmación de la compra al sistema (Web Service) </il>
+            <li> El usuario descarga el disco </il>
+        </ol>
+
+        <p><b>Extensión</b></p>
+
+        <p> 2.a El usuario no se encuentra logeado</p> 
+        <p> 2.a.1 Se ejecuta la inclusión login</p>
+        <p> 2.a.1.1 El sistema pregunta por el username y la contraseña</p>
+        <p> 2.a.1.1.1 Se ejecuta la extensión registrar usuario</p>
+
+        <p> 3.a El usuario rechaza la confirmación </p>
+        <p> 3.a.1 Vuelve al paso 1 </p> 
+
+        <p> 5.a Los datos son incorrectos </p>
+        <p> 5.a.1. Vuelve al paso 5 </p>
+    </ul>
+
+    <p><b>Caso de uso 2: Comentar un álbum</b></p>
+
+    <img src="imagenes/ComentarAlbum.png">
+    
+    <ul>
+        <p><b>Contexto:</b> Un usuario quiere comentar un álbum</p>
+
+        <p><b>Actores primarios:</b> Usuario</p>
+        <p><b>Actores de soporte:</b> Paypal</p>
+        <p><b>Precondiciones </b></p>
+        <p>El usuario se puede comunicar con el sistema </p>
+        <p>El usuario está logeado en el sistema </p>
+        <p>El usuario tiene que haberse comprado/descargado el álbum previamente para poder comentarlo</p>
+
+
+        <p><b>Postcondiciones de éxito</b></p>
+        <p>El usuario ha comentado un álbum con éxito</p>
+        <p>Sólo se puede dejar un comentario/valoración por usuario</p>
+
+        <p><b>Condiciones de fracaso</b></p>
+        <p>El usuario no ha podido comentar el álbum</p>
+        <p>El usuario ha hecho más de un comentario en el mismo álbum</p>
+
+        <p><b>Flujo básico</b></p>
+
+        <ol type="1">
+            <li> El usuario busca el álbum del artista que quiera comentar</il>
+            <li> El usuario indica que quiere comentar el álbum</il>
+            <li> El sistema verifica si el usuario está logeado </il>
+            <li> El sistema verifica que el usuario ha comprado o obtenido previamente el disco </il>
+            <li> El sistema redirige al usuario a la sección de comentarios </il>
+            <li> El usuario escribe el comentario</il>
+            <li> El usuario publica el nuevo comentario</il>
+            <li> El sistema verifica la longitud del comentario </il>
+            <li> El sistema guarda y publica el nuevo comentario </il>
+
+        </ol>
+
+        <p><b>Extensión</b></p>
+
+        <p> 3.a El usuario no se encuentra logeado</p> 
+        <p> 3.a.1 Se ejecuta la inclusión login</p>
+        <p> 3.a.1.1 El sistema pregunta por el username y la contraseña</p>
+        <p> 3.a.1.1.1 Se ejecuta la extensión registrar usuario</p>
+
+        <p> 4.a El usuario no ha comprado/descargado previamente el disco</p> 
+        <p> 4.a.1 Se ejecuta la inclusión comprar álbum</p>
+        <p> 4.a.1.1 El sistema pregunta por el username y la contraseña</p>
+        <p> 4.a.1.1.1 Se ejecuta la extensión registrar usuario</p>
+
+        <p> 6.a El usuario cancela la publicación</p>
+        <p> 6.a.1 Vuelve al paso 1</p>
+
+        <p>(Opcional) En el caso de que haya un límite de palabras para cada comentario</p>
+        <p> 8.a El comentario no cumple con la longitud máxima establecida</p>
+        <p> 8.a.1 Vuelve al paso 6</p>
+
+        <p> 9.a El sistema no puede guardar el nuevo comentario</p>
+        <p> 9.a.1 Vuelve al paso 7</p>
+    </ul>
+ 
+    <p><b>Requerimientos funcionales</b></p>
+    <ul>
+      <p>Artistas y clientes acceden al sistema a través de un navegador web.</p>
+
+      <p>Una vez identificado el artista (la primera vez que entran en el sistema, se tienen que registrar) suben sus canciones en formato Wav (16 bits, 44.1 kHz). Así, podemos utilizar el archivo para añadir una canción al album, y convertirlo en varios formatos de compresión. Se quiere evitar vender álbumes con canciones convertidas desde formato mp3, o descomprimidas y recomprimidas repetidamente.</p>
+
+      <p>Junto con el archivo, el artista debe introducir el título de la canción, autores, fecha de producción y (opcional) una descripción.</p>
+
+      <p>El sistema automáticamente convierte los archivos Wav a diferentes formatos de compresión. Actualmente, los formatos de compresión son mp3 y ogg a 192, 128 y 96 kbps (es probable que en el futuro se añadan más formatos y otros se eliminen). Algunos de estos archivos (excepto para los archivos de formato Wav) estarán disponibles para los usuarios para descargar o streaming. </p>
+
+      <p>En caso de no poder subir archivos grandes (ej: mala conexión), el artista puede enviar físicamente las canciones vía mail en formato digital (memoria USB, CD, etc.). En este caso, el sobre debe estar identificado con el nombre real y registrado del artista. Es necesario también para el dispositivo de almacenamiento contener un archivo "info.txt" que contenga información sobre las canciones (título, autores, etc).</p>
+
+      <p>Las canciones en dispositivos físicos deberán introducirse en el sistema por un operador humano, el cúal necesitará acceso al sistema vía una interficie gráfica (NO un navegador Web) </p>
+    
+
+      <li><b>Álbumes </b></li>
+
+      <p>El artista puede definir álbumes simplemente proveyendo una lista de canciones(los archivos Wav no pueden superar el límite), la fecha de producción, comentarios opcionales, y un conjunto de palabras clave qye describan el estilo de música. El artista también podrá actualizar el material promocional en formato digital.</p>
+
+      <p>En teoría, el artista puede añadir la misma canción a diferentes álbumes. Sin embargo, se deberá evitar para no confundir a los usuarios que siguen al artista </p>
+
+      <p>El usuario podrá comprar álbumes personalizados, seleccionando las canciones del artista deseadas. Si el artista lo permite, será posible mezclar canciones de otros artistas. En este caso, el coste total se calculará sobre el precio base de cada canción. </p>
+        
+      <li><b>Material promocional</b></li>
+
+      <p>El sistema accepta imágenes (jpg o png), texto (PDF) y videos (mpeg). El sistema incluirá un manual que explique a los artistas como crear y subir material promocional e indique el límite de memoria permitido para cada formato.</p>
+
+      <p> El sistema se encarga de la gestión del material promocional y de la distribucción a los usuarios cuando compren las canciones o álbumes.</p>
+
+      <li><b>Usuarios habituales</b></li>
+
+      <p>Los usuarios habituales deberán registrarse si quieren entrar en el servicio Web. Esto es para generar las estadísticas de los archivos descargados, los votos para un artista o canción, etc. </p>
+
+      <p>El registro deberá ser simple: username y contraseña. Opcionalmente se pedirá el nombre real y la dirección de email. El email permite a los usuarios recibir notificaciones del sistema acerca de contenido de interés.</p>
+
+      <p>Una vez identificado y logeado en el sitema, el usuario puede buscar artistas, saltar de un artista a otro, y mostar informacón del artista: cuales son los álbumes y canciones asociados, y que canciones no pertenecen a ningún álbum. </p>
+
+      <p>Algunas canciones pueden descargarse individualmente (o escucharse mediante streaming en la página web). Cada canción y álbum debe tener un área de valoración, dónde los usuarios puedan añadir comentaros o reviews. Se permitirá un comentario o review por usuario, pero sólo si el usuario ha comprado o descargado la canció o álbum </p>
+
+      <p> Opcionalmente, el usuario puede elegir si al comprar el álbum, quiere el CD el cual se graba y envia físicamente a la dirección del usuario. En este caso, el precio de compra incluye el precio de la compra, el grabado y el envio del CD. El precio de compra y grabado es fijo, pero el de envio depende del país del usuario. </p>
+
+      <li><b>Donaciones</b></li>
+
+      <p>El sistema debe incetivar la cultura de hacer donaciones. Aunque el usuario se descargue un archivo gratuito, se quedrá agradecer al artista haciendo una pqueña donación. Por este caso, en la página de descarga siempre deberá haber un link para donar dinero usando Paypal.</p>
+
+      <p> Paypal como intermediario no cobrará dinero por sus serviciones. </p>
+
+      <li><b>Búsqueda</b></li>
+
+      <p>El sistema dejará buscar a los artistas por nombre o estilo de música. El resultado de la música deberá estar ordenado en cascada según su ránking ("rendimiento") que combina: </p>
+      <ul>
+        <li>Votos</li>
+        <li>Número de descargas</li>
+        <li>Número de ventas</li>
+      </ul>
+
+      <p> La página principal de cada usuario deberá tener 3 listas top 10 (en un futuro podrá ser modificado): </p>
+
+      <ul>
+        <li>10 artistas con mayor rendimiento</li>
+        <li>10 artistas con mayor rendimiento en los últimos 6 meses</li>
+        <li>10 artistas con mayor rendimiento en los últimos 15 días</li>
+      </ul>
+
+      <p>Está previsto que al ser un sistema abierto y sin filtos, se registren nuevos artistas, y estos puedan subir canciones de mala calidad. Es por ello, que el usuario pueda encontrar fácilmente los artistas de mayor éxito y con canciones de mayor calidad. </p>
+
+
+      <li><b>Similitudes</b></li>
+
+      <p>La información del artista deberá incluir una sección con artistas parecidos, para que el usuario encuentre a otros del mismo criterio. Una lista llamada "personas que escucha a ..." </p>
+
+      <p>También deberá haber una segunda lista llamada "artista del mismo estilo". Para generar esta lista es necesario tener en cuenta el porcentage de canciones de pares de artista que tienen el mismo estilo en común.</p>
+
+      <p>Las listas estarán ordenadas por el rendimiento del artista.</p>
+
+      <li><b>Notificaciones</b></li>
+
+      <p>Parte de la página principal de cada usuario está dedicada a las notificaciones. Un usuario se puede suscribir a un artista o a un estilo. El sistema automáticamente notifica al usuario cuando el artista al que se está suscrito publica nuevas canciones. También se notifica se notifica cuando una nueva canción de un estilo se publica. </p>
+
+      <p>Si el usuario lo permite se el enviarán las notificaciones vía mail. Aparte de la notificación, en el email también se le incluirá las listas top 10. El mensaje se enviará en formato HTML ya que permite al usuario estar a un paso de la canción. </p> 
+
+      <li><b>Dejar de listar</b></li>
+
+      <p>Tanto artistas como operadores pueden dejar listar canciones y álbumes, borrandolos del sistema. Una vez que se deja de listar, no serán visibles (sin embargo, puede seguir estando visible para los artistas y operadores, que podrán volverlas a listar más adelante). </p>
+    
+    </ul>
+    
+    
+    
+    <p><b>Requerimientos no funcionales</b></p>
+        
+    <ul>
         <li>Producto</li> <p></p>
             <ul>
                 <li>Usabilidad</li>
@@ -112,30 +359,8 @@
                     
             </ul>
     </ul>
-    
-     <p><b>Ejercicio 3. Elabora dos diagramas de actividad que representen los procesos asociados con la publicación de un álbum y la compra de un álbum</b></p>
-    <p>
-        <b>Comprar album</b>
-    </p>
-        <img src="imagenes/PurchasingAlbum.png">
-    <p>
-        <b>Publicar album</b>
-    </p>
-        <img src="imagenes/PublicarAlbum.png">
-    
-     <p><b>Ejercicio 4. (Opcionalmente)Elabora otros diagramas (estado, actividad, secuencia, colaboración, etc.)</b></p>
-    
-     <p><b>Ejercicio 5. Verifica que los requerimientos del documento están bien estructurados, y si es necesario, modifcalo. Incorpora los diagramas en el documento. </b></p>
-    
-    <ul>
-        <li>Stakeholders</li>
-        <li>Requerimeintos de dominio</li>
-        <li>Casos de uso</li>
-    </ul>
-    
-    
-    
 
+    
     
 </body>
 	
