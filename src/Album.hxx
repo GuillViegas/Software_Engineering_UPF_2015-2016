@@ -1,15 +1,11 @@
-/* Final version for lab session 2 */
 #ifndef album_hxx
 #define album_hxx
 
 #include <string>
-using namespace std;
-
-
 
 class Album{
 private:
-	string titleAlbum;
+	std::string titleAlbum;
 	bool listed;
 
 public:
@@ -18,11 +14,11 @@ public:
 		listed = false;
 	}
 
-	string title(){
+	std::string title(){
 		return titleAlbum;
 	}
 
-	void title(string _title){
+	void title(const std::string &_title){
 		titleAlbum = _title;
 	}
 

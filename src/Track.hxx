@@ -1,4 +1,3 @@
-/* Final version for lab session 2 */
 #ifndef track_hxx
 #define track_hxx
 
@@ -13,7 +12,7 @@ private:
 public:
 	Track () {
 		trackTitle = "-- Untitled --";
-		trackDuration = "0u";
+		trackDuration = 0u;
 		trackPath = "";
 	}
 

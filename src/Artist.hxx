@@ -1,4 +1,3 @@
-/* Final version for lab session 2 */
 #ifndef artist_hxx
 #define artist_hxx
 
