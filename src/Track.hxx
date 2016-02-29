@@ -13,7 +13,7 @@ private:
 public:
 	Track () {
 		trackTitle = "-- Untitled --";
-		trackDuration = 0u;
+		trackDuration = "0u";
 		trackPath = "";
 	}
 
