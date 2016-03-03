@@ -94,7 +94,6 @@ public:
 
 			if ( (*it).title().compare(trackName) == 0 ) {
 				isTrack = true;
-				++it;
 				return (*it);
 			}
 			else ++it;
