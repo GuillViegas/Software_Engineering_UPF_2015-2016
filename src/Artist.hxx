@@ -58,7 +58,6 @@ public:
 	}
 	
 	std::string catalogTracks() {
-		Track track;
 		std::string catalog;
 
 		if(tracklist.empty()) return "";
@@ -66,7 +65,7 @@ public:
 
 			for (std::list<Track>::iterator it=tracklist.begin(); it != tracklist.end(); ++it) {				
 				
-				//Method to convert integer to string. With fucntion std::to_string() doesn't work correctly
+				//Method to convert integer to string. With function std::to_string() doesn't work correctly
 				std::stringstream ss;
 				ss << (*it).duration();
 				std::string dur = ss.str();
@@ -85,10 +84,27 @@ public:
 		tracklist.push_back(track);
 	}
 
-	/*
-	void newAlbum(const std:string &album) {}
 
-	void findTrack(const std:string &trackName) {}
+	Track & findTrack(const std::string &trackName) {
+		
+		std::list<Track>::iterator it = tracklist.begin();
+		bool isTrack = false;
+
+		while (!isTrack or it != tracklist.end()) {
+
+			if ( (*it).title().compare(trackName) == 0 ) {
+				isTrack = true;
+				++it;
+				return (*it);
+			}
+			else ++it;
+		}
+		return (*it);
+	}
+
+
+/*
+	void newAlbum(const std:string &album) {}
 
 	void findAlbum(const std:string &albumName) {}
 
