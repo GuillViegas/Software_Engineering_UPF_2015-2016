@@ -2,6 +2,7 @@
 #define artist_hxx
 
 #include <iostream>
+#include <sstream>
 #include <string>
 #include "Track.hxx"
 #include "Album.hxx"
@@ -9,10 +10,10 @@
 class Artist {
 
 private:
-	std::string artistName;				//Indicates artist name
-	bool artistIsGroup;					//Indicates if the artist belongs to a group
-	std::list<Track> tracklist; 	
-	std::list<Album> albumslist; 	
+	std::string artistName;				//Artist name
+	bool artistIsGroup;					//Indicates if the artist belongs to a group or solo
+	std::list<Track> tracklist; 		//List with all tracks from the artist
+	std::list<Album> albumslist; 		//List with all the albums
 
 public:
 
@@ -58,16 +59,23 @@ public:
 	
 	std::string catalogTracks() {
 		Track track;
-		std::string name_duration;
-		std::string folder;
+		std::string catalog;
 
-		if(tracklist.empty())
-			return "";
-		else if (tracklist.size() == 1) {
-			track = tracklist.front();
-			name_duration = "\t" + track.title() + " [" + std::to_string(track.duration()) + "s]\n";
-			folder = "\t\t" + track.master() + "\n";
-			return name_duration + folder;
+		if(tracklist.empty()) return "";
+		else {
+
+			for (std::list<Track>::iterator it=tracklist.begin(); it != tracklist.end(); ++it) {				
+				
+				//Method to convert integer to string. With fucntion std::to_string() doesn't work correctly
+				std::stringstream ss;
+				ss << (*it).duration();
+				std::string dur = ss.str();
+
+				catalog += "\t" + (*it).title() + " [" + dur + "s]\n";
+				catalog += "\t\t" + (*it).master() + "\n";
+
+			}
+			return catalog;
 		}
 
 	}
