@@ -1,11 +1,19 @@
 #ifndef artist_hxx
 #define artist_hxx
 
+#include <exception>
 #include <iostream>
 #include <sstream>
 #include <string>
 #include "Track.hxx"
 #include "Album.hxx"
+
+class MyException : public std::exception {
+public:
+	const char * what() const throw() {
+		return "Something went wrong!";
+	}
+};
 
 class Artist {
 
@@ -86,20 +94,22 @@ public:
 
 
 	Track & findTrack(const std::string &trackName) {
-		
+
 		std::list<Track>::iterator it = tracklist.begin();
 		bool isTrack = false;
 
-		while (!isTrack or it != tracklist.end()) {
+		while (!isTrack and it != tracklist.end()) {
 
-			if ( (*it).title().compare(trackName) == 0 ) {
+			if ( (*it).title() == trackName ) {
 				isTrack = true;
-				return (*it);
 			}
-			else ++it;
+			else ++it;		
 		}
+
+		if ( !isTrack and it == tracklist.end() ) throw MyException();
 		return (*it);
 	}
+
 
 
 /*
