@@ -106,11 +106,16 @@ public:
 			else ++it;		
 		}
 
-		if ( !isTrack and it == tracklist.end() ) throw MyException();
+		if ( !isTrack ) throw MyException();
 		return (*it);
 	}
 
-
+	std::string descriptionCatalog() {
+		std::string des;
+		des += description();
+		des += catalogTracks();
+		return des;
+	}
 
 /*
 	void newAlbum(const std:string &album) {}
