@@ -11,7 +11,7 @@ public:
 		TEST_CASE( testCatalogTracks_withTwoTracks );
 		TEST_CASE( testFindTrack_withTwoTracks );
 		TEST_CASE( testFindTrack_whenTrackDoesNotExist );
-		//TEST_CASE( testDescriptionCatalog_withTracks );
+		TEST_CASE( testDescriptionCatalog_withTracks );
 		//TEST_CASE( testDescriptionCatalog_withUnlistedAlbum );
 		//TEST_CASE( testDescriptionCatalog_withTrackAndAlbum );
 		//TEST_CASE( testDescriptionCatalog_withListedAlbum );
@@ -81,7 +81,7 @@ public:
 		}
 	}
 	
-	/*
+	
 	void testDescriptionCatalog_withTracks()
 	{
 		Artist artist;
@@ -89,7 +89,7 @@ public:
 		artist.newTrack( "Track 1", 120u, "masters/File1.wav" );
 		artist.newTrack( "Track 2", 90u, "masters/File2.wav" );
 		ASSERT_EQUALS(
-			"An artist [solo]\n"
+			"An artist [solo] \n"
 			"\tTrack 1 [120s]\n"
 			"\t\tmasters/File1.wav\n"
 			"\tTrack 2 [90s]\n"
@@ -97,6 +97,8 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
+
+	/*
 	void testDescriptionCatalog_withUnlistedAlbum()
 	{
 		Artist artist;

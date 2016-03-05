@@ -112,10 +112,15 @@ public:
 
 	std::string descriptionCatalog() {
 		std::string des;
-		des += description();
-		des += catalogTracks();
+		des += description() + catalogTracks();
 		return des;
 	}
+
+	//"An artist [solo]\n"
+	//		"\tTrack 1 [120s]\n"
+	//		"\t\tmasters/File1.wav\n"
+	//		"\tTrack 2 [90s]\n"
+	//		"\t\tmasters/File2.wav\n"
 
 /*
 	void newAlbum(const std:string &album) {}
