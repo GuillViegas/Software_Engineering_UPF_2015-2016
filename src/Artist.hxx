@@ -15,6 +15,13 @@ public:
 	}
 };
 
+class trackException : public std::exception {
+public:
+	const char * what() const throw() {
+		return "The album does not exist";
+	}
+};
+
 class Artist {
 
 private:
@@ -145,7 +152,7 @@ public:
 			}
 			else ++it;
 		}
-		if ( !isAlbum) throw MyException();
+		if ( !isAlbum) throw trackException();
 		return (*it);
 	}
 
