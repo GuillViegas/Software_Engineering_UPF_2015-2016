@@ -16,9 +16,9 @@ public:
 		TEST_CASE( testDescriptionCatalog_withTrackAndAlbum );
 		TEST_CASE( testDescriptionCatalog_withListedAlbum );
 		TEST_CASE( testDescriptionCatalog_withTwoAlbums );
-		//TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
-		//TEST_CASE( testTrackList_withNoTracks );
-		//TEST_CASE( testTrackList_withOneTrack );
+		TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
+		TEST_CASE( testTrackList_withNoTracks );
+		TEST_CASE( testTrackList_withOneTrack );
 		//TEST_CASE( testTrackList_withTwoTracks );
 	}
 	
@@ -156,7 +156,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
-	/*
+	
 	void testFindAlbum_whenAlbumDoesNotExist()
 	{
 		Artist artist;
@@ -170,6 +170,8 @@ public:
 			ASSERT_EQUALS( "The album does not exist", e.what() );
 		}
 	}
+
+	
 	void testTrackList_withNoTracks()
 	{
 		Artist artist;
@@ -180,6 +182,7 @@ public:
 			album.trackList()
 		);
 	}
+	
 	void testTrackList_withOneTrack()
 	{
 		Artist artist;
@@ -192,6 +195,7 @@ public:
 			album.trackList()
 		);
 	}
+	/*
 	void testTrackList_withTwoTracks()
 	{
 		Artist artist;

@@ -8,14 +8,14 @@
 #include "Track.hxx"
 #include "Album.hxx"
 
-class MyException : public std::exception {
+class trackException : public std::exception {
 public:
 	const char * what() const throw() {
 		return "The track does not exist";
 	}
 };
 
-class trackException : public std::exception {
+class albumException : public std::exception {
 public:
 	const char * what() const throw() {
 		return "The album does not exist";
@@ -131,12 +131,8 @@ public:
 			else ++it;		
 		}
 
-		if ( !isTrack ) throw MyException();
+		if ( !isTrack ) throw trackException();
 		return (*it);
-	}
-
-	std::string descriptionCatalog() { 
-		return description() + catalogTracks() + catalogAlbums();
 	}
 
 
@@ -152,15 +148,22 @@ public:
 			}
 			else ++it;
 		}
-		if ( !isAlbum) throw trackException();
+		if ( !isAlbum) throw albumException();
 		return (*it);
 	}
 
-/*
-	void assignTrackToAlbum(const std:string &trackName, const std:string &albumName) {}
 
-*/
-	
+	std::string descriptionCatalog() { 
+		return description() + catalogTracks() + catalogAlbums();
+	}
+
+	void assignTrackToAlbum(const std::string &trackName, const std::string &albumName) {
+		
+		Track & track = findTrack(trackName);
+		Album & album = findAlbum(albumName);
+		std::cout << track.title() << std::endl;
+		album.addTrack(track);
+	}
 
 };
 

@@ -41,19 +41,22 @@ public:
 		listed = false;
 	}
 
+	void addTrack(Track track) {
+		tlist.push_back(track);
+	}
+
 	std::string trackList() {
 		std::string list;
 
 		if (tlist.empty()) list ="";
-		/*
 		else {
 			for (std::list<Track>::iterator it=tlist.begin(); it != tlist.end(); ++it) {
+				list = (*it).title() + "\n";
 				//catalog += "Album: " + (*it).title();
 				//if ( !(*it).isListed() ) catalog += " [unlisted]\n";
 				//else catalog += "\n";
 			}
 		}
-		*/
 		return list;
 	}
 
