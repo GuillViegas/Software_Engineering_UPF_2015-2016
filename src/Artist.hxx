@@ -61,7 +61,7 @@ public:
 		if (isGroup() == true) label = "[group]";
 		else label = "[solo]";
 
-		return artistName + " " + label + " \n";
+		return artistName + " " + label + "\n";
 		
 	}
 	
@@ -104,7 +104,7 @@ public:
 			for (std::list<Album>::iterator it=albumlist.begin(); it != albumlist.end(); ++it) {
 				catalog += "Album: " + (*it).title() + " ";
 				if ( !(*it).isListed() ) catalog += "[unlisted]\n";
-				else catalog += "[listed]\n";
+				else if ((*it).isListed() ) catalog += "[listed]\n";
 			}
 		}
 		return catalog;
@@ -133,8 +133,6 @@ public:
 	}
 
 /*
-	void newAlbum(const std:string &album) {}
-
 	void findAlbum(const std:string &albumName) {}
 
 	void assignTrackToAlbum(const std:string &trackName, const std:string &albumName) {}
