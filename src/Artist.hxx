@@ -104,7 +104,7 @@ public:
 			for (std::list<Album>::iterator it=albumlist.begin(); it != albumlist.end(); ++it) {
 				catalog += "Album: " + (*it).title() + " ";
 				if ( !(*it).isListed() ) catalog += "[unlisted]\n";
-				else if ((*it).isListed() ) catalog += "[listed]\n";
+				else catalog += "[listed]\n";
 			}
 		}
 		return catalog;
