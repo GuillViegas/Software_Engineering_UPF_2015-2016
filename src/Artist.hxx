@@ -132,9 +132,23 @@ public:
 		return description() + catalogTracks() + catalogAlbums();
 	}
 
-/*
-	void findAlbum(const std:string &albumName) {}
 
+	Album & findAlbum(const std::string &albumName) {
+
+		std::list<Album>::iterator it = albumlist.begin();
+		bool isAlbum = false;
+
+		while (!isAlbum and it != albumlist.end() ) {
+
+			if ( (*it).title() == albumName ) {
+				isAlbum = true;
+			}
+			else ++it;
+		}
+		return (*it);
+	}
+
+/*
 	void assignTrackToAlbum(const std:string &trackName, const std:string &albumName) {}
 
 */
