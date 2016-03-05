@@ -9,10 +9,15 @@ private:
 	bool listed;
 
 public:
-	Album (){
+	Album(){
 		titleAlbum = "-- Untitled --";
 		listed = false;
 	}
+
+	Album(const std::string &albumName) {
+		titleAlbum = albumName;
+		listed = false;
+	} 
 
 	std::string title(){
 		return titleAlbum;

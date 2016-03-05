@@ -21,7 +21,7 @@ private:
 	std::string artistName;				//Artist name
 	bool artistIsGroup;					//Indicates if the artist belongs to a group or solo
 	std::list<Track> tracklist; 		//List with all tracks from the artist
-	std::list<Album> albumslist; 		//List with all the albums
+	std::list<Album> albumlist; 		//List with all the albums
 
 public:
 
@@ -92,6 +92,24 @@ public:
 		tracklist.push_back(track);
 	}
 
+	void newAlbum(const std::string &albumName) {
+		Album album(albumName);
+		albumlist.push_back(album);
+	}
+
+	std::string catalogAlbums() {
+		std::string catalog;
+		if (albumlist.empty()) return "";
+		else{
+			for (std::list<Album>::iterator it=albumlist.begin(); it != albumlist.end(); ++it) {
+				catalog += "Album: " + (*it).title() + " ";
+				if ( !(*it).isListed() ) catalog += "[unlisted]\n";
+				else catalog += "[listed]\n";
+			}
+		}
+		return catalog;
+	}
+
 
 	Track & findTrack(const std::string &trackName) {
 
@@ -111,14 +129,8 @@ public:
 	}
 
 	std::string descriptionCatalog() { 
-		return description() + catalogTracks();
+		return description() + catalogTracks() + catalogAlbums();
 	}
-
-	//"An artist [solo]\n"
-	//		"\tTrack 1 [120s]\n"
-	//		"\t\tmasters/File1.wav\n"
-	//		"\tTrack 2 [90s]\n"
-	//		"\t\tmasters/File2.wav\n"
 
 /*
 	void newAlbum(const std:string &album) {}
