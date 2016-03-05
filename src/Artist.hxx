@@ -102,9 +102,9 @@ public:
 		if (albumlist.empty()) return "";
 		else{
 			for (std::list<Album>::iterator it=albumlist.begin(); it != albumlist.end(); ++it) {
-				catalog += "Album: " + (*it).title() + " ";
-				if ( !(*it).isListed() ) catalog += "[unlisted]\n";
-				else catalog += "[listed]\n";
+				catalog += "Album: " + (*it).title();
+				if ( !(*it).isListed() ) catalog += " [unlisted]\n";
+				else catalog += "\n";
 			}
 		}
 		return catalog;
