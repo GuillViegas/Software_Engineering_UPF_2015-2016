@@ -45,6 +45,7 @@ public:
 		std::string list;
 
 		if (tlist.empty()) list ="";
+		/*
 		else {
 			for (std::list<Track>::iterator it=tlist.begin(); it != tlist.end(); ++it) {
 				//catalog += "Album: " + (*it).title();
@@ -52,8 +53,8 @@ public:
 				//else catalog += "\n";
 			}
 		}
+		*/
 		return list;
-
 	}
 
 };
