@@ -145,6 +145,7 @@ public:
 			}
 			else ++it;
 		}
+		if ( !isAlbum) throw MyException();
 		return (*it);
 	}
 
