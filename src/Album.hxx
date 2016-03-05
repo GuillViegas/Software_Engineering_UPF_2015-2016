@@ -44,7 +44,7 @@ public:
 	std::string trackList() {
 		std::string list;
 
-		if (tlist.empty()) list ="\n";
+		if (tlist.empty()) list ="";
 		else {
 			for (std::list<Track>::iterator it=tlist.begin(); it != tlist.end(); ++it) {
 				//catalog += "Album: " + (*it).title();
