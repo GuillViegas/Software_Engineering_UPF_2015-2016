@@ -110,10 +110,8 @@ public:
 		return (*it);
 	}
 
-	std::string descriptionCatalog() {
-		std::string des;
-		des += description() + catalogTracks();
-		return des;
+	std::string descriptionCatalog() { 
+		return description() + catalogTracks();
 	}
 
 	//"An artist [solo]\n"
