@@ -74,16 +74,18 @@ public:
 	
 	std::string catalogTracks() {
 		std::string catalog;
+		std::string dur;
 
 		if(tracklist.empty()) return "";
 		else {
 
 			for (std::list<Track>::iterator it=tracklist.begin(); it != tracklist.end(); ++it) {				
 				
-				//Method to convert integer to string. With function std::to_string() doesn't work correctly
+				//Method to convert integer to string. With function std::to_string() doesn't work correctly, terminal doesn't 
+			    //recognize the instruction as std library
 				std::stringstream ss;
 				ss << (*it).duration();
-				std::string dur = ss.str();
+				dur = ss.str();
 
 				catalog += "\t" + (*it).title() + " [" + dur + "s]\n";
 				catalog += "\t\t" + (*it).master() + "\n";

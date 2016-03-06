@@ -7,7 +7,7 @@
 
 class Album{
 private:
-	std::list<Track> tlist;			//A list with all the album's tracks
+	std::list<Track> tlist;				//A list with all the album's tracks
 	std::string titleAlbum;
 	bool listed;
 
@@ -42,24 +42,23 @@ public:
 		listed = false;
 	}
 
-	void addTrack(Track track) {
+	void addTrack(const Track &track) {
 		tlist.push_back(track);
 	}
 
 	std::string trackList() {
 		std::string list;
-
 		int number = 0;
-		std::string d, n;						
-
+		std::string d, n;				//n represents the track order in the album (string format)
+										//d represents the track's duration (string format)
 
 		if (tlist.empty()) list ="";
 		else {
 			for (std::list<Track>::iterator it=tlist.begin(); it != tlist.end(); ++it) {
 
 				++number;
-				n = to_string( number );
-				d = to_string( (*it).duration() );
+				n = to_string( number );				
+				d = to_string( (*it).duration() );		
 				list += n + " - " + (*it).title() + " [" + d + "s]"+ "\n";
 			}
 		}
