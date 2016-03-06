@@ -1,6 +1,7 @@
 #ifndef album_hxx
 #define album_hxx
 
+#include <sstream>
 #include <string>
 #include "Track.hxx"
 
@@ -47,14 +48,26 @@ public:
 
 	std::string trackList() {
 		std::string list;
+		std::stringstream ss;
+		std::stringstream ss2;
+		int number = 0;
+		int dur;
+
 
 		if (tlist.empty()) list ="";
 		else {
 			for (std::list<Track>::iterator it=tlist.begin(); it != tlist.end(); ++it) {
-				list = (*it).title() + "\n";
-				//catalog += "Album: " + (*it).title();
-				//if ( !(*it).isListed() ) catalog += " [unlisted]\n";
-				//else catalog += "\n";
+				++number;
+
+				ss << number;
+				std::string n = ss.str();
+
+				dur = (*it).duration();
+				ss2 << dur;
+				std::string d = ss2.str();
+
+				list = n + " - " + (*it).title() + " [" + d + "s]"+ "\n";
+
 			}
 		}
 		return list;
