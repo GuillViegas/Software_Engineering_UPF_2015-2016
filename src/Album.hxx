@@ -48,29 +48,31 @@ public:
 
 	std::string trackList() {
 		std::string list;
-		std::stringstream ss;
-		std::stringstream ss2;
+
 		int number = 0;
-		int dur;
+		std::string d, n;						
 
 
 		if (tlist.empty()) list ="";
 		else {
 			for (std::list<Track>::iterator it=tlist.begin(); it != tlist.end(); ++it) {
+				
 				++number;
-
-				ss << number;
-				std::string n = ss.str();
-
-				dur = (*it).duration();
-				ss2 << dur;
-				std::string d = ss2.str();
-
+				n = to_string( number );
+				d = to_string( (*it).duration() );
 				list = n + " - " + (*it).title() + " [" + d + "s]"+ "\n";
 
 			}
 		}
 		return list;
+	}
+
+	std::string to_string(const int& number) {
+		std::stringstream ss;
+		ss << number;
+		std::string n = ss.str();
+		ss.str("");
+		return n;
 	}
 
 };
