@@ -60,7 +60,7 @@ public:
 				++number;
 				n = to_string( number );
 				d = to_string( (*it).duration() );
-				list = n + " - " + (*it).title() + " [" + d + "s]"+ "\n";
+				list += n + " - " + (*it).title() + " [" + d + "s]"+ "\n";
 			}
 		}
 		return list;
