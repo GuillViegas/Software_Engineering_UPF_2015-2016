@@ -161,7 +161,6 @@ public:
 		
 		Track & track = findTrack(trackName);
 		Album & album = findAlbum(albumName);
-		std::cout << track.title() << std::endl;
 		album.addTrack(track);
 	}
 

@@ -56,7 +56,7 @@ public:
 		if (tlist.empty()) list ="";
 		else {
 			for (std::list<Track>::iterator it=tlist.begin(); it != tlist.end(); ++it) {
-				
+
 				++number;
 				n = to_string( number );
 				d = to_string( (*it).duration() );
@@ -68,10 +68,10 @@ public:
 
 	std::string to_string(const int& number) {
 		std::stringstream ss;
-		ss << number;
-		std::string n = ss.str();
+		//Remove ss content
 		ss.str("");
-		return n;
+		ss << number;
+		return ss.str();
 	}
 
 };

@@ -19,7 +19,7 @@ public:
 		TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
 		TEST_CASE( testTrackList_withNoTracks );
 		TEST_CASE( testTrackList_withOneTrack );
-		//TEST_CASE( testTrackList_withTwoTracks );
+		TEST_CASE( testTrackList_withTwoTracks );
 	}
 	
 	void testCatalogTracks_withNoTracks()
@@ -195,7 +195,7 @@ public:
 			album.trackList()
 		);
 	}
-	/*
+	
 	void testTrackList_withTwoTracks()
 	{
 		Artist artist;
@@ -211,7 +211,6 @@ public:
 			album.trackList()
 		);
 	}
-	*/
 };
 
 REGISTER_FIXTURE( AddTrackAndAlbumTests )
