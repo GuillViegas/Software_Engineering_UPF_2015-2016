@@ -10,7 +10,7 @@ public:
 	{
 		TEST_CASE( testCatalog_withNoArtists );
 		TEST_CASE( testCatalog_withSoloArtist );
-		//TEST_CASE( testCatalog_withGroupArtist );
+		TEST_CASE( testCatalog_withGroupArtist );
 		//TEST_CASE( testCatalog_withTwoArtists );
 		//TEST_CASE( testFindArtist_whenNoArtist );
 		//TEST_CASE( testFindArtist_whenArtistExists );
@@ -70,7 +70,7 @@ public:
 			"A solo artist [solo]\n",
 			business.catalog()
 		);
-	}/*
+	}
 	void testCatalog_withGroupArtist()
 	{
 		SingAlong business;
@@ -80,7 +80,7 @@ public:
 			"A group artist [group]\n",
 			business.catalog()
 		);
-	}
+	}/*
 	void testCatalog_withTwoArtists()
 	{
 		SingAlong business;

@@ -20,13 +20,13 @@ public:
 		std::string catalogArtist;
 		for (std::list<Artist>::iterator it = artistList.begin(); it != artistList.end(); ++it) {
 				catalogArtist += (*it).description();
-				//std::cout << (*it).catalogTracks() << std::endl;
 		}
 		return catalogArtist;
 	}
 
 	void createArtist(const std::string& name, const bool& b) {
 		Artist artist(name);
+		//if (b==true) artist.group();
 		artistList.push_back(artist);
 	}
 
