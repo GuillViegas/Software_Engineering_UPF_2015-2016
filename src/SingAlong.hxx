@@ -68,6 +68,11 @@ public:
 		artist.newTrack(trackName, duration, path);
 	}
 
+	void createNewAlbum(const std::string& artistName, const std::string& albumName ) {
+		Artist artist = findArtist(artistName);
+		artist.newAlbum(albumName);
+	}
+
 	Artist & findArtist(const std::string& a) {
 		std::list<Artist>::iterator it = artistList.begin();
 		bool isArtist = false;
