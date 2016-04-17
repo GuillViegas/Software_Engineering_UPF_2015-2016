@@ -40,6 +40,10 @@ public:
 		artistList.push_back(artist);
 	}
 
+	void createNewTrack(const std::string& artistName, const std::string& trackName, const std::string& file) {
+		Track track(trackName, 0, "");
+	}
+
 	Artist & findArtist(const std::string& a) {
 		std::list<Artist>::iterator it = artistList.begin();
 		bool isArtist = false;

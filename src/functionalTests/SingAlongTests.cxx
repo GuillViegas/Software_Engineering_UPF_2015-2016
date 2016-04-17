@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testCatalog_withTwoArtists );
 		TEST_CASE( testFindArtist_whenNoArtist );
 		TEST_CASE( testFindArtist_whenArtistExists );
-		//TEST_CASE( testCatalog_withTrack );
+		TEST_CASE( testCatalog_withTrack );
 		//TEST_CASE( testCatalog_withTwoTracksWithDifferentDuration );
 		//TEST_CASE( testCatalog_withTracksOfDifferentArtists );
 		//TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
@@ -115,7 +115,7 @@ public:
 			"An artist",
 			artist.name()
 		);
-	}/*
+	}
 	void testCatalog_withTrack()
 	{
 		SingAlong business;
@@ -130,7 +130,7 @@ public:
 			"\t\tmasters/aMasterFile.wav\n",
 			business.catalog()
 		);
-	}
+	}/*
 	void testCatalog_withTwoTracksWithDifferentDuration()
 	{
 		SingAlong business;
