@@ -18,9 +18,7 @@ public:
 	}
 
 	std::string catalog() {
-		std::string catalog = artist.catalogTracks();
-		return catalog;
-		//return artist.catalogTracks();
+		return artist.catalogTracks();
 	}
 
 };
