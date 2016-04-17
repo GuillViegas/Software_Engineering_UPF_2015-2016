@@ -73,6 +73,12 @@ public:
 		artist.newAlbum(albumName);
 	}
 
+	void listAlbum(const std::string& artistName, const std::string& albumName) {
+		Artist & artist = findArtist(artistName);
+		Album & album = artist.findAlbum(albumName);
+		album.unlist();
+	}
+
 	Artist & findArtist(const std::string& a) {
 		std::list<Artist>::iterator it = artistList.begin();
 		bool isArtist = false;
