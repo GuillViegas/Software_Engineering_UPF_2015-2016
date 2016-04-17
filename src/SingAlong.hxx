@@ -16,6 +16,13 @@ public:
 	}
 };
 
+class directoryException : public std::exception {
+public:
+	const char * what() const throw() {
+		return "The master file does not exist";
+	}
+};
+
 
 class SingAlong {
 private:
@@ -43,20 +50,20 @@ public:
 	}
 
 	void createNewTrack(const std::string& artistName, const std::string& trackName, const std::string& file) {
-		
 		char data[10];
 		std::ifstream in;
 		std::string path ="masters/" + file;
 		Artist & artist = findArtist(artistName);
-
-		//Read music file from masters/
-		in.open(path.c_str());
-		in >> data;
-		in.close();
-
+		//Check if path exists
+		std::ifstream my_file(path.c_str());
+		if ( my_file.good() ) {
+			//Read music file from masters/
+			in.open(path.c_str());
+			in >> data;
+			in.close();
+		} else throw directoryException(); 
 		int duration = atoi(data); //char to integer
 		artist.newTrack(trackName, duration, path);
-
 	}
 
 	Artist & findArtist(const std::string& a) {
