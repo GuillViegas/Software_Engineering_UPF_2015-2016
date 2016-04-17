@@ -26,11 +26,7 @@ public:
 
 	void createArtist(const std::string& name, const bool& b) {
 		Artist artist(name);
-		bool ver = b;
-		if (ver == true){
-			artist.group();
-		}
-		//if (b==true) artist.group();
+		if (b==true) artist.group();
 		artistList.push_back(artist);
 	}
 
