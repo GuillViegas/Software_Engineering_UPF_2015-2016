@@ -48,7 +48,7 @@ public:
 			if ( (*it).name() == a) {
 				isArtist = true;
 			}
-			else ++it;
+			++it;
 		}
 
 		if ( !isArtist ) throw artistException();
