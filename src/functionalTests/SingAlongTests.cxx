@@ -1,13 +1,14 @@
 #include "MiniCppUnit.hxx"
 #include "LibFileSystem.hxx"
 #include <fstream>
+#include <SingAlong.hxx>
 
 class SingAlongTests : public TestFixture<SingAlongTests>
 {
 public:
 	TEST_FIXTURE( SingAlongTests )
 	{
-		//TEST_CASE( testCatalog_withNoArtists );
+		TEST_CASE( testCatalog_withNoArtists );
 		//TEST_CASE( testCatalog_withSoloArtist );
 		//TEST_CASE( testCatalog_withGroupArtist );
 		//TEST_CASE( testCatalog_withTwoArtists );
@@ -50,7 +51,7 @@ public:
 		os << duration << std::endl;
 	}
 
-	/*
+	
 	void testCatalog_withNoArtists()
 	{
 		SingAlong business;
@@ -59,7 +60,7 @@ public:
 			"",
 			business.catalog()
 		);
-	}
+	}/*
 	void testCatalog_withSoloArtist()
 	{
 		SingAlong business;
