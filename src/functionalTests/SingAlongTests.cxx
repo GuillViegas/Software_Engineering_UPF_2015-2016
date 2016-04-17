@@ -21,7 +21,7 @@ public:
 		TEST_CASE( testAddTrack_whenMasterDoesNotExist );
 		TEST_CASE( testCatalog_withUnlistedAlbum );
 		TEST_CASE( testCatalog_withListedAlbum );
-		//TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
+		TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
 		//TEST_CASE( testCatalog_withTwoAlbums );
 		//TEST_CASE( testCatalog_albumWithTracks );
 		//TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
@@ -229,7 +229,7 @@ public:
 			"Album: An album\n",
 			business.catalog()
 		);
-	}/*
+	}
 	void testCatalog_withAlbumListedAndUnlisted()
 	{
 		SingAlong business;
@@ -243,7 +243,7 @@ public:
 			"Album: An album [unlisted]\n",
 			business.catalog()
 		);
-	}
+	}/*
 	void testCatalog_withTwoAlbums()
 	{
 		SingAlong business;
