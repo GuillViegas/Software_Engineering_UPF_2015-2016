@@ -23,7 +23,7 @@ public:
 		TEST_CASE( testCatalog_withListedAlbum );
 		TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
 		TEST_CASE( testCatalog_withTwoAlbums );
-		//TEST_CASE( testCatalog_albumWithTracks );
+		TEST_CASE( testCatalog_albumWithTracks );
 		//TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
 	}
 
@@ -257,7 +257,7 @@ public:
 			"Album: Another album [unlisted]\n",
 			business.catalog()
 		);
-	}/*
+	}
 	void testCatalog_albumWithTracks()
 	{
 		SingAlong business;
@@ -284,7 +284,7 @@ public:
 			"2 - Another track [50s]\n",
 			business.catalog()
 		);
-	}
+	}/*
 	void testIncludeTrackOnAlbum_whenAlbumDoesNotExist()
 	{
 		SingAlong business;

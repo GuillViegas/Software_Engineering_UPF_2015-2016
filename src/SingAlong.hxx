@@ -68,6 +68,11 @@ public:
 		artist.newTrack(trackName, duration, path);
 	}
 
+	void includeTrackOnAlbum(const std::string& artistName, const std::string trackName, const std::string albumName) {
+		Artist & artist = findArtist(artistName);
+		artist.assignTrackToAlbum(trackName, albumName);
+	}
+
 	void createNewAlbum(const std::string& artistName, const std::string& albumName ) {
 		Artist & artist = findArtist(artistName);
 		artist.newAlbum(albumName);
