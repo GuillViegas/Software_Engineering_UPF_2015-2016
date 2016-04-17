@@ -40,7 +40,7 @@ public:
 		artistList.push_back(artist);
 	}
 
-	std::string findArtist(const std::string& a) {
+	Artist & findArtist(const std::string& a) {
 		std::list<Artist>::iterator it = artistList.begin();
 		bool isArtist = false;
 
@@ -48,11 +48,11 @@ public:
 			if ( (*it).name() == a) {
 				isArtist = true;
 			}
-			++it;
+			else ++it;
 		}
 
 		if ( !isArtist ) throw artistException();
-		//return (*it);
+		return (*it);
 	}
 
 };
