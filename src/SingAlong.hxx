@@ -2,8 +2,10 @@
 #define singalong_hxx
 
 #include <exception>
-#include <string>
+#include <fstream>
 #include <iostream>
+#include <string>
+#include <stdlib.h>
 #include "Artist.hxx"
 #include "Track.hxx"
 
@@ -29,7 +31,7 @@ public:
 	std::string catalog() {
 		std::string catalogArtist;
 		for (std::list<Artist>::iterator it = artistList.begin(); it != artistList.end(); ++it) {
-				catalogArtist += (*it).description();
+				catalogArtist += (*it).descriptionCatalog();
 		}
 		return catalogArtist;
 	}
@@ -41,7 +43,20 @@ public:
 	}
 
 	void createNewTrack(const std::string& artistName, const std::string& trackName, const std::string& file) {
-		Track track(trackName, 0, "");
+		
+		char data[10];
+
+		Artist & artist = findArtist(artistName);
+		std::string path ="masters/" + file;
+
+		std::ifstream in;
+		in.open("masters/aMasterFile.wav");
+		in >> data;
+		//close file
+
+		int duration = atoi(data); 
+		artist.newTrack(trackName, duration, path);
+
 	}
 
 	Artist & findArtist(const std::string& a) {
