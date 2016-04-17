@@ -54,15 +54,17 @@ public:
 		std::ifstream in;
 		std::string path ="masters/" + file;
 		Artist & artist = findArtist(artistName);
+		
 		//Check if path exists
 		std::ifstream my_file(path.c_str());
+
 		if ( my_file.good() ) {
-			//Read music file from masters/
 			in.open(path.c_str());
 			in >> data;
 			in.close();
-		} else throw directoryException(); 
-		int duration = atoi(data); //char to integer
+		} else throw directoryException();
+
+		int duration = atoi(data);
 		artist.newTrack(trackName, duration, path);
 	}
 
