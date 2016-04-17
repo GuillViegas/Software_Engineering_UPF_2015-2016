@@ -19,7 +19,8 @@ public:
 	std::string catalog() {
 		std::string catalogArtist;
 		for (std::list<Artist>::iterator it = artistList.begin(); it != artistList.end(); ++it) {
-				catalogArtist += (*it).catalogTracks();
+				catalogArtist += (*it).description();
+				//std::cout << (*it).catalogTracks() << std::endl;
 		}
 		return catalogArtist;
 	}
