@@ -9,7 +9,7 @@ public:
 	TEST_FIXTURE( SingAlongTests )
 	{
 		TEST_CASE( testCatalog_withNoArtists );
-		//TEST_CASE( testCatalog_withSoloArtist );
+		TEST_CASE( testCatalog_withSoloArtist );
 		//TEST_CASE( testCatalog_withGroupArtist );
 		//TEST_CASE( testCatalog_withTwoArtists );
 		//TEST_CASE( testFindArtist_whenNoArtist );
@@ -60,7 +60,7 @@ public:
 			"",
 			business.catalog()
 		);
-	}/*
+	}
 	void testCatalog_withSoloArtist()
 	{
 		SingAlong business;
@@ -70,7 +70,7 @@ public:
 			"A solo artist [solo]\n",
 			business.catalog()
 		);
-	}
+	}/*
 	void testCatalog_withGroupArtist()
 	{
 		SingAlong business;
