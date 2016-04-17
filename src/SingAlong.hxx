@@ -10,8 +10,7 @@
 class artistException : public std::exception {
 public:
 	const char * what() const throw() {
-		//return "The artist does not exist";
-		return "Exception";
+		return "The artist does not exist";
 	}
 };
 
