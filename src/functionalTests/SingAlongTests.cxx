@@ -17,7 +17,7 @@ public:
 		TEST_CASE( testCatalog_withTrack );
 		TEST_CASE( testCatalog_withTwoTracksWithDifferentDuration );
 		TEST_CASE( testCatalog_withTracksOfDifferentArtists );
-		//TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
+		TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
 		//TEST_CASE( testAddTrack_whenMasterDoesNotExist );
 		//TEST_CASE( testCatalog_withUnlistedAlbum );
 		//TEST_CASE( testCatalog_withListedAlbum );
@@ -176,7 +176,7 @@ public:
 			"\t\tmasters/aThirdMasterFile.wav\n",
 			business.catalog()
 		);
-	}/*
+	}
 	void testAddTrack_toArtistThatDoesNotExist()
 	{
 		SingAlong business;
@@ -190,7 +190,7 @@ public:
 		{
 			ASSERT_EQUALS( "The artist does not exist", e.what() );
 		}
-	}
+	}/*
 	void testAddTrack_whenMasterDoesNotExist()
 	{
 		SingAlong business;
