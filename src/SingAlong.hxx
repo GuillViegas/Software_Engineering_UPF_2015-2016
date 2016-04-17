@@ -45,16 +45,16 @@ public:
 	void createNewTrack(const std::string& artistName, const std::string& trackName, const std::string& file) {
 		
 		char data[10];
-
-		Artist & artist = findArtist(artistName);
-		std::string path ="masters/" + file;
-
 		std::ifstream in;
-		in.open("masters/aMasterFile.wav");
-		in >> data;
-		//close file
+		std::string path ="masters/" + file;
+		Artist & artist = findArtist(artistName);
 
-		int duration = atoi(data); 
+		//Read music file from masters/
+		in.open(path.c_str());
+		in >> data;
+		in.close();
+
+		int duration = atoi(data); //char to integer
 		artist.newTrack(trackName, duration, path);
 
 	}
