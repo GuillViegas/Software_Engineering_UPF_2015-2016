@@ -1,8 +1,19 @@
 #ifndef singalong_hxx
 #define singalong_hxx
 
+#include <exception>
+#include <string>
+#include <iostream>
 #include "Artist.hxx"
 #include "Track.hxx"
+
+class artistException : public std::exception {
+public:
+	const char * what() const throw() {
+		//return "The artist does not exist";
+		return "Exception";
+	}
+};
 
 
 class SingAlong {
@@ -28,6 +39,21 @@ public:
 		Artist artist(name);
 		if (b==true) artist.group();
 		artistList.push_back(artist);
+	}
+
+	std::string findArtist(const std::string& a) {
+		std::list<Artist>::iterator it = artistList.begin();
+		bool isArtist = false;
+
+		while(!isArtist and it != artistList.end()) {
+			if ( (*it).name() == a) {
+				isArtist = true;
+			}
+			else ++it;
+		}
+
+		if ( !isArtist ) throw artistException();
+		//return (*it);
 	}
 
 };
