@@ -84,7 +84,6 @@ public:
 		album.list();
 	}
 
-
 	Artist & findArtist(const std::string& a) {
 		std::list<Artist>::iterator it = artistList.begin();
 		bool isArtist = false;
