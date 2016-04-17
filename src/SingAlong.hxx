@@ -7,9 +7,8 @@
 
 class SingAlong {
 private:
-	Artist artist;
-	Album album;
-	Track track;
+	std::list<Artist> artistList;
+
 
 public:
 
@@ -18,7 +17,16 @@ public:
 	}
 
 	std::string catalog() {
-		return artist.catalogTracks();
+		std::string catalogArtist;
+		for (std::list<Artist>::iterator it = artistList.begin(); it != artistList.end(); ++it) {
+				catalogArtist += (*it).catalogTracks();
+		}
+		return catalogArtist;
+	}
+
+	void createArtist(const std::string& name, const bool& b) {
+		Artist artist(name);
+		artistList.push_back(artist);
 	}
 
 };
