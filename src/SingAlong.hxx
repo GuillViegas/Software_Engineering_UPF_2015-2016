@@ -76,7 +76,7 @@ public:
 	void listAlbum(const std::string& artistName, const std::string& albumName) {
 		Artist & artist = findArtist(artistName);
 		Album & album = artist.findAlbum(albumName);
-		album.unlist();
+		album.list();
 	}
 
 	Artist & findArtist(const std::string& a) {
