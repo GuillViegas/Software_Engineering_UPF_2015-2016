@@ -23,8 +23,8 @@ public:
 		TEST_CASE( testCatalog_withListedAlbum );
 		TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
 		TEST_CASE( testCatalog_withTwoAlbums );
-		TEST_CASE( testCatalog_albumWithTracks );
-		//TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
+		//TEST_CASE( testCatalog_albumWithTracks );
+		TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
 	}
 
 	/**
@@ -284,7 +284,7 @@ public:
 			"2 - Another track [50s]\n",
 			business.catalog()
 		);
-	}/*
+	}
 	void testIncludeTrackOnAlbum_whenAlbumDoesNotExist()
 	{
 		SingAlong business;
@@ -303,7 +303,6 @@ public:
 			ASSERT_EQUALS( "The album does not exist", e.what() );
 		}
 	}
-	*/
 };
 
 REGISTER_FIXTURE( SingAlongTests )

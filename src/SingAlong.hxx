@@ -71,6 +71,7 @@ public:
 	void includeTrackOnAlbum(const std::string& artistName, const std::string trackName, const std::string albumName) {
 		Artist & artist = findArtist(artistName);
 		artist.assignTrackToAlbum(trackName, albumName);
+		
 	}
 
 	void createNewAlbum(const std::string& artistName, const std::string& albumName ) {
@@ -99,7 +100,6 @@ public:
 			}
 			else ++it;
 		}
-
 		if ( !isArtist ) throw artistException();
 		return (*it);
 	}
