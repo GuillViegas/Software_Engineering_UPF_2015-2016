@@ -39,6 +39,9 @@ public:
 		std::string catalogArtist;
 		for (std::list<Artist>::iterator it = artistList.begin(); it != artistList.end(); ++it) {
 				catalogArtist += (*it).descriptionCatalog();
+				if (!(*it).description().empty() and !(*it).catalogTracks().empty() and !(*it).catalogAlbums().empty()) {
+					catalogArtist += (*it).tracksAlbumList();
+				}
 		}
 		return catalogArtist;
 	}

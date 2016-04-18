@@ -35,14 +35,13 @@ public:
 	Artist() {
 		artistName = "-- No name --";
 		artistIsGroup = false;
+	
 	}
-
 	Artist(const std::string& n) {
 		artistName = n;
 		artistIsGroup = false;
 	}
 
-	
 	std::string name() {
 		return artistName;
 	}
@@ -70,6 +69,14 @@ public:
 
 		return artistName + " " + label + "\n";
 		
+	}
+
+	std::string tracksAlbumList() {
+		std::string tracks;
+		for (std::list<Album>::iterator it = albumlist.begin(); it != albumlist.end(); ++it) {
+			tracks += (*it).trackList();
+		}
+		return tracks;
 	}
 	
 	std::string catalogTracks() {
@@ -160,7 +167,7 @@ public:
 	}
 
 	void assignTrackToAlbum(const std::string &trackName, const std::string &albumName) {
-		
+
 		Track & track = findTrack(trackName);
 		Album & album = findAlbum(albumName);
 		album.addTrack(track);
