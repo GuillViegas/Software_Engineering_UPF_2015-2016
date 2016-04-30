@@ -2,12 +2,14 @@
 #include "LibFileSystem.hxx"
 #include <fstream>
 
+#include "SingAlong.hxx"
+
 class CompressionTests : public TestFixture<CompressionTests>
 {
 public:
 	TEST_FIXTURE( CompressionTests )
 	{
-		//TEST_CASE( compressionTestByDefault_withOneMaster );
+		TEST_CASE( compressionTestByDefault_withOneMaster );
 		//TEST_CASE( compressionTest_configuredWithFile );
 		//TEST_CASE( configurationTest_withUnsupportedFormat );
 		//TEST_CASE( configurationTest_withUnsupportedBitrateMp3 );
@@ -41,7 +43,7 @@ public:
 		os << duration << std::endl;
 	}
 
-	/*
+	
 	void compressionTestByDefault_withOneMaster()
 	{
 		SingAlong business;
@@ -59,7 +61,7 @@ public:
 			"compressed/An artist - A track [96].ogg\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
-	}
+	}/*
 	// Note: the functionality of reading a configuration file is not
 	// a priority of the client at this time.
 	// 
