@@ -1,13 +1,13 @@
 #ifndef mp3converter_hxx
 #define mp3converter_hxx
 
-//#include <exception>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <stdio.h>
 #include <vector>
+#include "Converter.cxx"
 
 class MP3ConverterException : public std::exception {
 public:
@@ -23,15 +23,15 @@ public:
 	}
 };
 
-class MP3Converter {
+class MP3Converter : public Converter {
 private:
 
 public:
-	MP3Converter() {
+	MP3Converter() {}
 
-	}
+	~MP3Converter() {}
 
-	void convert( const std::string& path, const std::string& file ){
+	void convert( const std::string& path, const std::string& file ) {
 
 		//Check if path exists
 		std::ifstream my_file(path.c_str());

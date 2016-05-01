@@ -130,8 +130,16 @@ public:
 
 	void testConvert_polymorphicCall() 
 	{
-		Converter converter;
 		MP3Converter mp3converter;
+		Converter & converter = mp3converter;
+
+		createMasterFile( "Master.wav", 50);
+		converter.convert( "masters/Master.wav", "compressed/Prefix" );
+
+		ASSERT_EQUALS(
+			"compressed/Prefix [128].mp3\n",
+			LibFileSystem::listDirectoryInOrder( "compressed" )
+		);
 	}
 
 
