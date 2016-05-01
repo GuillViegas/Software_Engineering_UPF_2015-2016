@@ -30,7 +30,7 @@ public:
 
 		if ( my_file.good() ) {
 			std::string outputFile( file );
-			outputFile += " [128].mp3";
+			outputFile += " [128].ogg";
 			std::ofstream newfile( outputFile.c_str() );
 		} else throw directoryException();
 	}
