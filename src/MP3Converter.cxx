@@ -19,14 +19,27 @@ public:
 		std::ofstream newfile( outputFile.c_str() );
 	}
 
-	void addTextToFile( const std::string& file,  const std::string& text ) {
-		std::string pathFile ("/masters");
-		pathFile += file;
+	void addContentToFile( const std::string& file,  const std::string& text ) {
+
+		std::string outputFile( "compressed/Prefix" );
+		outputFile += " [128].mp3";
+		std::ofstream newfile( outputFile.c_str() );
+
 		std::ofstream myfile;
-  		myfile.open( pathFile.c_str() );
-  		myfile << text;
+  		myfile.open ("compressed/Prefix [128].mp3");
+  		myfile <<  text;
   		myfile.close();
+		
+		//std::string pathFile ("/masters");
+		//pathFile += file;
+		//std::ofstream myfile( file );
+  		//myfile.open( pathFile.c_str() );
+  		//myfile.open( "compressed/Prefix [128].mp3" );
+  		//myfile << text;
+  		//myfile.close();
 	}
+
+	//void bitRate(const int & rate) {}
 
 };
 

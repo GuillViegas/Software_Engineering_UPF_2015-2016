@@ -65,15 +65,13 @@ public:
 		MP3Converter converter;
 
 		createMasterFile( "Master.wav", 50);
-		converter.addTextToFile("Master.wav", "MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.");
+		converter.convert( "masters/Master.wav", "compressed/Prefix" );
+		converter.addContentToFile("compressed/Prefix", "MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.");
 
 		ASSERT_EQUALS(
 			"MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
-			LibFileSystem::fileContent( "compressed" )
+			LibFileSystem::fileContent( "compressed/Prefix [128].mp3" )
 		);
-
-
-
 	}
 
 	/*
