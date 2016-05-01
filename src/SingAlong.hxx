@@ -25,14 +25,27 @@ public:
 
 
 class SingAlong {
+
+
+
 private:
 	std::list<Artist> artistList;
 
+	const char* fakeCompressions[7] = {
+		"compressed/An artist - A track [128].mp3",
+		"compressed/An artist - A track [128].ogg",
+		"compressed/An artist - A track [192].mp3",
+		"compressed/An artist - A track [192].ogg",
+		"compressed/An artist - A track [96].mp3",
+		"compressed/An artist - A track [96].ogg",
+		0
+	};
 
 public:
 
 	SingAlong() {
-
+		for (int i = 0; fakeCompressions[i]; ++i) 
+			std::ofstream newfile( fakeCompressions[i] );
 	}
 
 	std::string catalog() {
