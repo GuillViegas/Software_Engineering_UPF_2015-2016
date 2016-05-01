@@ -3,6 +3,7 @@
 #include <fstream>
 
 #include "MP3Converter.cxx"
+#include "Converter.cxx"
 
 class MP3ConverterTests : public TestFixture<MP3ConverterTests>
 {
@@ -14,7 +15,7 @@ public:
 		TEST_CASE( testConvert_withDifferentBitrate );
 		TEST_CASE( testConvert_withUnsupportedFormat );
 		TEST_CASE( testConvert_withInexistentMaster );
-		//TEST_CASE( testConvert_polymorphicCall );
+		TEST_CASE( testConvert_polymorphicCall );
 
 	}
 
@@ -126,9 +127,13 @@ public:
 
 	}
 
-	/*
-	void testConvert_polymorphicCall() {}
-	*/
+
+	void testConvert_polymorphicCall() 
+	{
+		Converter converter;
+		MP3Converter mp3converter;
+	}
+
 
 };
 
