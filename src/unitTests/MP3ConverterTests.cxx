@@ -9,7 +9,7 @@ public:
 	TEST_FIXTURE ( MP3ConverterTests )
 	{
 		TEST_CASE( testConvert_generateFile );
-		//TEST_CASE( testConvert_generateContent );
+		TEST_CASE( testConvert_generateContent );
 		//TEST_CASE( testConvert_withDifferentBitrate );
 		//TEST_CASE( testConvert_withUnsupportedFormat );
 		//TEST_CASE( testConvert_withInexistentMaster );
@@ -59,8 +59,24 @@ public:
 		);
 
 	}
+	
+	void testConvert_generateContent() {
+
+		MP3Converter converter;
+
+		createMasterFile( "Master.wav", 50);
+		converter.addTextToFile("Master.wav", "MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.");
+
+		ASSERT_EQUALS(
+			"MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
+			LibFileSystem::fileContent( "compressed" )
+		);
+
+
+
+	}
+
 	/*
-	void testConvert_generateContent() {}
 	void testConvert_withDifferentBitrate() {}
 	void testConvert_withUnsupportedFormat() {}
 	void testConvert_withInexistentMaster() {}
