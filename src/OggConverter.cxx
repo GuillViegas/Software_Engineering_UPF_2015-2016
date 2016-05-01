@@ -17,7 +17,7 @@ public:
 	}
 };
 
-class OggConverter {
+class OggConverter : public Converter {
 private:
 public:
 	OggConverter() {}

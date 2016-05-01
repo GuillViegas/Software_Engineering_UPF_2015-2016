@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testConvert_generateContent );
 		TEST_CASE( testConvert_withDifferentBitrate );
 		TEST_CASE( testConvert_withInexistentMaster );
-		//TEST_CASE( testConvert_polymorphicCall );
+		TEST_CASE( testConvert_polymorphicCall );
 
 	}
 
@@ -108,21 +108,21 @@ public:
 
 	}
 
-	/*
+	
 	void testConvert_polymorphicCall() 
 	{
 		OggConverter oggconverter;
-		Converter & converter = mp3converter;
+		Converter & converter = oggconverter;
 
 		createMasterFile( "Master.wav", 50);
 		converter.convert( "masters/Master.wav", "compressed/Prefix" );
 
 		ASSERT_EQUALS(
-			"compressed/Prefix [128].mp3\n",
+			"compressed/Prefix [128].ogg\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}
-	*/
+	
 
 
 };
