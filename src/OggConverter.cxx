@@ -47,6 +47,13 @@ public:
   		myfile.close();
 	}
 
+	void bitRate(const int& rate) {
+		char oldname[] = "compressed/Prefix [128].ogg";
+		char newname[] = "compressed/Prefix [96].mp3";
+		rename(oldname, newname);
+		
+	}
+
 };
 
 
