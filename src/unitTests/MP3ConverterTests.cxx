@@ -10,7 +10,7 @@ public:
 	{
 		TEST_CASE( testConvert_generateFile );
 		TEST_CASE( testConvert_generateContent );
-		//TEST_CASE( testConvert_withDifferentBitrate );
+		TEST_CASE( testConvert_withDifferentBitrate );
 		//TEST_CASE( testConvert_withUnsupportedFormat );
 		//TEST_CASE( testConvert_withInexistentMaster );
 		//TEST_CASE( testConvert_polymorphicCall );
@@ -60,7 +60,8 @@ public:
 
 	}
 	
-	void testConvert_generateContent() {
+	void testConvert_generateContent() 
+	{
 
 		MP3Converter converter;
 
@@ -74,8 +75,23 @@ public:
 		);
 	}
 
+	
+	void testConvert_withDifferentBitrate() 
+	{
+		MP3Converter converter;
+
+		createMasterFile( "Master.wav", 50);
+		converter.convert( "master/Master.wav", "compressed/Prefix" );
+		converter.bitRate(96);
+
+		ASSERT_EQUALS(
+			"compressed/Prefix [96].mp3\n",
+			LibFileSystem::listDirectoryInOrder( "compressed" )
+		);
+
+	}
+	
 	/*
-	void testConvert_withDifferentBitrate() {}
 	void testConvert_withUnsupportedFormat() {}
 	void testConvert_withInexistentMaster() {}
 	void testConvert_polymorphicCall() {}
