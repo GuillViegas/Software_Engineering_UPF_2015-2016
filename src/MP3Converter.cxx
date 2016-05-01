@@ -3,8 +3,17 @@
 
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <stdio.h>
+#include <vector>
+
+class MP3ConverterException : public std::exception {
+public:
+	const char * what() const throw() {
+		return "Unsupported format";
+	}
+};
 
 class MP3Converter {
 private:
@@ -33,9 +42,17 @@ public:
 	}
 
 	void bitRate(const int& rate) {
-		char oldname[] = "compressed/Prefix [128].mp3";
-		char newname[] = "compressed/Prefix [96].mp3";
-		rename(oldname, newname);
+
+		bool trobat = false;
+
+		if (rate == 96 or rate == 128 or rate == 192) trobat = true;
+
+		if (!trobat) throw MP3ConverterException();
+		else {
+			char oldname[] = "compressed/Prefix [128].mp3";
+			char newname[] = "compressed/Prefix [96].mp3";
+			rename(oldname, newname);
+		}
 	}
 
 };
