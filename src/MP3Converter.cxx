@@ -36,9 +36,6 @@ public:
 		char oldname[] = "compressed/Prefix [128].mp3";
 		char newname[] = "compressed/Prefix [96].mp3";
 		rename(oldname, newname);
-		//std::string outputFile( "compressed/Prefix" );
-		//outputFile += " [96].mp3";
-		//std::ofstream newfile( outputFile.c_str() );
 	}
 
 };
