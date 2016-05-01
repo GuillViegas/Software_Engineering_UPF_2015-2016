@@ -44,8 +44,7 @@ private:
 public:
 
 	SingAlong() {
-		for (int i = 0; fakeCompressions[i]; ++i) 
-			std::ofstream newfile( fakeCompressions[i] );
+		generateCompressions();
 	}
 
 	std::string catalog() {
@@ -118,6 +117,11 @@ public:
 		}
 		if ( !isArtist ) throw artistException();
 		return (*it);
+	}
+
+	void generateCompressions() {
+		for (int i = 0; fakeCompressions[i]; ++i) 
+			std::ofstream newfile( fakeCompressions[i] );
 	}
 
 };
