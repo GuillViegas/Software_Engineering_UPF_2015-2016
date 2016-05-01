@@ -1,6 +1,7 @@
 #include "MiniCppUnit.hxx"
 #include "LibFileSystem.hxx"
 #include <fstream>
+
 #include "MP3Converter.cxx"
 
 class MP3ConverterTests : public TestFixture<MP3ConverterTests>
@@ -12,7 +13,7 @@ public:
 		TEST_CASE( testConvert_generateContent );
 		TEST_CASE( testConvert_withDifferentBitrate );
 		TEST_CASE( testConvert_withUnsupportedFormat );
-		//TEST_CASE( testConvert_withInexistentMaster );
+		TEST_CASE( testConvert_withInexistentMaster );
 		//TEST_CASE( testConvert_polymorphicCall );
 
 	}
@@ -81,7 +82,7 @@ public:
 		MP3Converter converter;
 
 		createMasterFile( "Master.wav", 50);
-		converter.convert( "master/Master.wav", "compressed/Prefix" );
+		converter.convert( "masters/Master.wav", "compressed/Prefix" );
 		converter.bitRate(96);
 
 		ASSERT_EQUALS(
@@ -95,20 +96,37 @@ public:
 	void testConvert_withUnsupportedFormat() 
 	{
 		MP3Converter converter;
-		converter.convert( "master/Master.wav", "compressed/Prefix" );
+		createMasterFile( "Master.wav", 50);
+		converter.convert( "masters/Master.wav", "compressed/Prefix" );
 		
 		try 
 		{
 			converter.bitRate(72);
-			//FAIL( "An exception should be caught!" );
+			FAIL( "An exception should be caught!" );
 		}
 		catch (std::exception & e)
 		{
 			ASSERT_EQUALS( "Unsupported format", e.what() );
 		}
 	}
+
+	
+	void testConvert_withInexistentMaster() 
+	{
+		MP3Converter converter;
+	try 
+	{
+		converter.convert( "master/Master.wav", "compressed/Prefix" );
+		FAIL( "An exception should be caught!" );
+	}
+	catch ( std::exception & e)
+	{
+		ASSERT_EQUALS( "The master file does not exist", e.what() );
+	}
+
+	}
+
 	/*
-	void testConvert_withInexistentMaster() {}
 	void testConvert_polymorphicCall() {}
 	*/
 

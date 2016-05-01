@@ -1,6 +1,7 @@
 #ifndef mp3converter_hxx
 #define mp3converter_hxx
 
+//#include <exception>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -15,6 +16,13 @@ public:
 	}
 };
 
+class directoryException : public std::exception {
+public:
+	const char * what() const throw() {
+		return "The master file does not exist";
+	}
+};
+
 class MP3Converter {
 private:
 
@@ -24,9 +32,15 @@ public:
 	}
 
 	void convert( const std::string& path, const std::string& file ){
-		std::string outputFile( file );
-		outputFile += " [128].mp3";
-		std::ofstream newfile( outputFile.c_str() );
+
+		//Check if path exists
+		std::ifstream my_file(path.c_str());
+
+		if ( my_file.good() ) {
+			std::string outputFile( file );
+			outputFile += " [128].mp3";
+			std::ofstream newfile( outputFile.c_str() );
+		} else throw directoryException();
 	}
 
 	void addContentToFile( const std::string& file,  const std::string& text ) {
