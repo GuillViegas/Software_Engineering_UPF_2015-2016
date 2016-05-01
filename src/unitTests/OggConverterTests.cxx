@@ -11,10 +11,9 @@ public:
 	TEST_FIXTURE ( OggConverterTests )
 	{
 		TEST_CASE( testConvert_generateFile );
-		//TEST_CASE( testConvert_generateContent );
-		//TEST_CASE( testConvert_withDifferentBitrate );
-		//TEST_CASE( testConvert_withUnsupportedFormat );
-		//TEST_CASE( testConvert_withInexistentMaster );
+		TEST_CASE( testConvert_generateContent );
+		TEST_CASE( testConvert_withDifferentBitrate );
+		TEST_CASE( testConvert_withInexistentMaster );
 		//TEST_CASE( testConvert_polymorphicCall );
 
 	}
@@ -61,7 +60,7 @@ public:
 		);
 
 	}
-	/*
+	
 	void testConvert_generateContent() 
 	{
 
@@ -69,11 +68,11 @@ public:
 
 		createMasterFile( "Master.wav", 50);
 		converter.convert( "masters/Master.wav", "compressed/Prefix" );
-		converter.addContentToFile("compressed/Prefix", "MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.");
+		converter.addContentToFile("compressed/Prefix", "OGG extracted from 'masters/Master.wav' at 128 bps and length 50s.");
 
 		ASSERT_EQUALS(
-			"MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
-			LibFileSystem::fileContent( "compressed/Prefix [128].mp3" )
+			"OGG extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
+			LibFileSystem::fileContent( "compressed/Prefix [128].ogg" )
 		);
 	}
 
@@ -87,11 +86,12 @@ public:
 		converter.bitRate(96);
 
 		ASSERT_EQUALS(
-			"compressed/Prefix [96].mp3\n",
+			"compressed/Prefix [96].ogg\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 
 	}
+	
 	
 	void testConvert_withInexistentMaster() 
 	{
@@ -108,7 +108,7 @@ public:
 
 	}
 
-
+	/*
 	void testConvert_polymorphicCall() 
 	{
 		OggConverter oggconverter;
