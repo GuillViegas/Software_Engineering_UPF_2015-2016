@@ -35,6 +35,18 @@ public:
 		} else throw directoryException();
 	}
 
+	void addContentToFile( const std::string& file,  const std::string& text ) {
+
+		std::string outputFile( "compressed/Prefix" );
+		outputFile += " [128].ogg";
+		std::ofstream newfile( outputFile.c_str() );
+
+		std::ofstream myfile;
+  		myfile.open ("compressed/Prefix [128].ogg");
+  		myfile << text;
+  		myfile.close();
+	}
+
 };
 
 
