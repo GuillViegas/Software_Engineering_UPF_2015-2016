@@ -11,7 +11,7 @@ public:
 	TEST_FIXTURE ( ConverterGroupTests )
 	{
 		TEST_CASE( testConvert_withoutConverter );
-		//TEST_CASE( testConvert_withMp3Converter );
+		TEST_CASE( testConvert_withMp3Converter );
 		//TEST_CASE( testConvert_withOggConverter );
 		//TEST_CASE( testConvert_withOggConverterAndDifferentBitrate );
 		//TEST_CASE( testConvert_withMp3andOggConverters );
@@ -24,7 +24,7 @@ public:
 
 		ASSERT_EQUALS(
 			"",
-			LibFileSystem::listDirectoryInOrder( "compressed" )
+			LibFileSystem::listDirectoryInOrder( "compressedGroup" )
 		);
 	}
 
@@ -34,7 +34,7 @@ public:
 
 		ASSERT_EQUALS(
 			"compressed/Prefix [128].mp3\n",
-			LibFileSystem::listDirectoryInOrder( "compressed" )
+			LibFileSystem::listDirectoryInOrder( "compressedGroup" )
 		);
 	}
 };
