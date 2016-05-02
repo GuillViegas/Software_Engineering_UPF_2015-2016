@@ -13,7 +13,7 @@ public:
 	{
 		TEST_CASE( testConvert_withoutConverter );
 		TEST_CASE( testConvert_withMp3Converter );
-		//TEST_CASE( testConvert_withOggConverter );
+		TEST_CASE( testConvert_withOggConverter );
 		//TEST_CASE( testConvert_withOggConverterAndDifferentBitrate );
 		//TEST_CASE( testConvert_withMp3andOggConverters );
 		//TEST_CASE( testConvert_withUnknownConverter );
