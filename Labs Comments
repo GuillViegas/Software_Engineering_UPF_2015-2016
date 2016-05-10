@@ -14,6 +14,7 @@ Práctica 2:
 - No se hace uso del const.
 
 Práctica 3:
+- Las excepciones deberían estar en un fichero Exception.hxx (recomendación).
 
 Práctica 4:
 
