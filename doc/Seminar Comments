@@ -10,10 +10,18 @@ Seminario 2:
 - Falta el diagrama de casos de uso, donde debéis relacionar diferentes casos de uso que pueden haber en vuestro proyecto. (parecido al que habéis puesto en los dos primeros casos de uso pero con más casos de uso, actores y relaciones)
 
 Seminario 3:
+- El contenido del mail es incorrecto
+- Deberíais agregar el seminario 3 al index.html
+- Faltaría añadir entidades de servício de envíos y ventas de canciones.
 
 Seminario 4:
+- Algunas acciones (flechas) del diagrama de estados no parecen las adecuadas de la clase Album. Por lo demás buen seminario
 
 Seminario 5:
+- En vez de explicar los atributos, ponedlos técnicamente, por ej. list of album pointers = list< *Album >.
+- Faltan bastantes métodos a SingAlong.
+- Artistas y clientes podrían heredar de una clase user.
+- Deberíais crear acceso al seminario 5 desde index.html
 
 Seminario 6:
 
