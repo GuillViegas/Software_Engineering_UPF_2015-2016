@@ -41,9 +41,16 @@ public:
 	}
 
 	void bitRate(const int& rate) {
-		char oldname[] = "compressed/Prefix [128].ogg";
-		char newname[] = "compressed/Prefix [96].ogg";
-		rename(oldname, newname);
+		bool trobat = false;
+
+		if (rate == 96 or rate == 128 or rate == 192) trobat = true;
+
+		if (!trobat) throw ConverterException();
+		else {
+			char oldname[] = "compressed/Prefix [128].ogg";
+			char newname[] = "compressed/Prefix [96].ogg";
+			rename(oldname, newname);
+		}
 	}
 
 };

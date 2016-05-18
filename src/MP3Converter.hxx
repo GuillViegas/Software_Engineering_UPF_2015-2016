@@ -9,13 +9,6 @@
 #include <vector>
 #include "Converter.hxx"
 
-class MP3ConverterException : public std::exception {
-public:
-	const char * what() const throw() {
-		return "Unsupported format";
-	}
-};
-
 class MP3Converter : public Converter {
 private:
 
@@ -54,7 +47,7 @@ public:
 
 		if (rate == 96 or rate == 128 or rate == 192) trobat = true;
 
-		if (!trobat) throw MP3ConverterException();
+		if (!trobat) throw ConverterException();
 		else {
 			char oldname[] = "compressed/Prefix [128].mp3";
 			char newname[] = "compressed/Prefix [96].mp3";

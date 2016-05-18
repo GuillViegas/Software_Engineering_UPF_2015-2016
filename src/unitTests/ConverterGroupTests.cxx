@@ -13,9 +13,9 @@ public:
 		TEST_CASE( testConvert_withoutConverter );
 		TEST_CASE( testConvert_withMp3Converter );
 		TEST_CASE( testConvert_withOggConverter );
-		//TEST_CASE( testConvert_withOggConverterAndDifferentBitrate );
-		//TEST_CASE( testConvert_withMp3andOggConverters );
-		//TEST_CASE( testConvert_withUnknownConverter );
+		TEST_CASE( testConvert_withOggConverterAndDifferentBitrate );
+		TEST_CASE( testConvert_withMp3andOggConverters );
+		TEST_CASE( testConvert_withUnknownConverter );
 
 	}
 
@@ -79,6 +79,7 @@ public:
 	}
 
 	void testConvert_withOggConverterAndDifferentBitrate(){
+		createMasterFile( "Master.wav", 50);
 		ConverterGroup converterGroup;
 		converterGroup.addConverter( "ogg", 96 );
 
@@ -89,6 +90,7 @@ public:
 	}
 
 	void testConvert_withMp3andOggConverters(){
+		createMasterFile( "Master.wav", 50);
 		ConverterGroup converterGroup;
 		converterGroup.addConverter( "mp3", 128);
 		converterGroup.addConverter( "ogg", 128);
