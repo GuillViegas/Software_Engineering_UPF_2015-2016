@@ -2,7 +2,7 @@
 #include "LibFileSystem.hxx"
 #include <fstream>
 
-#include "OggConverter.cxx"
+#include "OggConverter.hxx"
 //#include "Converter.cxx"
 
 class OggConverterTests : public TestFixture<OggConverterTests>

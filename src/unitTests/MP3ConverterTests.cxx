@@ -2,8 +2,8 @@
 #include "LibFileSystem.hxx"
 #include <fstream>
 
-#include "MP3Converter.cxx"
-#include "Converter.cxx"
+#include "MP3Converter.hxx"
+//#include "Converter.hxx"
 
 class MP3ConverterTests : public TestFixture<MP3ConverterTests>
 {

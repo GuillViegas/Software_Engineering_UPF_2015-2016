@@ -4,11 +4,12 @@
 #include <string>
 #include <stdio.h>
 #include <fstream>
-#include "ConverterGroup.hxx"
+//#include "ConverterGroup.hxx"
 #include "LibFileSystem.hxx"
-#include "MP3Converter.cxx"
-#include "OggConverter.cxx"
-#include "Converter.cxx"
+//#include "Converter.hxx"
+#include "MP3Converter.hxx"
+#include "OggConverter.hxx"
+
 
 class ConverterGroup {
 private:
@@ -24,6 +25,11 @@ public:
 			MP3Converter mp3converter;
 			mp3converter.convert("masters/Master.wav","compressed/Prefix");
 			converterlist.push_back(mp3converter);
+		}
+		if(path == "ogg" && rate == 128){
+			OggConverter oggconverter;
+			oggconverter.convert("masters/Master.wav","compressed/Prefix");
+			converterlist.push_back(oggconverter);
 		}
 	}
 };

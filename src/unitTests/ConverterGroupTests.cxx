@@ -2,9 +2,8 @@
 #include "MiniCppUnit.hxx"
 #include "ConverterGroup.hxx"
 #include "LibFileSystem.hxx"
-#include "MP3Converter.cxx"
-#include "OggConverter.cxx"
-#include "Converter.cxx"
+//#include "MP3Converter.hxx"
+//#include "OggConverter.hxx"
 
 class ConverterGroupTests : public TestFixture<ConverterGroupTests>
 {
@@ -69,6 +68,7 @@ public:
 	}
 
 	void testConvert_withOggConverter(){
+		createMasterFile( "Master.wav", 50);
 		ConverterGroup converterGroup;
 		converterGroup.addConverter( "ogg", 128 );
 
