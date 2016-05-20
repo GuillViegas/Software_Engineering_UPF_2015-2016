@@ -3,7 +3,7 @@
 
 #include <string>
 
-class Track{
+class Track {
 private:
 	std::string trackTitle;
 	unsigned int trackDuration;

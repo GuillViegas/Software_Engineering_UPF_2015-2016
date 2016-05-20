@@ -62,7 +62,7 @@ public:
 		converterGroup.addConverter( "mp3", 128 );
 
 		ASSERT_EQUALS(
-			"compressed/Prefix [128].mp3\n",
+			"compressed/Prefix [96].mp3\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}
@@ -73,7 +73,7 @@ public:
 		converterGroup.addConverter( "ogg", 128 );
 
 		ASSERT_EQUALS(
-			"compressed/Prefix [128].ogg\n",
+			"compressed/Prefix [96].ogg\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}
@@ -96,8 +96,8 @@ public:
 		converterGroup.addConverter( "ogg", 128);
 
 		ASSERT_EQUALS(
-			"compressed/Prefix [128].mp3\n"
-			"compressed/Prefix [128].ogg\n",
+			"compressed/Prefix [96].mp3\n"
+			"compressed/Prefix [96].ogg\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}

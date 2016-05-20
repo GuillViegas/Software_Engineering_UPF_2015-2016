@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <stdlib.h>
 #include "Track.hxx"
 #include "Album.hxx"
 
@@ -142,6 +143,8 @@ public:
 
 		if ( !isTrack ) throw trackException();
 		return (*it);
+
+		free(&it);
 	}
 
 
@@ -150,14 +153,15 @@ public:
 		std::list<Album>::iterator it = albumlist.begin();
 		bool isAlbum = false;
 
-		while (!isAlbum and it != albumlist.end() ) {
+		while ( it != albumlist.end() and !isAlbum ) {
 
 			if ( (*it).title() == albumName ) {
 				isAlbum = true;
 			}
 			else ++it;
 		}
-		if ( !isAlbum) throw albumException();
+		
+		if (!isAlbum) throw albumException();
 		return (*it);
 	}
 
