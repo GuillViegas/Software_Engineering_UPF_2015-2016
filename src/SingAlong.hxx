@@ -136,7 +136,7 @@ public:
 	std::string styleList() {
 		std::string musicStyles;
 	 	for ( std::list<std::string>::iterator it = stlist.begin(); it != stlist.end(); ++it) {
-	 		musicStyles += (*it);
+	 		musicStyles += (*it) + "\n";
 	 	}
 	 	return musicStyles;
 	}
