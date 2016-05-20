@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "Artist.hxx"
 #include "Track.hxx"
+// #include "ConverterGroup.hxx"
 
 class artistException : public std::exception {
 public:
@@ -30,6 +31,7 @@ class SingAlong {
 
 private:
 	std::list<Artist> artistList;
+	std::list<std::string> stlist;
 
 	const char* fakeCompressions[7] = {
 		"compressed/An artist - A track [128].mp3",
@@ -41,10 +43,13 @@ private:
 		0
 	};
 
+	// ConverterGroup convertergroup;
+
 public:
 
 	SingAlong() {
 		generateCompressions();
+		// convertergroup.addConveter();
 	}
 
 	std::string catalog() {
@@ -123,6 +128,19 @@ public:
 		for (int i = 0; fakeCompressions[i]; ++i) 
 			std::ofstream newfile( fakeCompressions[i] );
 	}
+
+	void createNewStyle(const std::string & style) {
+		stlist.push_back(style);
+	}
+
+	std::string styleList() {
+		std::string musicStyles;
+	 	for ( std::list<std::string>::iterator it = stlist.begin(); it != stlist.end(); ++it) {
+	 		musicStyles += (*it);
+	 	}
+	 	return musicStyles;
+	}
+
 
 };
 
