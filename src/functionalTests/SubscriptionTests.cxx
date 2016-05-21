@@ -17,7 +17,7 @@ public:
 		//TEST_CASE( testCatalog_trackWithTwoStyles );
 		TEST_CASE( testUserList_withOneUser );
 		TEST_CASE( testUserList_withTwoUsers );
-		//TEST_CASE( testListSubscribedToStyle_withOneUser );
+		TEST_CASE( testListSubscribedToStyle_withOneUser );
 		//TEST_CASE( testListSubscribedToStyle_withTwoUsers );
 		//TEST_CASE( testListSubscribedToStyle_whenUserDoesNotExist );
 		//TEST_CASE( testListSubscribedToStyle_whenStyleDoesNotExist );
@@ -119,7 +119,7 @@ public:
 			"Another user <another@mail.org>\n",
 			business.userList()
 		);
-	}/*
+	}
 	void testListSubscribedToStyle_withOneUser()
 	{
 		SingAlong business;
@@ -130,7 +130,7 @@ public:
 			"A user\n", 
 			business.listSubscribedToStyle( "A style" )
 		);				
-	}
+	}/*
 	void testListSubscribedToStyle_withTwoUsers()
 	{
 		SingAlong business;

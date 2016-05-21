@@ -9,6 +9,7 @@
 #include "Artist.hxx"
 #include "Track.hxx"
 #include "User.hxx"
+#include "Style.hxx"
 // #include "ConverterGroup.hxx"
 
 class artistException : public std::exception {
@@ -32,14 +33,19 @@ public:
 	}
 };
 
+class userException : public std::exception {
+public:
+	const char * what() const throw() {
+		return "User does not exist";
+	}
+};
+
 
 class SingAlong {
 
-
-
 private:
 	std::list<Artist> artistList;
-	std::list<std::string> stlist;
+	std::list<Style> stlist;
 	std::list<User> users;
 
 	const char* fakeCompressions[7] = {
@@ -138,14 +144,15 @@ public:
 			std::ofstream newfile( fakeCompressions[i] );
 	}
 
-	void createNewStyle(const std::string & style) {
+	void createNewStyle(const std::string & sName) {
+		Style style(sName);
 		stlist.push_back(style);
 	}
 
 	std::string styleList() {
 		std::string musicStyles;
-	 	for ( std::list<std::string>::iterator it = stlist.begin(); it != stlist.end(); ++it) {
-	 		musicStyles += (*it) + "\n";
+	 	for ( std::list<Style>::iterator it = stlist.begin(); it != stlist.end(); ++it) {
+	 		musicStyles += (*it).getNameStyle() + "\n";
 	 	}
 	 	return musicStyles;
 	}
@@ -153,8 +160,8 @@ public:
 	void associateStyleWithTrack(const std::string& style, const std::string& artistName, const std::string& trackName) {
 		bool trobat = false;
 
-		for (std::list<std::string>::iterator it = stlist.begin(); it != stlist.end(); it++) {
-			if ((*it) == style) trobat = true;
+		for (std::list<Style>::iterator it = stlist.begin(); it != stlist.end(); it++) {
+			if ((*it).getNameStyle() == style) trobat = true;
 		}
 
 		if (!trobat) throw styleException();
@@ -175,6 +182,43 @@ public:
 
 		return ulist;
 
+	}
+
+	void subscribeUserToStyle(const std::string & userName, const std::string & styleName) {
+		User & user = findUser(userName);
+		Style & style = findStyle(styleName);
+		style.addUsertoSubscribers(user);
+	}
+
+	std::string listSubscribedToStyle(const std::string & styleName) {
+		Style & style = findStyle(styleName);
+		return style.subscribersList();
+	}
+
+	User & findUser(const std::string &userName) {
+		std::list<User>::iterator it = users.begin();
+		bool trobat = false;
+
+		while (!trobat and it != users.end()) {
+			if ((*it).getName() == userName) trobat = true;
+			else ++it;
+		}
+
+		if (!trobat) throw userException();
+		return (*it);
+	}
+
+	Style & findStyle(const std::string &styleName) {
+		std::list<Style>::iterator it = stlist.begin();
+		bool trobat = false;
+
+		while (!trobat and it != stlist.end()) {
+			if ((*it).getNameStyle() == styleName) trobat = true;
+			else ++it;
+		}
+
+		if (!trobat) throw styleException();
+		return (*it);
 	}
 
 
