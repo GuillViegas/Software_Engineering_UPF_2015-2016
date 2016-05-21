@@ -10,7 +10,6 @@
 #include "Track.hxx"
 #include "User.hxx"
 #include "Style.hxx"
-// #include "ConverterGroup.hxx"
 
 class artistException : public std::exception {
 public:
