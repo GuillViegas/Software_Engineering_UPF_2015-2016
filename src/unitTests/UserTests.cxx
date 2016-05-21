@@ -6,7 +6,7 @@ class UserTests : public TestFixture<UserTests>
 public:
 	TEST_FIXTURE( UserTests ) {
 		TEST_CASE( testUser_createEmptyNewUser );
-		//TEST_CASE( testUser_afterModifyingName );
+		TEST_CASE( testUser_afterModifyingName );
 		//TEST_CASE( testUser_afterModifyingMail );
 		//TEST_CASE( testUser_createNewUser );
 	}
@@ -23,7 +23,7 @@ public:
 		void testUser_afterModifyingName() 
 	{
 		User user;
-		user.setName("Louise");
+		user.setName(" Louise ");
 		ASSERT_EQUALS(
 			"Louise", 
 			user.getName()
