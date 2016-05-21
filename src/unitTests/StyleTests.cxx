@@ -11,7 +11,7 @@ public:
 
 	void testStyle_createNewStyle() 
 	{
-		Style style(" house ");
+		Style style("house");
 		ASSERT_EQUALS(
 			"house", 
 			style.getNameStyle()
