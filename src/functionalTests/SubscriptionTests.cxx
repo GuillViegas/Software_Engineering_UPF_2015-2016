@@ -18,7 +18,7 @@ public:
 		TEST_CASE( testUserList_withOneUser );
 		TEST_CASE( testUserList_withTwoUsers );
 		TEST_CASE( testListSubscribedToStyle_withOneUser );
-		//TEST_CASE( testListSubscribedToStyle_withTwoUsers );
+		TEST_CASE( testListSubscribedToStyle_withTwoUsers );
 		//TEST_CASE( testListSubscribedToStyle_whenUserDoesNotExist );
 		//TEST_CASE( testListSubscribedToStyle_whenStyleDoesNotExist );
 		// Notification Tests: 
@@ -130,7 +130,7 @@ public:
 			"A user\n", 
 			business.listSubscribedToStyle( "A style" )
 		);				
-	}/*
+	}
 	void testListSubscribedToStyle_withTwoUsers()
 	{
 		SingAlong business;
@@ -144,7 +144,7 @@ public:
 			"Another user\n",
 			business.listSubscribedToStyle( "A style" )
 		);
-	}
+	}/*
 	void testListSubscribedToStyle_whenUserDoesNotExist()
 	{
 		SingAlong business;
