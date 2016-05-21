@@ -2,12 +2,15 @@
 #define track_hxx
 
 #include <string>
+#include <vector>
+#include "Style.hxx"
 
 class Track {
 private:
 	std::string trackTitle;
 	unsigned int trackDuration;
 	std::string trackPath;
+	std::vector<Style> styles;
 
 public:
 	Track () {
@@ -44,6 +47,19 @@ public:
 
 	void master(const std::string &_trackPath){
 		trackPath = _trackPath;
+	}
+
+	void addStyle(const Style & styleName) {
+		styles.push_back(styleName);
+	}
+
+	std::string getAssociatedStylesWithTrack() {
+		std::string associatedStyles;
+		for(int it = 0; it < styles.size(); it++) {
+			associatedStyles += "\t\t" + styles[it].getNameStyle() + "\n";
+		}
+
+		return associatedStyles;
 	}
 };
 

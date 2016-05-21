@@ -127,6 +127,18 @@ public:
 		return catalog;
 	}
 
+	std::string catalogStyles() {
+		std::string styles;
+		if (tracklist.empty()) return "";
+		else {
+			for (std::list<Track>::iterator it=tracklist.begin(); it != tracklist.end(); ++it) {
+
+				styles += (*it).getAssociatedStylesWithTrack();
+			}
+		}
+		return styles;
+	}
+
 
 	Track & findTrack(const std::string &trackName) {
 
@@ -143,8 +155,6 @@ public:
 
 		if ( !isTrack ) throw trackException();
 		return (*it);
-
-		free(&it);
 	}
 
 
@@ -167,7 +177,7 @@ public:
 
 
 	std::string descriptionCatalog() { 
-		return description() + catalogTracks() + catalogAlbums();
+		return description() + catalogTracks() + catalogAlbums() + catalogStyles();
 	}
 
 	void assignTrackToAlbum(const std::string &trackName, const std::string &albumName) {

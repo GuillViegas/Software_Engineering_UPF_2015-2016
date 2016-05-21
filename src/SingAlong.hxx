@@ -159,8 +159,14 @@ public:
 	void associateStyleWithTrack(const std::string& style, const std::string& artistName, const std::string& trackName) {
 		bool trobat = false;
 
+		Artist & artist = findArtist(artistName);
+		Track & track = artist.findTrack(trackName);
+
 		for (std::list<Style>::iterator it = stlist.begin(); it != stlist.end(); it++) {
-			if ((*it).getNameStyle() == style) trobat = true;
+			if ((*it).getNameStyle() == style) {
+			 	track.addStyle(*it);
+			 	trobat = true;
+			}
 		}
 
 		if (!trobat) throw styleException();
