@@ -7,7 +7,7 @@ public:
 	TEST_FIXTURE( UserTests ) {
 		TEST_CASE( testUser_createEmptyNewUser );
 		TEST_CASE( testUser_afterModifyingName );
-		//TEST_CASE( testUser_afterModifyingMail );
+		TEST_CASE( testUser_afterModifyingMail );
 		//TEST_CASE( testUser_createNewUser );
 	}
 
@@ -34,7 +34,7 @@ public:
 	void testUser_afterModifyingMail() 
 	{
 		User user;
-		user.setMail("test@gmail.com");
+		user.setMail(" test@gmail.com ");
 		ASSERT_EQUALS(
 			"test@gmail.com",
 			user.getMail()
