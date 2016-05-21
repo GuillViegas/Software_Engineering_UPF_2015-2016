@@ -13,7 +13,7 @@ public:
 	{
 		TEST_CASE( testStyleList_withOneStyle );
 		TEST_CASE( testStyleList_withTwoStyles );
-		//TEST_CASE( testAssociateStyleWithTrack_whenStyleDoesNotExist );
+		TEST_CASE( testAssociateStyleWithTrack_whenStyleDoesNotExist );
 		//TEST_CASE( testCatalog_trackWithTwoStyles );
 		//TEST_CASE( testUserList_withOneUser );
 		//TEST_CASE( testUserList_withTwoUsers );
@@ -67,7 +67,7 @@ public:
 			"reggae\n",
 			business.styleList()
 		);
-	}/*
+	}
 	void testAssociateStyleWithTrack_whenStyleDoesNotExist()
 	{
 		SingAlong business;
@@ -84,7 +84,7 @@ public:
 			ASSERT_EQUALS( "The style does not exist", e.what() );
 		}
 	}
-	void testCatalog_trackWithTwoStyles()
+/*	void testCatalog_trackWithTwoStyles()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
