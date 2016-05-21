@@ -8,7 +8,7 @@ public:
 		TEST_CASE( testUser_createEmptyNewUser );
 		TEST_CASE( testUser_afterModifyingName );
 		TEST_CASE( testUser_afterModifyingMail );
-		//TEST_CASE( testUser_createNewUser );
+		TEST_CASE( testUser_createNewUser );
 	}
 
 	void testUser_createEmptyNewUser() 
@@ -48,7 +48,7 @@ public:
 		user.setName("John");
 		user.setMail("john@gmail.com");
 		ASSERT_EQUALS(
-			"John john@gmail.com\n", 
+			"\tJohn john@gmail.com\n", 
 			user.getInfo()
 		);
 
