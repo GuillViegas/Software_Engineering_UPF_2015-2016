@@ -3,6 +3,7 @@
 
 #include <string>
 #include "User.hxx"
+#include "MailStub.hxx"
 
 
 class Style {
@@ -37,6 +38,18 @@ public:
 			slist += (*it).getName() + "\n";
 		}
 		return slist;
+	}
+
+	void notifyUsers(const std::string& subject) 
+	{
+		std::string to;
+
+		for (std::list<User>::iterator it = subscribers.begin(); it != subscribers.end(); it++) {
+			to = (*it).getName();
+			MailStub::theInstance().sendMail(to, subject);
+		}
+
+
 	}
 
 };

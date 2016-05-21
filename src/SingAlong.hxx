@@ -164,6 +164,7 @@ public:
 
 		for (std::list<Style>::iterator it = stlist.begin(); it != stlist.end(); it++) {
 			if ((*it).getNameStyle() == style) {
+			 	(*it).notifyUsers("new track " + track.title() + " by " + artist.name());
 			 	track.addStyle(*it);
 			 	trobat = true;
 			}
