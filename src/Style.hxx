@@ -34,7 +34,7 @@ public:
 	std::string subscribersList() {
 		std::string slist;
 		for (std::list<User>::iterator it = subscribers.begin(); it != subscribers.end(); ++it) {
-			slist += (*it).getName();
+			slist += (*it).getName() + "\n";
 		}
 		return slist;
 	}
