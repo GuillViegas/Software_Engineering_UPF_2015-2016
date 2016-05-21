@@ -23,7 +23,7 @@ public:
 		void testUser_afterModifyingName() 
 	{
 		User user;
-		user.setName(" Louise ");
+		user.setName("Louise");
 		ASSERT_EQUALS(
 			"Louise", 
 			user.getName()
