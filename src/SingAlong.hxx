@@ -24,6 +24,13 @@ public:
 	}
 };
 
+class styleException : public std::exception {
+public:
+	const char * what() const throw() {
+		return "The style does not exist";
+	}
+};
+
 
 class SingAlong {
 
@@ -139,6 +146,17 @@ public:
 	 		musicStyles += (*it) + "\n";
 	 	}
 	 	return musicStyles;
+	}
+
+	void associateStyleWithTrack(const std::string& style, const std::string& artistName, const std::string& trackName) {
+		bool trobat = false;
+
+		for (std::list<std::string>::iterator it = stlist.begin(); it != stlist.end(); it++) {
+			if ((*it) == style) trobat = true;
+		}
+
+		if (!trobat) throw styleException();
+
 	}
 
 
