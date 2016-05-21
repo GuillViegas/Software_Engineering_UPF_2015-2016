@@ -45,7 +45,7 @@ public:
 		std::string to;
 
 		for (std::list<User>::iterator it = subscribers.begin(); it != subscribers.end(); it++) {
-			to = (*it).getName();
+			to = (*it).getName() + " <" + (*it).getMail() + ">";
 			MailStub::theInstance().sendMail(to, subject);
 		}
 

@@ -22,7 +22,7 @@ public:
 		TEST_CASE( testListSubscribedToStyle_whenUserDoesNotExist );
 		TEST_CASE( testListSubscribedToStyle_whenStyleDoesNotExist );
 		// Notification Tests: 
-		//TEST_CASE( testAddStyleToTrack_notifyUserSubscribedToStyle );
+		TEST_CASE( testAddStyleToTrack_notifyUserSubscribedToStyle );
 		//TEST_CASE( testAddStyleToTrack_notifyTwoUsersSubscribedToStyle );	
 	}
 
@@ -172,7 +172,7 @@ public:
 			ASSERT_EQUALS( "The style does not exist", e.what() );
 		}
 
-	}/*
+	}
 	void testAddStyleToTrack_notifyUserSubscribedToStyle()
 	{
 		SingAlong business;
@@ -191,7 +191,7 @@ public:
 			"\n",
 			MailStub::theInstance().sentMails()
 		);
-	}
+	}/*
 	
 	void testAddStyleToTrack_notifyTwoUsersSubscribedToStyle()
 	{
