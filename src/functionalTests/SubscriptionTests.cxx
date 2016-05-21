@@ -16,7 +16,7 @@ public:
 		TEST_CASE( testAssociateStyleWithTrack_whenStyleDoesNotExist );
 		//TEST_CASE( testCatalog_trackWithTwoStyles );
 		TEST_CASE( testUserList_withOneUser );
-		//TEST_CASE( testUserList_withTwoUsers );
+		TEST_CASE( testUserList_withTwoUsers );
 		//TEST_CASE( testListSubscribedToStyle_withOneUser );
 		//TEST_CASE( testListSubscribedToStyle_withTwoUsers );
 		//TEST_CASE( testListSubscribedToStyle_whenUserDoesNotExist );
@@ -108,7 +108,7 @@ public:
 		SingAlong business;
 		business.createNewUser( "A user", "a@mail.org" );
 		ASSERT_EQUALS( "A user <a@mail.org>\n", business.userList() );
-	}/*
+	}
 	void testUserList_withTwoUsers()
 	{
 		SingAlong business;
