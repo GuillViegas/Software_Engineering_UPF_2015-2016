@@ -34,7 +34,7 @@ public:
 	void testUser_afterModifyingMail() 
 	{
 		User user;
-		user.setMail(" test@gmail.com ");
+		user.setMail("test@gmail.com");
 		ASSERT_EQUALS(
 			"test@gmail.com",
 			user.getMail()
