@@ -55,7 +55,7 @@ public:
 
 	std::string getAssociatedStylesWithTrack() {
 		std::string associatedStyles;
-		for(int it = 0; it < styles.size(); it++) {
+		for(unsigned int it = 0; it < styles.size(); it++) {
 			associatedStyles += "\t\t" + styles[it].getNameStyle() + "\n";
 		}
 
