@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "Artist.hxx"
 #include "Track.hxx"
+#include "User.hxx"
 // #include "ConverterGroup.hxx"
 
 class artistException : public std::exception {
@@ -39,6 +40,7 @@ class SingAlong {
 private:
 	std::list<Artist> artistList;
 	std::list<std::string> stlist;
+	std::list<User> users;
 
 	const char* fakeCompressions[7] = {
 		"compressed/An artist - A track [128].mp3",
@@ -156,6 +158,22 @@ public:
 		}
 
 		if (!trobat) throw styleException();
+
+	}
+
+	void createNewUser(const std::string & name, const std::string mail) {
+		User user(name, mail);
+		users.push_back(user);
+	}
+
+	std::string userList() {
+		std::string ulist;	//result: list of users
+
+		for (std::list<User>::iterator it = users.begin(); it != users.end(); it++) {
+			ulist += (*it).getName() + (*it).getMail();
+		}
+
+		return ulist;
 
 	}
 
