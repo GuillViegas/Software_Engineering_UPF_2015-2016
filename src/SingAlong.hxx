@@ -35,7 +35,7 @@ public:
 class userException : public std::exception {
 public:
 	const char * what() const throw() {
-		return "User does not exist";
+		return "The user does not exist";
 	}
 };
 
