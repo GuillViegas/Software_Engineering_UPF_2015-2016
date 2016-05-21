@@ -40,9 +40,9 @@ public:
 		return getName() + " " + getMail() + "\n"; 
 	}
 
-	// void notify(const std::string& message) {
-
-	// }
+	void notify(const std::string& message) {
+		std::cout << message << std::endl;
+	}
 
 };
 
