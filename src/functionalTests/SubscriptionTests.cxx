@@ -23,7 +23,7 @@ public:
 		TEST_CASE( testListSubscribedToStyle_whenStyleDoesNotExist );
 		// Notification Tests: 
 		TEST_CASE( testAddStyleToTrack_notifyUserSubscribedToStyle );
-		//TEST_CASE( testAddStyleToTrack_notifyTwoUsersSubscribedToStyle );	
+		TEST_CASE( testAddStyleToTrack_notifyTwoUsersSubscribedToStyle );	
 	}
 
 	/**
@@ -191,7 +191,7 @@ public:
 			"\n",
 			MailStub::theInstance().sentMails()
 		);
-	}/*
+	}
 	
 	void testAddStyleToTrack_notifyTwoUsersSubscribedToStyle()
 	{
@@ -218,8 +218,6 @@ public:
 		);
 		// note: messages returned in alphabetical order
 	}
-	*/
-
 };
 
 REGISTER_FIXTURE( SubscriptionTests )
