@@ -24,7 +24,7 @@ public:
 		User user("elena", "elena@gmail.com");
 		style.addUsertoSubscribers(user);
 		ASSERT_EQUALS(
-			"elena", 
+			"elena\n", 
 			style.subscribersList()
 		);
 
