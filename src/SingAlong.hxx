@@ -13,35 +13,6 @@
 #include "Exception.hxx"
 
 
-// class artistException : public std::exception {
-// public:
-// 	const char * what() const throw() {
-// 		return "The artist does not exist";
-// 	}
-// };
-
-// class directoryException : public std::exception {
-// public:
-// 	const char * what() const throw() {
-// 		return "The master file does not exist";
-// 	}
-// };
-
-// class styleException : public std::exception {
-// public:
-// 	const char * what() const throw() {
-// 		return "The style does not exist";
-// 	}
-// };
-
-// class userException : public std::exception {
-// public:
-// 	const char * what() const throw() {
-// 		return "The user does not exist";
-// 	}
-// };
-
-
 class SingAlong {
 
 private:

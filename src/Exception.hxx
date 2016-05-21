@@ -19,12 +19,17 @@ public:
 	}
 };
 
+// ---------------------------------------------------------------------------
+
+
 class albumException : public Exception {
 public:
 	const char * what() const throw() {
 		return "The album does not exist";
 	}
 };
+
+// ---------------------------------------------------------------------------
 
 class directoryException : public Exception {
 public:
@@ -33,12 +38,16 @@ public:
 	}
 };
 
+// ---------------------------------------------------------------------------
+
 class ConverterException : public Exception {
 public:
 	const char * what() const throw() {
 		return "Unsupported format";
 	}
 };
+
+// ---------------------------------------------------------------------------
 
 class artistException : public Exception {
 public:
@@ -47,6 +56,8 @@ public:
 	}
 };
 
+// ---------------------------------------------------------------------------
+
 class styleException : public Exception {
 public:
 	const char * what() const throw() {
@@ -54,11 +65,16 @@ public:
 	}
 };
 
+// ---------------------------------------------------------------------------
+
 class userException : public Exception {
 public:
 	const char * what() const throw() {
 		return "The user does not exist";
 	}
 };
+
+// ---------------------------------------------------------------------------
+
 
 #endif

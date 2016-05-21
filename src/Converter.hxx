@@ -5,20 +5,6 @@
 #include "Exception.hxx"
 
 
-// class directoryException : public std::exception {
-// public:
-// 	const char * what() const throw() {
-// 		return "The master file does not exist";
-// 	}
-// };
-
-// class ConverterException : public std::exception {
-// public:
-// 	const char * what() const throw() {
-// 		return "Unsupported format";
-// 	}
-// };
-
 class Converter {
 private:
 
