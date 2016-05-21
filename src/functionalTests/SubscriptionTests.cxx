@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testStyleList_withOneStyle );
 		TEST_CASE( testStyleList_withTwoStyles );
 		TEST_CASE( testAssociateStyleWithTrack_whenStyleDoesNotExist );
-		//TEST_CASE( testCatalog_trackWithTwoStyles );
+		TEST_CASE( testCatalog_trackWithTwoStyles );
 		TEST_CASE( testUserList_withOneUser );
 		TEST_CASE( testUserList_withTwoUsers );
 		TEST_CASE( testListSubscribedToStyle_withOneUser );
@@ -83,7 +83,7 @@ public:
 		{
 			ASSERT_EQUALS( "The style does not exist", e.what() );
 		}
-	}/*
+	}
 	void testCatalog_trackWithTwoStyles()
 	{
 		SingAlong business;
@@ -102,7 +102,7 @@ public:
 			"\t\tAnother style\n",
 			business.catalog()
 		);
-	}*/
+	}
 	void testUserList_withOneUser()
 	{
 		SingAlong business;
