@@ -8,20 +8,21 @@
 #include <stdlib.h>
 #include "Track.hxx"
 #include "Album.hxx"
+#include "Exception.hxx"
 
-class trackException : public std::exception {
-public:
-	const char * what() const throw() {
-		return "The track does not exist";
-	}
-};
+// class trackException : public std::exception {
+// public:
+// 	const char * what() const throw() {
+// 		return "The track does not exist";
+// 	}
+// };
 
-class albumException : public std::exception {
-public:
-	const char * what() const throw() {
-		return "The album does not exist";
-	}
-};
+// class albumException : public std::exception {
+// public:
+// 	const char * what() const throw() {
+// 		return "The album does not exist";
+// 	}
+// };
 
 class Artist {
 
@@ -150,7 +151,7 @@ public:
 			if ( (*it).title() == trackName ) {
 				isTrack = true;
 			}
-			else ++it;		
+			else ++it;
 		}
 
 		if ( !isTrack ) throw trackException();
