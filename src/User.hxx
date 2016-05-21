@@ -8,7 +8,10 @@ private:
 	std::string _mail;
 
 public:
-	User() {}
+	User() {
+		_name = "No name";
+		_mail = "No mail";
+	}
 
 	User(const std::string& n, const std::string& m) {
 		_name = n;
@@ -31,6 +34,10 @@ public:
 
 	std::string getMail() {
 		return _mail;
+	}
+
+	std::string getInfo() {
+		return getName() + " " + getMail() + "\n"; 
 	}
 
 };
