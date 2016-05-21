@@ -48,7 +48,7 @@ public:
 		user.setName("John");
 		user.setMail("john@gmail.com");
 		ASSERT_EQUALS(
-			"\tJohn john@gmail.com\n", 
+			"John john@gmail.com\n", 
 			user.getInfo()
 		);
 
