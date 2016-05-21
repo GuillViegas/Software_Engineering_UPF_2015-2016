@@ -170,7 +170,7 @@ public:
 		std::string ulist;	//result: list of users
 
 		for (std::list<User>::iterator it = users.begin(); it != users.end(); it++) {
-			ulist += (*it).getName() + (*it).getMail();
+			ulist += (*it).getName() + " <" + (*it).getMail() + ">" + "\n";
 		}
 
 		return ulist;
