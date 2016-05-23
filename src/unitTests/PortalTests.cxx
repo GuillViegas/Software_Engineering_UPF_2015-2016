@@ -25,7 +25,7 @@ public:
 		Portal portal("Portal Test", "This is a test portal message");
 		ASSERT_EQUALS(
 			"Portal Test\n" 
-			"This is a test portal message", 
+			"This is a test portal message\n", 
 			portal.getInfoFromPortal()
 		);
 
