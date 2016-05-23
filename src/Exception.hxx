@@ -76,5 +76,12 @@ public:
 
 // ---------------------------------------------------------------------------
 
+class portalException : public Exception {
+public:
+	const char * what() const throw() {
+		return "The portal does not exist";
+	}
+};
+
 
 #endif
