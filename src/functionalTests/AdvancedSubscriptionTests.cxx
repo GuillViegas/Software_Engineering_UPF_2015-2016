@@ -2,6 +2,7 @@
 #include "LibFileSystem.hxx"
 #include "MailStub.hxx"
 #include <fstream>
+#include "SingAlong.hxx"
 
 class AdvancedSubscriptionTests : public TestFixture<AdvancedSubscriptionTests>
 {
@@ -10,7 +11,7 @@ public:
 	{
 		//TEST_CASE( testCreateNewTrack_notifyUserSubscribedToArtist );
 		//TEST_CASE( testCreateNewTrack_notifyTwoUsersSubscribedToArtist );
-		//TEST_CASE( testListThematicPortals );
+		TEST_CASE( testListThematicPortals );
 		//TEST_CASE( testRssByPortal_withoutNotificacion );
 		//TEST_CASE( testRssByPortal_whenNoPortalExists );
 		//TEST_CASE( testRssByPortal_withNotifiedTrack );
@@ -90,7 +91,7 @@ public:
 			"\n", 
 			MailStub::theInstance().sentMails()
 		);
-	}
+	}*/
 	
 	void testListThematicPortals()
 	{
@@ -104,7 +105,7 @@ public:
 			"\tA portal for heavy metal fans\n",
 			business.listPortals()
 		);
-	}
+	}/*
 
 	void testRssByPortal_withoutNotificacion()
 	{

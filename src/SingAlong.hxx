@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <utility>
 #include "Artist.hxx"
 #include "Track.hxx"
 #include "User.hxx"
@@ -19,6 +20,8 @@ private:
 	std::list<Artist> artistList;
 	std::list<Style> stlist;
 	std::list<User> users;
+	std::vector<std::pair<std::string,std::string> > artistSuscriptionList;
+	std::vector<std::pair<std::string,std::string> > portalList;
 
 	const char* fakeCompressions[7] = {
 		"compressed/An artist - A track [128].mp3",
@@ -187,6 +190,19 @@ public:
 		return (*it);
 	}
 
+	// Artist & findArtist(const std::string & artistName) {
+	// 	std::list<Artist>::iterator it = artistList.begin();
+	// 	bool trobat = false;
+
+	// 	while (!trobat and it != artistList.end()) {
+	// 		if ((*it).name() == artistName) trobat = true;
+	// 		else ++it;
+	// 	}
+
+	// 	if (!trobat) throw artistException();
+	// 	return (*it);
+	// }
+
 	Style & findStyle(const std::string &styleName) {
 		std::list<Style>::iterator it = stlist.begin();
 		bool trobat = false;
@@ -198,6 +214,26 @@ public:
 
 		if (!trobat) throw styleException();
 		return (*it);
+	}
+
+	void subscribeUserToArtist(const std::string & userName, const std::string & artistName) {
+		// User & user = findUser(userName);
+		// Artist & artist = findArtist(artistName);
+		// artist.addUsertoSubscribersArtistList(user);
+		artistSuscriptionList.push_back(std::make_pair(userName,artistName));
+	}
+
+	void createNewPortal(const std::string portalName, const std::string pmessage) {
+		portalList.push_back(std::make_pair(portalName, pmessage));
+
+	}
+
+	std::string listPortals() {
+		std::string result;
+		for (int i=0; i < portalList.size(); i++) {
+			result += portalList[i].first + " " + portalList[i].second + "\n";
+		}
+		return result;
 	}
 
 
