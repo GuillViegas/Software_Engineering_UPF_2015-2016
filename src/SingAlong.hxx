@@ -217,9 +217,6 @@ public:
 	}
 
 	void subscribeUserToArtist(const std::string & userName, const std::string & artistName) {
-		// User & user = findUser(userName);
-		// Artist & artist = findArtist(artistName);
-		// artist.addUsertoSubscribersArtistList(user);
 		artistSuscriptionList.push_back(std::make_pair(userName,artistName));
 	}
 
