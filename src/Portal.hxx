@@ -35,6 +35,10 @@ public:
 		_message = m;
 	}
 
+	std::string getInfoFromPortal() {
+		return _name + "\n" + _message + "\n";
+	}
+
 
 };
 
