@@ -236,6 +236,20 @@ public:
 		return result;
 	}
 
+	std::string rssByPortal(const std::string& portal) {
+		std::string xml = "<?xml version='1.0' encoding='ISO-8859-15'?>\n";
+		std::string doctype = "<!DOCTYPE rss PUBLIC '-//Netscape Communications//DTD RSS 0.91//EN'\n";
+		std::string url = "'http://my.netscape.com/publish/formats/rss-0.91.dtd'>\n";
+		std::string rss_version = "<rss version='0.91'>\n";
+		std::string ch = "<channel>\n";
+		std::string title =	"<title>SingAlong: Headbangers</title>\n";
+		std::string link = "<link>http://www.singalong.com/Headbangers</link>\n";
+		std::string description = "<description>A portal for heavy metal fans</description>\n";
+		std::string channel = "</channel>\n";
+		std::string rss_label_close =	"</rss>\n";
+		return xml + doctype + url + rss_version + ch + title + link + description + channel + rss_label_close + "\n";
+	}
+
 
 };
 

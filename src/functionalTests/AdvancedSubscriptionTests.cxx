@@ -12,7 +12,7 @@ public:
 		//TEST_CASE( testCreateNewTrack_notifyUserSubscribedToArtist );
 		//TEST_CASE( testCreateNewTrack_notifyTwoUsersSubscribedToArtist );
 		TEST_CASE( testListThematicPortals );
-		//TEST_CASE( testRssByPortal_withoutNotificacion );
+		TEST_CASE( testRssByPortal_withoutNotificacion );
 		//TEST_CASE( testRssByPortal_whenNoPortalExists );
 		//TEST_CASE( testRssByPortal_withNotifiedTrack );
 		//TEST_CASE( testRssByPortal_subscribedToArtistAndStyle );
@@ -105,7 +105,7 @@ public:
 			"\tA portal for heavy metal fans\n",
 			business.listPortals()
 		);
-	}/*
+	}
 
 	void testRssByPortal_withoutNotificacion()
 	{
@@ -126,6 +126,7 @@ public:
 			business.rssByPortal( "Headbangers" )
 		);
 	}
+	/*
 	void testRssByPortal_whenNoPortalExists()
 	{
 		SingAlong business;
