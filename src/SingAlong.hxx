@@ -242,8 +242,8 @@ public:
 		std::string url = "'http://my.netscape.com/publish/formats/rss-0.91.dtd'>\n";
 		std::string rss_version = "<rss version='0.91'>\n";
 		std::string ch = "<channel>\n";
-		std::string title =	"<title>SingAlong: Headbangers</title>\n";
-		std::string link = "<link>http://www.singalong.com/Headbangers</link>\n";
+		std::string title =	"<title>SingAlong: "+ portal +"</title>\n";
+		std::string link = "<link>http://www.singalong.com/" + portal + "</link>\n";
 		std::string description = "<description>A portal for heavy metal fans</description>\n";
 		std::string channel = "</channel>\n";
 		std::string rss_label_close =	"</rss>\n";
