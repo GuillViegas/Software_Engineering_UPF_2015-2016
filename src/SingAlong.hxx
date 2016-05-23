@@ -247,7 +247,7 @@ public:
 		std::string description = "<description>A portal for heavy metal fans</description>\n";
 		std::string channel = "</channel>\n";
 		std::string rss_label_close =	"</rss>\n";
-		return xml + doctype + url + rss_version + ch + title + link + description + channel + rss_label_close + "\n";
+		return xml + doctype + url + rss_version + ch + title + link + description + channel + rss_label_close;
 	}
 
 
