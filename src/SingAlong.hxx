@@ -241,7 +241,7 @@ public:
 		std::string output = "";
 		bool value = portalExists(portal);
 
-		if (value) throw portalException();
+		if (!value) throw portalException();
 	 	else { 
 			std::string xml = "<?xml version='1.0' encoding='ISO-8859-15'?>\n";
 			std::string doctype = "<!DOCTYPE rss PUBLIC '-//Netscape Communications//DTD RSS 0.91//EN'\n";
