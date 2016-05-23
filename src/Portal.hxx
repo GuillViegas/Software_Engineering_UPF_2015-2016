@@ -10,26 +10,28 @@ private:
 	std::string _message;
 
 public:
-	Portal();
-	Portal(const std::string &name, const std::string &message) {
+	Portal() {}
 
+	Portal(const std::string &n, const std::string &m) {
+		_name = n;
+		_message = m;
 	}
 
-	~Portal();
+	~Portal() {}
 
-	std::string get portalName() {
+	std::string getPortalName() {
 		return _name;
 	}
 
-	void set portalName(const std::string n) {
+	void setportal(const std::string n) {
 		_name = n;
 	}
 
-	std::string get messageName() {
+	std::string getMessage() {
 		return _message;
 	}
 
-	void set messageName(const std::string m) {
+	void setMessage(const std::string m) {
 		_message = m;
 	}
 

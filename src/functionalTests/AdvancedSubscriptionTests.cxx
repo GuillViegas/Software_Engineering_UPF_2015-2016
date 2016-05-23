@@ -141,8 +141,8 @@ public:
 		{
 			ASSERT_EQUALS( "The portal does not exist", e.what() );
 		}
-	}
-	/*
+	}/*
+	
 	void testRssByPortal_withNotifiedTrack()
 	{
 		SingAlong business;
@@ -171,7 +171,7 @@ public:
 			"</rss>\n",
 			business.rssByPortal( "Headbangers" )
 		);
-	}	
+	}/*	
 	void testRssByPortal_subscribedToArtistAndStyle()
 	{
 		SingAlong business;
