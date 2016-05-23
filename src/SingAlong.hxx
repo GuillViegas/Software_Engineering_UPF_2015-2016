@@ -231,7 +231,8 @@ public:
 	std::string listPortals() {
 		std::string result;
 		for (int i=0; i < portalList.size(); i++) {
-			result += portalList[i].first + " " + portalList[i].second + "\n";
+			result += portalList[i].first + "\n";
+			result += "\t" + portalList[i].second + "\n";
 		}
 		return result;
 	}
