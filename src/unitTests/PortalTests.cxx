@@ -15,7 +15,7 @@ public:
 	void testPortal_createNewEmptyPortal() {
 		Portal portal;
 		ASSERT_EQUALS(
-			"No name", 
+			"", 
 			portal.getPortalName()
 		);
 
