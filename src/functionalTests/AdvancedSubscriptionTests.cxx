@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testListThematicPortals );
 		TEST_CASE( testRssByPortal_withoutNotificacion );
 		TEST_CASE( testRssByPortal_whenNoPortalExists );
-		//TEST_CASE( testRssByPortal_withNotifiedTrack );
+		TEST_CASE( testRssByPortal_withNotifiedTrack );
 		//TEST_CASE( testRssByPortal_subscribedToArtistAndStyle );
 	}
 
@@ -92,7 +92,7 @@ public:
 			MailStub::theInstance().sentMails()
 		);
 	}
-	
+
 	void testListThematicPortals()
 	{
 		SingAlong business;
@@ -141,7 +141,7 @@ public:
 		{
 			ASSERT_EQUALS( "The portal does not exist", e.what() );
 		}
-	}/*
+	}
 	
 	void testRssByPortal_withNotifiedTrack()
 	{
@@ -171,7 +171,7 @@ public:
 			"</rss>\n",
 			business.rssByPortal( "Headbangers" )
 		);
-	}	
+	}/*	
 	void testRssByPortal_subscribedToArtistAndStyle()
 	{
 		SingAlong business;

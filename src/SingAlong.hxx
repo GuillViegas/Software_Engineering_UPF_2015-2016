@@ -22,6 +22,7 @@ private:
 	std::list<Style> stlist;
 	std::list<User> users;
 	std::vector<std::pair<std::string,std::string> > artistSuscriptionList;
+	std::vector<std::pair<std::string,std::string> > artistPortalSuscriptionList;
 	std::list<Portal> portalList;
 
 	const char* fakeCompressions[7] = {
@@ -220,6 +221,10 @@ public:
 
 	void subscribeUserToArtist(const std::string & userName, const std::string & artistName) {
 		artistSuscriptionList.push_back(std::make_pair(userName,artistName));
+	}
+
+	void subscribePortalToArtist(const std::string & portalName, const std::string & artistName) {
+		artistPortalSuscriptionList.push_back(std::make_pair(portalName,artistName));
 	}
 
 	void createNewPortal(const std::string portalName, const std::string pmessage) {
