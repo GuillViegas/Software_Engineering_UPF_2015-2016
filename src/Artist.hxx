@@ -174,19 +174,6 @@ public:
 
 	}
 
-	// void notifyUsersSubscribedToArtist() 
-	// {
-	// 	std::string to;
-	// 	std::string subject;
-	// 	for (std::list<User>::iterator it = subscribers.begin(); it != subscribers.end(); it++) {
-	// 		to = (*it).getName() + " <" + (*it).getMail() + ">";
-	// 		subject = "new track " + " by " + artistName;
-	// 		MailStub::theInstance().sendMail(to, subject);
-	// 	}
-
-
-	// }
-
 };
 
 #endif

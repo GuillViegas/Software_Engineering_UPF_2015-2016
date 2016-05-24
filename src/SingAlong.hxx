@@ -77,7 +77,7 @@ public:
 
 		int duration = atoi(data);
 		artist.newTrack(trackName, duration, path);
-		notifyUsersSubscribedToArtist(artistName, "test.wav");
+		notifyUsersSubscribedToArtist(artistName, trackName);
 	}
 
 	void includeTrackOnAlbum(const std::string& artistName, const std::string trackName, const std::string albumName) {
