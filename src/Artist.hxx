@@ -168,11 +168,24 @@ public:
 	}
 
 	void assignTrackToAlbum(const std::string &trackName, const std::string &albumName) {
-
 		Track & track = findTrack(trackName);
 		Album & album = findAlbum(albumName);
 		album.addTrack(track);
+
 	}
+
+	// void notifyUsersSubscribedToArtist() 
+	// {
+	// 	std::string to;
+	// 	std::string subject;
+	// 	for (std::list<User>::iterator it = subscribers.begin(); it != subscribers.end(); it++) {
+	// 		to = (*it).getName() + " <" + (*it).getMail() + ">";
+	// 		subject = "new track " + " by " + artistName;
+	// 		MailStub::theInstance().sendMail(to, subject);
+	// 	}
+
+
+	// }
 
 };
 
