@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <utility>
 #include "Artist.hxx"
+#include "Portal.hxx"
 #include "Track.hxx"
 #include "User.hxx"
 #include "Style.hxx"
@@ -21,7 +22,7 @@ private:
 	std::list<Style> stlist;
 	std::list<User> users;
 	std::vector<std::pair<std::string,std::string> > artistSuscriptionList;
-	std::vector<std::pair<std::string,std::string> > portalList;
+	std::list<Portal> portalList;
 
 	const char* fakeCompressions[7] = {
 		"compressed/An artist - A track [128].mp3",
@@ -221,14 +222,15 @@ public:
 	}
 
 	void createNewPortal(const std::string portalName, const std::string pmessage) {
-		portalList.push_back(std::make_pair(portalName, pmessage));
+		Portal portal(portalName,pmessage);
+		portalList.push_back(portal);
 
 	}
 
 	std::string listPortals() {
 		std::string result;
-		for (int i=0; i < portalList.size(); i++) {
-			result += portalList[i].first + "\n" + "\t" + portalList[i].second + "\n";
+		for (std::list<Portal>::iterator it = portalList.begin(); it != portalList.end(); it++) {
+			result += (*it).getPortalName() + "\n" + "\t" + (*it).getMessage() + "\n";
 		}
 		return result;
 	}
@@ -259,10 +261,10 @@ public:
 
 	bool portalExists(const std::string& portalName) {
 		bool exists = false;
-		int i = 0;
-		while (!exists and i < portalList.size()) {
-			if (portalList[i].first == portalName) exists = true;
-			else i++;
+		std::list<Portal>::iterator it = portalList.begin();
+		while (!exists and it != portalList.end()) {
+			if ((*it).getPortalName() == portalName) exists = true;
+			else ++it;
 		}
 		return exists;
 	}
