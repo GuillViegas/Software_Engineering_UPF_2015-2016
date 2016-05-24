@@ -271,22 +271,16 @@ public:
 	}
 
 	void notifyUsersSubscribedToArtist(const std::string & artistName, const std::string & song) {
-
-		std::string to, subject;
 		
 		for (int i = 0; i < artistSuscriptionList.size(); i++) {
 			
 			if (artistSuscriptionList[i].second == artistName) {
 				User & user = findUser(artistSuscriptionList[i].first);
-				to = user.getName() + " <" + user.getMail() + ">";
-				subject = "new track " + song +" by " + artistName;
+				std::string to = user.getName() + " <" + user.getMail() + ">";
+				std::string subject = "new track " + song +" by " + artistName;
 				MailStub::theInstance().sendMail(to, subject);
 			}
 		}
-
-
-
-
 
 	}
 
