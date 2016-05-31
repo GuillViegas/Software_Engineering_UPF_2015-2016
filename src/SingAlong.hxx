@@ -279,21 +279,14 @@ public:
 		std::string title =	"<title>SingAlong: "+ portalName +"</title>\n";
 		std::string link = "<link>http://www.singalong.com/" + portalName + "</link>\n";
 		std::string description = "<description>A portal for heavy metal fans</description>\n";
-
-		//PUT NEW CODE
 		std::string items = portal.getNewNotifications();
-
 		std::string channel = "</channel>\n";
 		std::string rss_label_close =	"</rss>\n";
 		return output = xml + doctype + url + rss_version + ch + title + link + description + items + channel + rss_label_close;
-		
-
-
 	}
 
 
-	void notifyUsersSubscribedToArtist(const std::string & artistName, const std::string & song) {
-		
+	void notifyUsersSubscribedToArtist(const std::string & artistName, const std::string & song) {	
 		for (int i = 0; i < artistSuscriptionList.size(); i++) {
 			
 			if (artistSuscriptionList[i].second == artistName) {
@@ -305,7 +298,6 @@ public:
 		}
 
 	}
-
 
 };
 
