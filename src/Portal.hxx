@@ -8,6 +8,7 @@ class Portal {
 private:
 	std::string _name;
 	std::string _message;
+	std::string _newNotifications;
 
 public:
 	Portal() {}
@@ -15,6 +16,7 @@ public:
 	Portal(const std::string &n, const std::string &m) {
 		_name = n;
 		_message = m;
+		_newNotifications = "";
 	}
 
 	~Portal() {}
@@ -39,6 +41,15 @@ public:
 		return _name + "\n" + _message + "\n";
 	}
 
+	void addNewNotifications(const std::string & artist, const std::string & song) {
+		std::string title ="<title>New track: '" + song + "' by '" + artist + " '</tile>\n";
+		std::string link = "<link>http://www.singalong.com/infoTrack?artist='" + artist + "'&title='" + song + "'</link>\n";
+		_newNotifications += "<item>\n" + title + link + "</item>\n";
+	}
+
+	std::string getNewNotifications() {
+		return _newNotifications;
+	}
 
 };
 

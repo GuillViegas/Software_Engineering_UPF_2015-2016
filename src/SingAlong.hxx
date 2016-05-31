@@ -79,6 +79,17 @@ public:
 		int duration = atoi(data);
 		artist.newTrack(trackName, duration, path);
 		notifyUsersSubscribedToArtist(artistName, trackName);
+		updatePortalsAssociatedWithArtirst(artistName, trackName);
+	}
+
+	void updatePortalsAssociatedWithArtirst(const std::string & artistName, const std::string & trackName) {
+
+		for (int i = 0; i < artistPortalSuscriptionList.size(); i++) {	
+			if (artistPortalSuscriptionList[i].second == artistName) {
+				Portal & portal = findPortal(artistPortalSuscriptionList[i].first);
+				portal.addNewNotifications(artistName, trackName);
+			}		
+		}
 	}
 
 	void includeTrackOnAlbum(const std::string& artistName, const std::string trackName, const std::string albumName) {
@@ -206,6 +217,19 @@ public:
 	// 	return (*it);
 	// }
 
+	Portal & findPortal(const std::string& portalName) {
+		bool exists = false;
+		std::list<Portal>::iterator it = portalList.begin();
+
+		while (!exists and it != portalList.end()) {
+			if ((*it).getPortalName() == portalName) exists = true;
+			else ++it;
+		}
+
+		if (!exists) throw portalException();
+		return (*it);
+	}
+
 	Style & findStyle(const std::string &styleName) {
 		std::list<Style>::iterator it = stlist.begin();
 		bool trobat = false;
@@ -241,39 +265,32 @@ public:
 		return result;
 	}
 
-	std::string rssByPortal(const std::string& portal) {
+	std::string rssByPortal(const std::string& portalName) {
 		
-		std::string output = "";
-		bool value = portalExists(portal);
+		std::string output;
 
-		if (!value) throw portalException();
-	 	else { 
-			std::string xml = "<?xml version='1.0' encoding='ISO-8859-15'?>\n";
-			std::string doctype = "<!DOCTYPE rss PUBLIC '-//Netscape Communications//DTD RSS 0.91//EN'\n";
-			std::string url = "'http://my.netscape.com/publish/formats/rss-0.91.dtd'>\n";
-			std::string rss_version = "<rss version='0.91'>\n";
-			std::string ch = "<channel>\n";
-			std::string title =	"<title>SingAlong: "+ portal +"</title>\n";
-			std::string link = "<link>http://www.singalong.com/" + portal + "</link>\n";
-			std::string description = "<description>A portal for heavy metal fans</description>\n";
-			std::string channel = "</channel>\n";
-			std::string rss_label_close =	"</rss>\n";
-			output = xml + doctype + url + rss_version + ch + title + link + description + channel + rss_label_close;
-		}
+		Portal & portal = findPortal(portalName);
+		
+		std::string xml = "<?xml version='1.0' encoding='ISO-8859-15'?>\n";
+		std::string doctype = "<!DOCTYPE rss PUBLIC '-//Netscape Communications//DTD RSS 0.91//EN'\n";
+		std::string url = "'http://my.netscape.com/publish/formats/rss-0.91.dtd'>\n";
+		std::string rss_version = "<rss version='0.91'>\n";
+		std::string ch = "<channel>\n";
+		std::string title =	"<title>SingAlong: "+ portalName +"</title>\n";
+		std::string link = "<link>http://www.singalong.com/" + portalName + "</link>\n";
+		std::string description = "<description>A portal for heavy metal fans</description>\n";
 
-		return output; 
+		//PUT NEW CODE
+		std::string items = portal.getNewNotifications();
+
+		std::string channel = "</channel>\n";
+		std::string rss_label_close =	"</rss>\n";
+		return output = xml + doctype + url + rss_version + ch + title + link + description + items + channel + rss_label_close;
+		
+
 
 	}
 
-	bool portalExists(const std::string& portalName) {
-		bool exists = false;
-		std::list<Portal>::iterator it = portalList.begin();
-		while (!exists and it != portalList.end()) {
-			if ((*it).getPortalName() == portalName) exists = true;
-			else ++it;
-		}
-		return exists;
-	}
 
 	void notifyUsersSubscribedToArtist(const std::string & artistName, const std::string & song) {
 		
