@@ -42,7 +42,7 @@ public:
 	}
 
 	void addNewNotifications(const std::string & artist, const std::string & song) {
-		std::string title ="<title>New track: '" + song + "' by '" + artist + " '</tile>\n";
+		std::string title ="<title>New track: '" + song + "' by '" + artist + "'</title>\n";
 		std::string link = "<link>http://www.singalong.com/infoTrack?artist='" + artist + "'&title='" + song + "'</link>\n";
 		_newNotifications += "<item>\n" + title + link + "</item>\n";
 	}
