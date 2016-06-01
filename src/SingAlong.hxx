@@ -307,12 +307,34 @@ public:
 			
 			if (artistSuscriptionList[i].second == artistName) {
 				User & user = findUser(artistSuscriptionList[i].first);
-				std::string to = user.getName() + " <" + user.getMail() + ">";
-				std::string subject = "new track " + song +" by " + artistName;
-				MailStub::theInstance().sendMail(to, subject);
+				if (user.getPreferences() == 0) {
+					std::string to = user.getName() + " <" + user.getMail() + ">";
+					std::string subject = "new track " + song +" by " + artistName;
+					MailStub::theInstance().sendMail(to, subject);
+				} else if (user.getPreferences() == 1) {
+					std::string text = "[SingAlong] new track " + song + " by " + artistName + "\n" ;
+					SmsStub::theInstance().sendSms(user.getPhoneNumber(), text);
+				} else {
+					std::string text = "[SingAlong] new track " + song + " by " + artistName + "\n" ;;
+					WhatsappStub::theInstance().sendWhatsapp(user.getPhoneNumber(), text);
+				}
+
 			}
 		}
 
+	}
+
+	void userPrefersSms(const std::string & userName, const std::string & number) {
+		User & user = findUser(userName);
+		user.setPhoneNumber(number);
+		user.setPreferences(1);
+
+	}
+
+	void userPrefersWhatsapp(const std::string & userName, const std::string & number) {
+		User & user = findUser(userName);
+		user.setPhoneNumber(number);
+		user.setPreferences(2);
 	}
 
 };

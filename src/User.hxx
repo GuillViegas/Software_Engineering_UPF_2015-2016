@@ -5,17 +5,23 @@
 class User {
 private:
 	std::string _name;
+	std::string _phone;
 	std::string _mail;
+	int _preferences;	//Attribute that define the preference of notification. 0 -> mail, 1 -> SMS message, 2 -> Whatsapp message
 
 public:
 	User() {
 		_name = "No name";
 		_mail = "No mail";
+		_phone = "";
+		_preferences = 0;
 	}
 
 	User(const std::string& n, const std::string& m) {
 		_name = n;
 		_mail = m;
+		_phone = "";
+		_preferences = 0;	//By default the preference is mail notification
 	}
 
 	~User() {}
@@ -42,6 +48,22 @@ public:
 
 	void notify(const std::string& message) {
 		std::cout << message << std::endl;
+	}
+
+	int getPreferences() {
+		return _preferences;
+	}
+
+	void setPreferences(const int & p) {
+		_preferences = p;
+	}
+
+	std::string getPhoneNumber() {
+		return _phone;
+	}
+
+	void setPhoneNumber(const std::string & phoneNumber) {
+		_phone = phoneNumber;
 	}
 
 };
