@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <utility>
 #include "Artist.hxx"
+#include "externalLibs/MailStub.hxx"
 #include "Portal.hxx"
 #include "Track.hxx"
 #include "User.hxx"
@@ -173,7 +174,6 @@ public:
 
 		if (!trobat) throw styleException();
 		updatePortalsAssociatedWithStyle(style, artistName, trackName);
-
 	}
 
 	void createNewUser(const std::string & name, const std::string mail) {
@@ -203,12 +203,15 @@ public:
 		return style.subscribersList();
 	}
 
-	User & findUser(const std::string &userName) {
+	User & findUser(const std::string & userName) {
 		std::list<User>::iterator it = users.begin();
 		bool trobat = false;
 
 		while (!trobat and it != users.end()) {
-			if ((*it).getName() == userName) trobat = true;
+
+			std::string str1 = (*it).getName();
+			//if ( (*it).getName() == userName ) trobat = true;
+			if ( str1.compare(userName) == 0 ) trobat = true;
 			else ++it;
 		}
 
@@ -303,38 +306,57 @@ public:
 
 
 	void notifyUsersSubscribedToArtist(const std::string & artistName, const std::string & song) {	
+		
 		for (int i = 0; i < artistSuscriptionList.size(); i++) {
 			
 			if (artistSuscriptionList[i].second == artistName) {
+
 				User & user = findUser(artistSuscriptionList[i].first);
-				if (user.getPreferences() == 0) {
+
+				if (user.getPreferences() == "mail") {
 					std::string to = user.getName() + " <" + user.getMail() + ">";
 					std::string subject = "new track " + song +" by " + artistName;
 					MailStub::theInstance().sendMail(to, subject);
-				} else if (user.getPreferences() == 1) {
+				} else if (user.getPreferences() == "sms") {
 					std::string text = "[SingAlong] new track " + song + " by " + artistName + "\n" ;
 					SmsStub::theInstance().sendSms(user.getPhoneNumber(), text);
 				} else {
 					std::string text = "[SingAlong] new track " + song + " by " + artistName + "\n" ;;
 					WhatsappStub::theInstance().sendWhatsapp(user.getPhoneNumber(), text);
 				}
-
+				
 			}
+		}
+	}
+
+	
+
+	void userPrefersSms(const std::string & userName, const std::string & phoneNumber) {
+		bool trobat = false;
+		std::list<User>::iterator it = users.begin();
+
+		while (!trobat and it != users.end()) {
+			if ((*it).getName() == userName) {
+				(*it).setPhoneNumber(phoneNumber);
+				(*it).setPreferences("sms");
+				trobat = true;
+			}
+			else it++;
 		}
 
 	}
 
-	void userPrefersSms(const std::string & userName, const std::string & number) {
-		User & user = findUser(userName);
-		user.setPhoneNumber(number);
-		user.setPreferences(1);
-
-	}
-
-	void userPrefersWhatsapp(const std::string & userName, const std::string & number) {
-		User & user = findUser(userName);
-		user.setPhoneNumber(number);
-		user.setPreferences(2);
+	void userPrefersWhatsapp(const std::string & userName, const std::string & phoneNumber) {
+		bool trobat = false;
+		std::list<User>::iterator it = users.begin();
+		while (!trobat and it != users.end()) {
+			if ((*it).getName() == userName) {
+				(*it).setPhoneNumber(phoneNumber);
+				(*it).setPreferences("whatsapp");
+				trobat = true;
+			}
+			else it++;
+		}
 	}
 
 };
