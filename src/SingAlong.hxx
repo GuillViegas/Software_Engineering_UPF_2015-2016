@@ -23,6 +23,7 @@ private:
 	std::list<User> users;
 	std::vector<std::pair<std::string,std::string> > artistSuscriptionList;
 	std::vector<std::pair<std::string,std::string> > artistPortalSuscriptionList;
+	std::vector<std::pair<std::string,std::string> > stylePortalSuscriptionList;
 	std::list<Portal> portalList;
 
 	const char* fakeCompressions[7] = {
@@ -251,6 +252,10 @@ public:
 		artistPortalSuscriptionList.push_back(std::make_pair(portalName,artistName));
 	}
 
+	void subscribePortalToStyle(const std::string & portal, const std::string & style) {
+		stylePortalSuscriptionList.push_back(std::make_pair(portal, style));
+	}
+
 	void createNewPortal(const std::string portalName, const std::string pmessage) {
 		Portal portal(portalName,pmessage);
 		portalList.push_back(portal);
@@ -279,10 +284,10 @@ public:
 		std::string title =	"<title>SingAlong: "+ portalName +"</title>\n";
 		std::string link = "<link>http://www.singalong.com/" + portalName + "</link>\n";
 		std::string description = "<description>A portal for heavy metal fans</description>\n";
-		std::string items = portal.getNewNotifications();
+		std::string notifications = portal.getNewNotifications();
 		std::string channel = "</channel>\n";
 		std::string rss_label_close =	"</rss>\n";
-		return output = xml + doctype + url + rss_version + ch + title + link + description + items + channel + rss_label_close;
+		return output = xml + doctype + url + rss_version + ch + title + link + description + notifications + channel + rss_label_close;
 	}
 
 

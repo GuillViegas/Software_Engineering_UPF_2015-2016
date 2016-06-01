@@ -2,13 +2,14 @@
 #define portal_hxx
 
 #include <string>
+#include <vector>
 #include "Exception.hxx"
 
 class Portal {
 private:
 	std::string _name;
 	std::string _message;
-	std::string _newNotifications;
+	std::vector<std::pair<std::string,std::string> > newNotifications;
 
 public:
 	Portal() {}
@@ -16,7 +17,6 @@ public:
 	Portal(const std::string &n, const std::string &m) {
 		_name = n;
 		_message = m;
-		_newNotifications = "";
 	}
 
 	~Portal() {}
@@ -42,13 +42,23 @@ public:
 	}
 
 	void addNewNotifications(const std::string & artist, const std::string & song) {
-		std::string title ="<title>New track: '" + song + "' by '" + artist + "'</title>\n";
-		std::string link = "<link>http://www.singalong.com/infoTrack?artist='" + artist + "'&title='" + song + "'</link>\n";
-		_newNotifications += "<item>\n" + title + link + "</item>\n";
+		newNotifications.push_back(std::make_pair(artist, song));
+		//DELETE
+		//std::string title ="<title>New track: '" + song + "' by '" + artist + "'</title>\n";
+		//std::string link = "<link>http://www.singalong.com/infoTrack?artist='" + artist + "'&title='" + song + "'</link>\n";
+		//_newNotifications += "<item>\n" + title + link + "</item>\n";
 	}
 
 	std::string getNewNotifications() {
-		return _newNotifications;
+		std::string rss;
+		std::string title;
+		std::string link;
+		for (int i = 0; i < newNotifications.size(); i++) {
+			title ="<title>New track: '" + newNotifications[i].second + "' by '" + newNotifications[i].first + "'</title>\n";
+			link = "<link>http://www.singalong.com/infoTrack?artist='" + newNotifications[i].first + "'&title='" + newNotifications[i].second + "'</link>\n";
+			rss += "<item>\n" + title + link + "</item>\n";
+		}
+		return rss;
 	}
 
 };
