@@ -93,6 +93,16 @@ public:
 		}
 	}
 
+	void updatePortalsAssociatedWithStyle(const std::string & style, const std::string & artistName, const std::string & trackName) {
+
+		for (int i = 0; i < stylePortalSuscriptionList.size(); i++) {	
+			if (stylePortalSuscriptionList[i].second == style) {
+				Portal & portal = findPortal(stylePortalSuscriptionList[i].first);
+				portal.addNewNotifications(artistName, trackName);
+			}		
+		}
+	}
+
 	void includeTrackOnAlbum(const std::string& artistName, const std::string trackName, const std::string albumName) {
 		Artist & artist = findArtist(artistName);
 		artist.assignTrackToAlbum(trackName, albumName);
@@ -162,6 +172,7 @@ public:
 		}
 
 		if (!trobat) throw styleException();
+		updatePortalsAssociatedWithStyle(style, artistName, trackName);
 
 	}
 
