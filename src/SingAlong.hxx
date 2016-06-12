@@ -305,6 +305,7 @@ public:
 	}
 
 
+
 	void notifyUsersSubscribedToArtist(const std::string & artistName, const std::string & song) {	
 		
 		for (int i = 0; i < artistSuscriptionList.size(); i++) {
@@ -328,35 +329,18 @@ public:
 			}
 		}
 	}
-
 	
 
 	void userPrefersSms(const std::string & userName, const std::string & phoneNumber) {
-		bool trobat = false;
-		std::list<User>::iterator it = users.begin();
-
-		while (!trobat and it != users.end()) {
-			if ((*it).getName() == userName) {
-				(*it).setPhoneNumber(phoneNumber);
-				(*it).setPreferences("sms");
-				trobat = true;
-			}
-			else it++;
-		}
-
+		User & user = findUser(userName);
+		user.setPhoneNumber(phoneNumber);
+		user.setPreferences("sms");
 	}
 
 	void userPrefersWhatsapp(const std::string & userName, const std::string & phoneNumber) {
-		bool trobat = false;
-		std::list<User>::iterator it = users.begin();
-		while (!trobat and it != users.end()) {
-			if ((*it).getName() == userName) {
-				(*it).setPhoneNumber(phoneNumber);
-				(*it).setPreferences("whatsapp");
-				trobat = true;
-			}
-			else it++;
-		}
+		User & user = findUser(userName);
+		user.setPhoneNumber(phoneNumber);
+		user.setPreferences("whatsapp");
 	}
 
 };
