@@ -23,18 +23,23 @@ public:
 	
 	ElementType valueDen() const { return _denominador; }
 	
-	Fraction operator+(const Fraction & other) const {
-		return Fraction( ( _numerador * other.valueDen() + _denominador * other.valueNum() ) , ( _denominador * other.valueDen() ) );
+	Fraction operator+(const Fraction & other) {
+		
+		_numerador = _numerador * other.valueDen() + _denominador * other.valueNum();
+		_denominador = _denominador * other.valueDen();
+		
+		ElementType tmp = gcd<ElementType>(_numerador, _denominador);
+		return Fraction(_numerador/tmp, _denominador/tmp);
 	}
 	
-	Fraction operator*(const Fraction & other) const {
-		return Fraction( _numerador* other.valueNum() , _denominador* other.valueDen());
-	
+	Fraction operator*(const Fraction & other) {
+		
+		_numerador = _numerador* other.valueNum();
+		_denominador = _denominador* other.valueDen();
+
+		ElementType tmp = gcd<ElementType>(_numerador, _denominador);
+		return Fraction(_numerador/tmp, _denominador/tmp);
 	}
 
-	Fraction result() {
-		ElementType tmp = gcd<ElementType>(_numerador, _denominador);
-		Fraction fraction(_numerador/tmp, _denominador/tmp);
-		return fraction;
-	}
+
 };

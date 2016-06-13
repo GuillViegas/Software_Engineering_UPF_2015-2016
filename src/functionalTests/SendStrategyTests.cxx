@@ -1,6 +1,7 @@
 #include "MiniCppUnit.hxx"
 #include "LibFileSystem.hxx"
 #include "MailStub.hxx"
+#include "SingAlong.hxx"
 #include <fstream>
 
 class SendStrategyTests : public TestFixture<SendStrategyTests>
@@ -8,7 +9,7 @@ class SendStrategyTests : public TestFixture<SendStrategyTests>
 public:
 	TEST_FIXTURE( SendStrategyTests )
 	{
-		//TEST_CASE( testAssociateStyleWithTrack_notifyUsersInDifferentWays );
+		TEST_CASE( testAssociateStyleWithTrack_notifyUsersInDifferentWays );
 	}
 
 	/**
@@ -42,7 +43,7 @@ public:
 		os << duration << std::endl;
 	}
 
-	/*
+	
 	void testAssociateStyleWithTrack_notifyUsersInDifferentWays()
 	{
 		SingAlong business;
@@ -78,7 +79,7 @@ public:
 			WhatsappStub::theInstance().sentMessages()
 		);
 	}
-	*/
+	
 };
 
 REGISTER_FIXTURE( SendStrategyTests )
