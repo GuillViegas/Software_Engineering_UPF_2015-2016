@@ -14,9 +14,10 @@
 #include "User.hxx"
 #include "Style.hxx"
 #include "Exception.hxx"
+#include "gui/Model.hxx"
 
 
-class SingAlong {
+class SingAlong: public Model {
 
 private:
 	std::list<Artist> artistList;
@@ -218,19 +219,6 @@ public:
 		if (!trobat) throw userException();
 		return (*it);
 	}
-
-	// Artist & findArtist(const std::string & artistName) {
-	// 	std::list<Artist>::iterator it = artistList.begin();
-	// 	bool trobat = false;
-
-	// 	while (!trobat and it != artistList.end()) {
-	// 		if ((*it).name() == artistName) trobat = true;
-	// 		else ++it;
-	// 	}
-
-	// 	if (!trobat) throw artistException();
-	// 	return (*it);
-	// }
 
 	Portal & findPortal(const std::string& portalName) {
 		bool exists = false;

@@ -3,8 +3,7 @@
 #include "Model.hxx"
 #include "View.hxx"
 #include "Controller.hxx"
-
-//#include "SingAlong.hxx"
+#include "SingAlong.hxx"
 
 int main( int argc, char *argv[] ) {
 	QApplication app( argc, argv );
@@ -12,8 +11,8 @@ int main( int argc, char *argv[] ) {
 	View view;
 	Controller controller;
 
-	//SingAlong business;
-	//model = &business;
+	SingAlong business;
+	model = &business;
 
 	QObject::connect( model, SIGNAL( modifiedCatalog( const std::string & ) ),
 		              &view, SLOT( updateContent( const std::string & ) ) );
