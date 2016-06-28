@@ -24,11 +24,24 @@ Seminario 5:
 - Deberíais crear acceso al seminario 5 desde index.html
 
 Seminario 6:
+- Gestor debería ser gestionado en memoria por el Facade. A su vez podría ser un grupo de converters, que gestiona la memoria de cada converter y que tiene una relación de 1 a múltiples.
+- No utiliceis ese tipo de flecha con la conexión a servicios externos, ya que parece que heredéis.
 
 Seminario 7:
+- Se ha entregado con 6 días de retraso.
+- Práctica correcta pero demasiado tarde.
 
 Seminario 8:
+- Entregado 7 días tarde.
+- Ejercicio de clase muy pobre, no se ha visto claro ni el diseño del Strategy ni del Creator.
+- Notification y CreateChannel deben ser gestionados por Client. En el primero tambien gestiona la memoria.
+- Faltan métodos en Client y Facade para crear y/o cambiar de strategy.
 
 Seminario 9:
+- El uso de templates sirve para diferentes tipos de datos, así que tendríais que haber probado otra cosa que no fuese un int, como por ejemplo long long.
+- Por lo demás perfecto
 
 Seminario 10:
+- Podríais haber utilizado el modelo para gestionar la memoria de la vista y los controladores.
+- Faltan tipos de objetos en la vista y en los controladores.
+- Faltan funciones que relacionen con signal-slot la vista y los controladores.
